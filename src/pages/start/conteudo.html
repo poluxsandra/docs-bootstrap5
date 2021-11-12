@@ -5,15 +5,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>Conteúdo</title>
-
+    
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
+        
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Conteúdo
+                    </h1>
+                </div>
+                <p class="bd-lead">Descubra o que está incluído no Bootstrap, incluindo nossas versões de código-fonte e pré-compilados.
+                </p>
+            </div>
 
+            <div class="bd-content ps-lg-4">
+                <h2 class="head2" id="precompiled-bootstrap">Bootstrap Pré-Compilado
+                </h2>
+                <p>Depois de fazer o download, descompacte a pasta compactada e você verá algo assim:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ger1">bootstrap/
+├── css/
+│   ├── bootstrap-grid.css
+│   ├── bootstrap-grid.css.map
+│   ├── bootstrap-grid.min.css
+│   ├── bootstrap-grid.min.css.map
+│   ├── bootstrap-grid.rtl.css
+│   ├── bootstrap-grid.rtl.css.map
+│   ├── bootstrap-grid.rtl.min.css
+│   ├── bootstrap-grid.rtl.min.css.map
+│   ├── bootstrap-reboot.css
+│   ├── bootstrap-reboot.css.map
+│   ├── bootstrap-reboot.min.css
+│   ├── bootstrap-reboot.min.css.map
+│   ├── bootstrap-reboot.rtl.css
+│   ├── bootstrap-reboot.rtl.css.map
+│   ├── bootstrap-reboot.rtl.min.css
+│   ├── bootstrap-reboot.rtl.min.css.map
+│   ├── bootstrap-utilities.css
+│   ├── bootstrap-utilities.css.map
+│   ├── bootstrap-utilities.min.css
+│   ├── bootstrap-utilities.min.css.map
+│   ├── bootstrap-utilities.rtl.css
+│   ├── bootstrap-utilities.rtl.css.map
+│   ├── bootstrap-utilities.rtl.min.css
+│   ├── bootstrap-utilities.rtl.min.css.map
+│   ├── bootstrap.css
+│   ├── bootstrap.css.map
+│   ├── bootstrap.min.css
+│   ├── bootstrap.min.css.map
+│   ├── bootstrap.rtl.css
+│   ├── bootstrap.rtl.css.map
+│   ├── bootstrap.rtl.min.css
+│   └── bootstrap.rtl.min.css.map
+└── js/
+    ├── bootstrap.bundle.js
+    ├── bootstrap.bundle.js.map
+    ├── bootstrap.bundle.min.js
+    ├── bootstrap.bundle.min.js.map
+    ├── bootstrap.esm.js
+    ├── bootstrap.esm.js.map
+    ├── bootstrap.esm.min.js
+    ├── bootstrap.esm.min.js.map
+    ├── bootstrap.js
+    ├── bootstrap.js.map
+    ├── bootstrap.min.js
+    └── bootstrap.min.js.map</span></code></pre>
+                </div>
+                <p>Esta é a forma mais básica de Bootstrap: arquivos pré-compilados para uso rápido em quase qualquer projeto da web. Nós fornecemos CSS e JS compilados (<code>bootstrap.*</code>), bem como CSS e JS compilados e minimificados (<code>bootstrap.min.*</code>). <a href="https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps">Mapas de Fontes</a> (<code>bootstrap.*.map</code>) estão disponíveis para uso com ferramentas de desenvolvedor dos navegadores. Os arquivos JS agrupados (<code>bootstrap.bundle.js</code>) (e minificados  <code>bootstrap.bundle.min.js</code>) incluem o <a href="https://popper.js.org/">Popper</a>.
+                </p>
+
+                <h2 class="head2" id="css-files">Arquivos CSS
+                </h2>
+                <p>O Bootstrap inclui um punhado de opções para incluir alguns ou todos os nossos CSS compilados.
+                </p>
+                <table class="table bg-dark">
+                    <thead>
+                        <tr class="na1">
+                            <th scope="col">Arquivos CSS
+                            <th scope="col">Layout
+                            <th scope="col">Conteúdo
+                            <th scope="col">Componentes
+                            <th scope="col">Utilitários
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div><code class="fw-normal text-nowrap">bootstrap.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap.rtl.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap.min.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap.rtl.min.css</code>
+                                </div>
+                            </th>
+                            <td class="tg1">Incluído
+                            <td class="tg1">Incluído
+                            <td class="tg1">Incluído
+                            <td class="tg1">Incluído
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <div><code class="fw-normal text-nowrap">bootstrap-grid.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap-grid.rtl.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap-grid.min.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap-grid.rtl.min.css</code>
+                                </div>
+                            </th>
+                            <td><a href="../layout/grid.html">Somente em sistemas Grid</a>
+                            <td class="ig1">&mdash;
+                            <td class="ig1">&mdash;
+                            <td><a href="../util/flex.html">Somente Flex</a>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <div><code class="fw-normal text-nowrap">bootstrap-utilities.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap-utilities.rtl.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap-utilities.min.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap-utilities.rtl.min.css</code>
+                                </div>
+                            </th>
+                            <td class="ig1">&mdash;
+                            <td class="ig1">&mdash;
+                            <td class="ig1">&mdash;
+                            <td class="tg1">Incluído
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <div><code class="fw-normal text-nowrap">bootstrap-reboot.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap-reboot.rtl.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap-reboot.min.css</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap-reboot.rtl.min.css</code>
+                                </div>
+                            </th>
+                            <td class="ig1">&mdash;
+                            <td><a href="../content/reinicio.html">Somente Reinício</a>
+                            <td class="ig1">&mdash;
+                            <td class="ig1">&mdash;
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="head2" id="js-files">Arquivos JS
+                </h2>
+                <p>Da forma mesma, opções para incluir alguns ou todo o nosso JavaScript compilado.
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr class="na1">
+                            <th scope="col">Arquivos JS
+                            <th scope="col">Popper
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div><code class="fw-normal text-nowrap">bootstrap.bundle.js</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap.bundle.min.js</code>
+                                </div>
+                            </th>
+                            <td class="tg1">Incluído
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <div><code class="fw-normal text-nowrap">bootstrap.js</code>
+                                </div>
+                                <div><code class="fw-normal text-nowrap">bootstrap.min.js</code>
+                                </div>
+                            </th>
+                            <td class="ig1">&mdash;
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="head2" id="bootstrap-source-code">Bootstrap Código-Fonte
+                </h2>
+                <p>O download do código-fonte do Bootstrap inclui os recursos CSS e JavaScript pré-compilados, junto com o Sass, JavaScript e documentos de fonte. Mais especificamente, inclui o seguinte e mais:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ger1">bootstrap/
+├── dist/
+│   ├── css/
+│   └── js/
+├── site/
+│   └──content/
+│      └── docs/
+│          └── 5.0/
+│              └── examples/
+├── js/
+└── scss/</span></code></pre>
+                </div>
+                <p>O <code>scss/</code> e o <code>js/</code> são os códigos-fonte de nosso CSS e JavaScript.<br/>A pasta <code>dist/</code> inclui tudo o que está listado na seção de download pré-compilado acima.</br>A pasta <code>site/docs/</code>  inclui o código-fonte da nossa documentação;<br/>E a pasta <code>examples/</code> mostra exemplos de como usar o Bootstrap.</br>Além disso, qualquer outro arquivo incluído oferece suporte para pacotes, informações de licença e desenvolvimento.
+                </p>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>
