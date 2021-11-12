@@ -1,19 +1,216 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html      lang="pt-br">
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>RTL</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">RTL
+                    </h1>
+                </div>
+                <p class="bd-lead">Aprenda como ativar o suporte para texto da direita para esquerda no Bootstrap em nossos layout, componentes e utilitários.
+                </p>
+            </div>
+
+            <div class="bd-content ps-lg-4">
+                <h2 class="head2" id="get-familiar">Familiarizando
+                </h2>
+                <p>Recomendamos familiarizar-se com o Bootstrap primeiro lendo nossa  <a href="introducao.html">página de introdução </a> dessa seção. Após isto, segue o conteúdo a seguir sobre RTL. 
+                </p>
+                <p>Você também pode querer ler sobre o <a href="https://rtlcss.com/">Projeto RTLCSS</a>, ele reforça nossa abordagem para RTL.
+                </p>
+
+                <div class="bd-callout bd-callout-warning bg-dark">
+                    <h3 class="head3" id="experimental-feature" >Recurso Experimental
+                    </h3>
+                    <p>O recurso RTL ainda é <strong>experimental</strong> e provavelmente irá evoluir de acordo com os feedbacks do usuários. Identificou algo ou tem uma sugestão de melhoria? <a href="https://github.com/twbs/bootstrap/issues/new">Abra um issue</a>, adoraríamos receber seus insights.
+                    </p>
+                </div>
+
+                <h2 class="head2" id="required-html">HTML Requirido
+                </h2>
+                <p>Existem dois requisitos estritos para habilitar RTL em páginas com Bootstrap.
+                </p>
+                <ol>
+                    <li>Definir <code>dir=&quot;rtl&quot;</code> no elemento <code>&lt;html&gt;</code>.
+                    <li>Adicionar um valor apropriado ao atributo <code>lang</code>, como por exemplo, <code>lang=&quot;ar&quot;</code>, no elemento <code>&lt;html&gt;</code>.
+                </ol>
+                <p>A partir daí, você precisará incluir uma versão RTL de nosso CSS. Por exemplo, aqui está a folha de estilo para nosso CSS compilado e minimizado com RTL habilitado:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">link</span> <span class="na1">rel</span><span class="ig1">=</span><span class="vl1">&#34;stylesheet&#34;</span> <span class="na1">href</span><span class="ig1">=</span><span class="vl1">&#34;https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.rtl.min.css&#34;</span> <span class="na1">integrity</span><span class="ig1">=</span><span class="vl1">&#34;sha384-4dNpRvNX0c/TdYEbYup8qbjvjaMrgUPh+g4I03CnNtANuv+VAvPL6LqdwzZKV38G&#34;</span> <span class="na1">crossorigin</span><span class="ig1">=</span><span class="vl1">&#34;anonymous&#34;</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="starter-template">Modelo Inicial 
+                </h3>
+                <p>Você pode ver os requisitos acima refletidos neste modelo de partida RTL modificado.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="doc1">&lt;!doctype html&gt;</span>
+<span class="tg1">&lt;</span><span class="nt1">html</span> <span class="na1">lang</span><span class="ig1">=</span><span class="vl1">&#34;ar&#34;</span> <span class="na1">dir</span><span class="ig1">=</span><span class="vl1">&#34;rtl&#34;</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;</span><span class="nt1">head</span><span class="tg1">&gt;</span>
+    <span class="cm1">&lt;!-- Meta Tags requiridas --&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">meta</span> <span class="na1">charset</span><span class="ig1">=</span><span class="vl1">&#34;utf-8&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">meta</span> <span class="na1">name</span><span class="ig1">=</span><span class="vl1">&#34;viewport&#34;</span> <span class="na1">content</span><span class="ig1">=</span><span class="vl1">&#34;width=device-width, initial-scale=1&#34;</span><span class="tg1">&gt;</span>
+
+    <span class="cm1">&lt;!-- CSS Bootstrap --&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">link</span> <span class="na1">rel</span><span class="ig1">=</span><span class="vl1">&#34;stylesheet&#34;</span> <span class="na1">href</span><span class="ig1">=</span><span class="vl1">&#34;https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.rtl.min.css&#34;</span> <span class="na1">integrity</span><span class="ig1">=</span><span class="vl1">&#34;sha384-4dNpRvNX0c/TdYEbYup8qbjvjaMrgUPh+g4I03CnNtANuv+VAvPL6LqdwzZKV38G&#34;</span> <span class="na1">crossorigin</span><span class="ig1">=</span><span class="vl1">&#34;anonymous&#34;</span><span class="tg1">&gt;</span>
+
+    <span class="tg1">&lt;</span><span class="nt1">title</span><span class="tg1">&gt;</span><span class="ger1">مرحبابالعالم!</span><span class="tg1">&lt;/</span><span class="nt1">title</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">head</span><span class="tg1">&gt;</span>
+  <span class="th1">&lt;</span><span class="nt1">body</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">h1</span><span class="tg1">&gt;</span><span class="ger1">مرحبا بالعالم!</span><span class="tg1">&lt;/</span><span class="nt1">h1</span><span class="tg1">&gt;</span>
+
+    <span class="cm1">&lt;!-- JavaScript Opcional; escolha uma dentre as duas alternativas abaixo! --&gt;</span>
+
+    <span class="cm1">&lt;!-- Opção 1: Bootstrap Compilado com Popper --&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">script</span> <span class="na1">src</span><span class="ig1">=</span><span class="vl1">&#34;https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js&#34;</span> <span class="na1">integrity</span><span class="ig1">=</span><span class="vl1">&#34;sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0&#34;</span> <span class="na1">crossorigin</span><span class="ig1">=</span><span class="vl1">&#34;anonymous&#34;</span><span class="tg1">&gt;&lt;/</span><span class="nt1">script</span><span class="tg1">&gt;</span>
+
+    <span class="cm1">&lt;!-- Opção 2: Popper e Bootstrap JS separados--&gt;</span>
+    <span class="cm1">&lt;!--
+</span><span class="tg1">    &lt;</span><span class="nt1">script</span> <span class="na1">src</span><span class="ig1">=</span><span class="vl1">&#34;https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js&#34;</spab> <span class="na1">integrity</span><span class="ig1">=</span><span class="vl1">&#34;sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi&#34;</span> <span class="na1">crossorigin</span><span class="ig1">=</span><span class="vl1">&#34;anonymous&#34;</span><span class="tg1">&gt;&lt;/</span><span class="nt1">script</span><span class="tg1">&gt;</span>
+</span><span class="tg1">    &lt;</span><span class="nt1">script</span> <span class="na1">src</span><span class="ig1">=</span><span class="vl1">&#34;https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js&#34;</span> <span class="na1">integrity</span><span class="ig1">=</span><span class="vl1">&#34;sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG&#34;</span> <span class="na1">crossorigin</span><span class="ig1">=</span><span class="vl1">&#34;anonymous&#34;</span><span class="tg1">&gt;&lt;/</span><span class="nt1">script</span><span class="tg1">&gt;</span>
+</span><span class="cm1">    --&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">body</span><span class="tg1">&gt;</span>
+<span class="tg1">&lt;/</span><span class="nt1">html</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="rtl-examples">Exemplos de RTL
+                </h3>
+                <p>Comece com um de nossos vários <a href="../../examples/examples.html#rtl">exemplos de RTL</a>.
+                </p>
+
+                <h2 class="head2" id="approach">Abordagem
+                </h2>
+                <p>Nossa abordagem para construir suporte RTL no Bootstrap vem com duas decisões importantes que afetaram como escrevemos e usamos nosso CSS:
+                </p>
+                <ol>
+                    <li>
+                        <p><strong>Primeiro, decidimos construí-lo com o projeto <a href="https://rtlcss.com/">RTLCSS</a>.</strong> Isso nos dá alguns recursos poderosos para gerenciar alterações e substituições ao mudar de LTR para RTL. Também nos permite construir duas versões do Bootstrap a partir de um código-base.
+                        </p>
+                    <li>
+                        <p><strong>Em segundo lugar, renomeamos um punhado de classes direcionais para adotar uma abordagem de propriedades lógicas.</strong> Most of you have alreadA maioria de vocês já interagiu com propriedades lógicas graças aos nossos utilitários flex - eles substituem as propriedades de direção como <code>left</code> e <code>right</code> em favor das propriedades <code>start</code> e <code>end</code>. Isso torna os nomes e valores das classes apropriados para LTR e RTL sem qualquer sobrecarga.
+                        </p>
+
+                </ol>
+                <p>Por exemplo, em vez de <code>.ml-3</code> para <code>margin-left</code>, use <code>.ms-3</code>.
+                </p>
+                <p>Trabalhar com RTL, por meio de nosso Sass de origem ou CSS compilado, não deve ser muito diferente de nosso LTR padrão.
+                </p>
+
+                <h2 class="head2" id="customize-from-source">Personalize a partir da fonte
+                </h2>
+                <p>Quando se trata de <a href="../custom/sass.html">customização</a>, a maneira preferida é aproveitar as vantagens de usar variáveis, mapas e mixins. Essa abordagem funciona da mesma forma para RTL, mesmo que seja pós-processada a partir dos arquivos compilados, graças ao <a href="https://rtlcss.com/learn/getting-started/why-rtlcss/">funcionamento do RTLCSS</a>.
+                </p>
+
+                <h3 class="head3" id="custom-rtl-values">Valores RTL Personalizados
+                </h3>
+                <p>Usando <a href="https://rtlcss.com/learn/usage-guide/value-directives/">diretivas de valor RTLCSS</a>, você pode fazer de uma saída variável um valor diferente para RTL. Por exemplo, para diminuir o peso de <code>$font-weight-bold</code> ao longo da base de código, você pode usar a sintaxe <code>/*rtl: {value}*/</code>:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">$font-weight-bold</span><span class="ig1">:</span> <span class="vl1">700</span> <span class="ig1">#{</span><span class="cm1">/* rtl:600 </span><span class="cm1">*/</span><span class="ig1">}</span> <span class="na1">!default</span><span class="ig1">;</span></code></pre>
+                </div>
+                <p>O que resultaria no seguinte, para nosso CSS padrão e CSS RTL:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-css" data-lang="css"><span class="cm1">/* bootstrap.css */</span>
+<span class="nt1">dt</span> <span class="ig1">{</span>
+  <span class="na1">font-weight</span><span class="ig1">:</span> <span class="vl1">700</span> <span class="cm1">/* rtl:600 */</span><span class="ig1">;</span>
+<span class="ig1">}</span>
+
+<span class="cm1">/* bootstrap.rtl.css */</span>
+<span class="nt1">dt</span> <span class="ig1">{</span>
+  <span class="na1">font-weight</span><span class="ig1">:</span> <span class="vl1">600</span><span class="ig1">;</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="alternative-font-stack">Pilha de Fontes Alternativas
+                </h3>
+                <p>No caso de você estar usando uma fonte personalizada, esteja ciente de que nem todas as fontes suportam o alfabeto não latino. Para mudar da família pan-europeia para a árabe, pode ser necessário usar <code>/*rtl:insert: {value}*/</code> em sua pilha de fontes para modificar os nomes das famílias de fontes.
+                </p>
+                <p>Por exemplo, para mudar de <code>Helvetica Neue Webfont</code> do LTR para <code>Helvetica Neue Arabic</code> do RTL, seu código Sass irá se parecer com este:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">$font-family-sans-serif</span><span class="ig1">:</span>
+  <span class="na1">Helvetica</span> <span class="na1">Neue</span> <span class="ig1">#{</span><span class="vl1">&#34;/* rtl:insert:Arabic */&#34;</span><span class="ig1">}</span><span class="ig1">,</span>
+  <span class="cm1">// Família de fontes genéricas multiplataforma (fonte padrão da interface do usuário)</span>
+  <span class="na1">system-ui</span><span class="ig1">,</span>
+  <span class="cm1">// Safari para macOS e iOS (San Francisco)</span>
+  <span class="ig1">-</span><span class="na1">apple-system</span><span class="ig1">,</span>
+  <span class="cm1">// Chrome &lt; 56 para macOS (San Francisco)</span>
+  <span class="na1">BlinkMacSystemFont</span><span class="ig1">,</span>
+  <span class="cm1">// Windows</span>
+  <span class="vl1">&#34;Segoe UI&#34;</span><span class="ig1">,</span>
+  <span class="cm1">// Android</span>
+  <span class="na1">Roboto</span><span class="ig1">,</span>
+  <span class="cm1">// Fallback básico da web</span>
+  <span class="na1">Arial</span><span class="ig1">,</span>
+  <span class="cm1">// Linux</span>
+  <span class="vl1">&#34;Noto Sans&#34;</span><span class="ig1">,</span>
+  <span class="cm1">// Sans serif fallback</span>
+  <span class="na1">sans-serif</span><span class="ig1">,</span>
+  <span class="cm1">// Fontes Emoji</span>
+  <span class="vl1">&#34;Apple Color Emoji&#34;</span><span class="ig1">,</span> <span class="vl1">&#34;Segoe UI Emoji&#34;</span><span class="ig1">,</span> <span class="vl1">&#34;Segoe UI Symbol&#34;</span><span class="ig1">,</span> <span class="vl1">&#34;Noto Color Emoji&#34;</span> <span class="nt1">!default</span><span class="ig1">;</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="ltr-and-rtl-at-the-same-time">LTR e RTL ao mesmo tempo
+                </h3>
+                <p>Precisa de LTR e RTL na mesma página? Graças ao <a href="https://rtlcss.com/learn/usage-guide/string-map/">String Maps do RTLCSS</a>, isso é bastante simples. Envolva seu <code>@import</code> com uma classe e determinada regra de renomeação personalizada para RTLCSS:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="na1">/* rtl:begin:options: {
+</span><span class="vl1">  &#34;autoRename&#34;: true,
+</span><span class="vl1">  &#34;stringMap&#34;:[
+</span><span class="vl1">    &#34;name&#34;: &#34;ltr-rtl&#34;,
+</span><span class="vl1">    &#34;priority&#34;: 100,
+</span><span class="vl1">    &#34;search&#34;: [&#34;ltr&#34;],
+</span><span class="vl1">    &#34;replace&#34;: [&#34;rtl&#34;],
+</span><span class="vl1">    &#34;options&#34;: {
+</span><span class="vl1">      &#34;scope&#34;: &#34;*&#34;,
+</span><span class="vl1">      &#34;ignoreCase&#34;: false
+</span><span class="ig1">    }
+</span><span class="ig1">  ]
+</span><span class="ig1">}</span> <span class="na1">*/</span>
+<span class="tg1">.ltr</span> <span class="ig1">{</span>
+  <span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/bootstrap&#34;</span><span class="ig1">;</span>
+<span class="ig1">}</span>
+<span class="na1">/*rtl:end:options*/</span></code></pre>
+                </div>
+                <p>Depois de executar o Sass, em seguida, RTLCSS, cada seletor em seus arquivos CSS será preparado para <code>.ltr</code>, e <code>.rtl</code> para arquivos RTL. Agora você pode usar os dois arquivos na mesma página e simplesmente usar <code>.ltr</code> ou <code>.rtl</code> nos contêiners dos seus componentes para usar uma ou outra direção.
+                </p>
+                <div class="bd-callout bd-callout-warning bg-dark">
+
+                    <h4 class="head4" id="edge-cases-and-known-limitations">Casos Extremos e Limitados
+                    </h4>
+                    <p>Embora essa abordagem seja compreensível, preste atenção ao seguinte:
+                    </p>
+                    <ol>
+                        <li>Quando alternar entre <code>.ltr</code> e <code>.rtl</code>, certifique-se de adicionar os atributos <code>dir</code> e <code>lang</code> compatíveis.
+                        <li>Carregar ambos os arquivos pode ser um verdadeiro gargalo de desempenho: considere alguns pontos de <a href="../custom/otimizacao.html">otimização</a>, e talvez tentar <a href="https://www.filamentgroup.com/lab/load-css-simpler/">carregar um desses arquivos de forma assíncrona</a>.
+                        <li>O aninhamento de estilos dessa forma evitará que nosso mixin <code>form-validation-state()</code> funcione conforme o esperado, portanto, é necessário ajustá-lo um pouco sozinho. Veja o <a href="https://github.com/twbs/bootstrap/issues/31223">Issue #31223</a>.
+                    </ol>
+                </div>
+
+                <h2 class="head2" id="the-breadcrumb-case">O caso do Breadcrumb
+                </h2>
+                <p>O separador <a href="../component/bread.html#changing-the-separator">breadcrumb</a> é o único caso que requer sua própria variável — isto é, <code>$breadcrumb-divider-flipped</code> — padronizando para <code>$breadcrumb-divider</code>.
+                </p>
+
+                <h2 class="head2" id="additional-resources">Recursos Adicionais
+                </h2>
+                <ul>
+                    <li><a href="https://rtlcss.com/">RTLCSS</a>
+                    <li><a href="https://rtlstyling.com/posts/rtl-styling">RTL Styling 101</a>
+                </ul>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>
