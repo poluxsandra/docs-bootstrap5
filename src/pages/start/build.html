@@ -5,15 +5,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>Ferramentas de Construção</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title" id="content">Ferramentas de Construção</h1>
+                </div>
+                <p class="bd-lead">Aprenda como usar os scripts npm incluídos no Bootstrap para construir nossos documentos, compilar o código-fonte, executar testes e muito mais.</p>
+            </div>
 
+            <div class="bd-content ps-lg-4">
+                <h2 class="head2" id="tooling-setup">Configuração de Ferramentas
+                </h2>
+                <p>O Bootstrap usa <a href="https://docs.npmjs.com/misc/scripts/">scripts npm</a> para seu sistema de construção. Nosso <a href="https://github.com/twbs/bootstrap/blob/v5.0.0-beta2/package.json">package.json</a> inclui métodos convenientes para trabalhar com nossa estrutura, incluindo compilação de código, execução de testes e muito mais.
+                </p>
+                <p>Para usar nosso sistema de construção e rodar a documentação localmente, você precisa copiar os arquivos-fonte do Bootstrap e Node. Faça os seguintes passos:
+                </p>
+                <ol>
+                    <li><a href="https://nodejs.org/en/download/">Baixe e instale o Node.js</a>, ele serve para gerenciar nossas dependências.
+                    <li><a href="https://github.com/twbs/bootstrap/archive/v5.0.0-beta2.zip">Baixe os arquivos-fontes do Bootstrap </a> ou clone o <a href="../../../../../external.html?link=https://github.com/twbs/bootstrap">Repositório</a>.
+                    <li>Navegue até a pasta raiz<code>/bootstrap</code> e execute o comando <code>npm install</code> para instalar nossas dependências locais listadas no <a href="https://github.com/twbs/bootstrap/blob/v5.0.0-beta2/package.json">package.json</a>.
+                </ol>
+                <p>Quando concluído, você poderá executar os vários comandos fornecidos a partir da linha de comando.
+                </p>
+
+                <h2 class="head2" id="using-npm-scripts">Using npm scripts
+                </h2>
+                <p>Nosso <a href="https://github.com/twbs/bootstrap/blob/v5.0.0-beta2/package.json">package.json</a> inclui inúmeras tarefas para o desenvolvimento do projeto. Execute <code>npm run</code> para ver todos os scripts npm em seu terminal. <strong>As tarefas primárias incluem:</strong>
+                </p>
+                <table class="table bg-dark">
+                    <thead>
+                        <tr>
+                            <th class="na1">Tarefa
+                            <th class="na1">Descrição
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="tg1">npm start</code>
+                            <td class="cm1">Compila CSS e JavaScript, constrói a documentação e inicia um servidor local.
+                        </tr>
+                        <tr>
+                            <td><code class="tg1">npm run dist</code>
+                            <td class="cm1">Cria o diretório <code>dist/</code> com os arquivos compilados. Requer <a href="https://sass-lang.com/">Sass</a>, <a href="https://github.com/postcss/autoprefixer">Autoprefixador</a>, e <a href="https://github.com/terser/terser">terser</a>.
+                        </tr>
+                        <tr>
+                            <td><code class="tg1">npm test</code>
+                            <td class="cm1">Executa testes localmente após executar o comando <code>npm run dist</code>
+                        </tr>
+                        <tr>
+                            <td><code class="tg1">npm run docs-serve</code>
+                            <td class="cm1">Constrói e executa a documentação localmente.
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="bd-callout bd-callout-info bg-dark">
+                    <p><strong>Comece com Bootstrap via npm com o nosso projeto inicial!</strong> Vá para o <a href="https://github.com/twbs/bootstrap-npm-starter">twbs/bootstrap-npm-starter</a> repositório de modelos para ver como construir e personalizar Bootstrap em seu próprio projeto npm. Incluí o compilador Sass, Autoprefixador, Stylelint, PurgeCSS, e Ícones Bootstrap.
+                    </p>
+                </div>
+
+                <h2 class="head2" id="sass">Sass
+                </h2>
+                <p>Bootstrap usa o <a href="https://sass-lang.com/dart-sass">Dart Sass</a> para compilar nossos arquivos-fonted Sass em arquivos CSS (incluído em nosso processo de construção), e recomendamos que você faça o mesmo se estiver compilando o Sass usando seu próprio pipeline de ativos. Anteriormente, usamos o Node Sass para Bootstrap v4, mas LibSass e pacotes construídos em cima dele, incluindo Node Sass, são agora <a href="https://sass-lang.com/blog/libsass-is-deprecated">obsoletos</a>.
+                </p>
+                <p>Dart Sass usa uma precisão de 10 em rounding e por razões de eficiência não permite ajuste desse valor. Nós não baixamos essa precisão durante o processamento adicional do nosso CSS gerado, nem durante o processo de mimificação, recomendamos manter uma precisão de pelo menos 6 para evitar problemas com rounding do navegador.
+                </p>
+
+                <h2 class="head2" id="autoprefixer">Autoprefixador
+                </h2>
+                <p>Bootstrap usa <a href="https://github.com/postcss/autoprefixer">Autoprefixador</a> (incluído no nosso processo de compilação) para adicionar automaticamente prefixos de fornecedor a algumas propriedades CSS no momento da compilação. Isso nos economiza tempo e código, permitindo-nos escrever partes importantes de nosso CSS uma única vez, ao mesmo tempo que elimina a necessidade de mixins de fornecedores como os encontrados na v3.
+                </p>
+                <p>Mantemos uma lista de navegadores suportados pelo Autoprefixador em um arquivo separado em nosso repositório GitHub. Consulte <a href="https://github.com/twbs/bootstrap/blob/v5.0.0-beta2/.browserslistrc">.browserslistrc</a> para mais detalhes.
+                </p>
+
+                <h2 id="rtlcss">RTLCSS
+                </h2>
+                <p>Bootstrap usa <a href="https://rtlcss.com/">RTLCSS</a> para processar CSS compilado e convertê-lo em RTL - basicamente substituindo como propriedades que reconhecem a direção horizontal invertida (por exemplo <code>padding-left</code>) por seus opostos. Ele nos permite apenas escrever nosso CSS uma única vez e fazer pequenos ajustes usando o <a href="https://rtlcss.com/learn/usage-guide/control-directives/">controle RTLCSS</a> e <a href="https://rtlcss.com/learn/usage-guide/value-directives/">valores de diretivas</a>.
+                </p>
+
+                <h2 class="head2" id="local-documentation">Documentação Local
+                </h2>
+                <p>Rodar nossa documentação localmente requer o uso do Hugo, que é instalado por meio do pacote npm <a href="https://www.npmjs.com/package/hugo-bin">hugo-bin</a>. Hugo é um gerador de sites estáticos extremamente rápido e extensível que nos fornece: inclusões básicas, arquivos baseados em Markdown, modelos e muito mais. Veja como começar:
+                </p>
+                <ol>
+                    <li>Execute as <a href="#tooling-setup">configurações de ferramentas</a> acima, para instalar todas as nossas dependências.
+                    <li>Vai para o diretório-raiz <code>/bootstrap</code> e execute o comando <code>npm run docs-serve</code>.
+                    <li>Abra <code>http://localhost:9001/</code> no seu navegador, e pronto.
+                </ol>
+                <p>Aprenda mais de como usar o Hugo lendo sua <a href="https://gohugo.io/documentation/">documentação</a>.
+                </p>
+                <h2 class="head2" id="troubleshooting">Solução de problemas
+                </h2>
+                <p>Se você encontrar problemas ao instalar dependências, desinstalar todas as versões anteriores das dependências (global e local). Então, execute novamente <code>npm install</code>.
+                </p>
+            </div>
+        </main>
+
+    </div>
 </body>
 </html>

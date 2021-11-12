@@ -5,15 +5,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>RFS</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+
+                    <h1 class="head1" class="bd-title" id="content">RFS
+                    </h1>
+                </div>
+                <p class="bd-lead">O mecanismo de redimensionamento do Bootstrap dimensiona responsavelmente propriedades CSS comuns para melhor utilizar o espaço disponível em viewports e dispositivos.
+                </p>
+            </div>
+
+            <div class="bd-content ps-lg-4">
+
+                <h2 class="head2" id="what-is-rfs">O que é RFS?
+                </h2>
+                <p>O projeto paralelo do Bootstrap, <a href="https://github.com/twbs/rfs/tree/v9.0.3">RFS</a> é um mecanismo de redimensionamento de unidade que foi elaborado para redimensionar tamanhos de fonte (daí sua abreviatura para Tamanhos de Fonte Responsivos). Atualmente o RFS é capaz de ser especificada na maioria das propriedades CSS com valores unitários como <code>margin</code>, <code>padding</code>, <code>border-radius</code>, ou mesmo <code>box-shadow</code>.
+                </p>
+                <p>O mecanismo automaticamente calcula os valores fornecidos com base nas dimensões do viewport do navegador. Ele será compilado através da combinação das funções <code>calc()</code> com a unidade <code>rem</code>, e unidades de viewport para permitir o comportamento de dimensionamento responsivo.
+                </p>
+
+                <h2 class="head2" id="using-rfs">Usando RFS
+                </h2>
+                <p>Os mixins estão incluídos no Bootstrap e estarão disponíveis assim que você incluir o <code>scss</code> do Bootstrap. O RFS também pode ser <a href="https://github.com/twbs/rfs/tree/v9.0.3#installation">instalado separadamente</a> caso necessário.
+                </p>
+
+                <h3 class="head3" id="using-the-mixins">Usando os mixins
+                </h3>
+                <p>O mixin <code>rfs()</code> possui atalhos para <code>font-size</code>, <code>margin</code>, <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>, <code>padding</code>, <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code>. Veja o exemplo abaixo para o código-fonte Sass e CSS compilado.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="tg1">.title</span> <span class="ig1">{</span>
+  <span class="nt1">@include</span><span class="na1"> font-size</span><span class="ig1">(</span><span class="vl1">4</span><span class="tg1">rem</span><span class="ig1">);</span>
+<span class="ig1">}</span>
+</code></pre>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="tg1">title</span> <span class="ig1">{</span>
+  <span class="nt1">font-size</span><span class="ig1">:</span> <span class="na1">calc</span><span class="ig1">(</span><span class="vl1">1.525</span><span class="tg1">rem</span> <span class="ig1">+</span> <span class="vl1">3.3</span><span class="tg1">vw</span><span class="ig1">);</span>
+<span class="ig1">}</span>
+
+<span class="ig1">@</span><span class="tg1">media</span> <span class="ig1">(</span><span class="na1">min-width</span><span class="ig1">:</span> <span class="vl1">1200px</span><span class="ig1">)</span> <span class="ig1">{</span>
+  <span class="ig1">.</span><span class="tg1">title</span> <span class="ig1">{</span>
+    <span class="nt1">font-size</span><span class="ig1">:</span> <span class="vl1">4</span><span class="tg1">rem</span><span class="ig1">;</span>
+  <span class="ig1">}</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+                <p>Qualquer outra propriedade pode ser passada para o mixin <code>rfs()</code> desta forma:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="tg1">.selector</span> <span class="ig1">{</span>
+  <span class="nt1">@include</span><span class="na1"> rfs</span><span class="ig1">(</span><span class="vl1">4</span><span class="tg1">rem</span><span class="ig1">,</span> <span class="na1">border</span><span class="ig1">-</span><span class="vl1">radius</span><span class="ig1">);</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+                <p><code>!important</code> também pode ser adicionado a qualquer valor que você quiser:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="tg1">.selector</span> <span class="ig1">{</span>
+  <span class="nt1">@include</span><span class="na1"> padding</span><span class="ig1">(</span><span class="vl1">2</span><span class="vl1">.5</span><span class="tg1">rem</span> <span class="nt1">!important</span><span class="ig1">);</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="using-the-functions">Usando as funções 
+                </h3>
+                <p>Quando você não quiser usar as inclusões, também existem duas outras funções:
+                </p>
+                <ul>
+                    <li><code>rfs-value()</code> converte para um valor em <code>rem</code> se um valor em <code>px</code> é passado, em outros casos retorna o mesmo resultado.
+                    <li><code>rfs-fluid-value()</code> retorna uma versão fluida de um valor se a propriedade precisar ser redimensionada.</li>
+                </ul>
+                <p>Neste exemplo, usamos um dos mixins embutidos do Bootstrap (<a href="../layout/breakpoints.html">breakpoint responsivo</a>) para aplicar somente o estilo do breakpoint <code>lg</code> abaixo.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="tg1">.selector</span> <span class="ig1">{</span>
+  <span class="nt1">@include</span><span class="na1"> media-breakpoint-down</span><span class="ig1">(</span><span class="vl1">lg</span><span class="ig1">)</span> <span class="ig1">{</span>
+    <span class="tg1">padding</span><span class="ig1">:</span> <span class="na1">rfs-fluid-value</span><span class="ig1">(</span><span class="vl1">2rem</span><span class="ig1">)</span><span class="ig1">;</span>
+    <span class="tg1">font-size</span><span class="ig1">:</span> <span class="na1">rfs-fluid-value</span><span class="ig1">(</span><span class="vl1">1</span><span class="vl1">.125rem</span><span class="ig1">)</span><span class="ig1">;</span>
+  <span class="ig1">}</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-css" data-lang="css"><span class="ig1">@</span><span class="nt1">media</span> <span class="ig1">(</span><span class="na1">max-width</span><span class="ig1">:</span> <span class="vl1">991</span><span class="ig1">.</span><span class="vl1">98px</span><span class="ig1">)</span> <span class="ig1">{</span>
+  <span class="ig1">.</span><span class="tg1">selector</span> <span class="ig1">{</span>
+    <span class="nt1">padding</span><span class="ig1">:</span> <span class="na1">calc</span><span class="ig1">(</span><span class="vl1">1.325</span><span class="tg1">rem</span> <span class="ig1">+</span> <span class="vl1">0.9</span><span class="tg1">vw</span><span class="ig1">);</span>
+    <span class="nt1">font-size</span><span class="ig1">:</span> <span class="vl1">1.125</span><span class="tg1">rem</span><span class="ig1">;</span> <span class="cm1">/* 1.125rem é muito pequeno, então o RFS não redimensionará*/</span>
+  <span class="ig1">}</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="extended-documentation">Documentação estendida
+                </h2>
+                <p>O RFS é um projeto separado da organização Bootstrap. Mais sobre RFS e sua configuração podem ser encontrados em seu <a href="https://github.com/twbs/rfs/tree/v9.0.3">repositório GitHub</a>.
+                </p>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>
