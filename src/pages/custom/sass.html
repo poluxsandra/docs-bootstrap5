@@ -24,8 +24,10 @@
             </div>
 
             <div class="bd-content ps-lg-4">
-                <p>Utilize nossos arquivos-fonte Sass para utilizar as vantagens de variáveis, mapas, mixins e muito mais.
-                </p>
+                <div class="bd-callout bd-callout-warning">
+                    <p>Utilize nossos arquivos-fonte Sass para utilizar as vantagens de variáveis, mapas, mixins e muito mais.
+                    </p>
+                </div>
 
                 <h2 class="head2" id="file-structure">Estrutura de Arquivos
                 </h2>
@@ -111,7 +113,7 @@
                 </div>
                 <p>Repita conforme necessário para qualquer variável no Bootstrap, incluindo as opções globais abaixo.
                 </p>
-                <div class="bd-callout bd-callout-info bg-dark"><strong>Comece com Bootstrap via npm com nosso projeto inicial!</strong> Vá para o repositório de modelos <a href="https://github.com/twbs/bootstrap-npm-starter">twbs/bootstrap-npm-starter</a> para ver como construir e personalizar bootstrap em seu próprio projeto npm. Inclui compilador Sass, Autoprefixador, Stylelint, PurgeCSS, e Ícones do Bootstrap.
+                <div class="bd-callout bd-callout-warning bg-dark"><strong>Comece com Bootstrap via npm com nosso projeto inicial!</strong> Vá para o repositório de modelos <a href="https://github.com/twbs/bootstrap-npm-starter" target="_blank">twbs/bootstrap-npm-starter</a> para ver como construir e personalizar bootstrap em seu próprio projeto npm. Inclui compilador Sass, Autoprefixador, Stylelint, PurgeCSS, e Ícones do Bootstrap.
                 </div>
 
                 <h2 class="head2" id="maps-and-loops">Mapas e Loops
@@ -180,7 +182,7 @@
 
                 <h3 class="head3" id="colors">Cores
                 </h3>
-                <p>Ao lado do <a href="cor.html#color-sass-maps">Mapas Sass</a> nós temos, cores temáticas também que podem ser usadas como variáveis autônomas, como <code>$primary</code>.
+                <p>Ao lado do <a href="cor.html#color-sass-maps" target="_blank">Mapas Sass</a> nós temos, cores temáticas também que podem ser usadas como variáveis autônomas, como <code>$primary</code>.
                 </p>
                 <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">.custom-element</span> <span class="ig1">{</span>
   <span class="na1">color</span><span class="ig1">:</span> <span class="ig1">$</span><span class="vl1">gray-100</span><span class="ig1">;</span>
@@ -217,9 +219,9 @@
 
                 <h3 class="head3" id="color-contrast">Contraste de Cor
                 </h3>
-                <p>A fim de atender os <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html"> Padrões de Acessibilidade de Contraste de Cor do WCAG 2.0</a>, autores <strong>devem</strong> providenciar <a href="https://www.w3.org/WAI/WCAG20/quickref/20160105/Overview.php#visual-audio-contrast-contrast">uma relação de contraste de pelo menos de 4,5:1</a>, com poucas exceções.
+                <p>A fim de atender os <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" target="_blank"> Padrões de Acessibilidade de Contraste de Cor do WCAG 2.0</a>, autores <strong>devem</strong> providenciar <a href="https://www.w3.org/WAI/WCAG20/quickref/20160105/Overview.php#visual-audio-contrast-contrast" target="_blank">uma relação de contraste de pelo menos de 4,5:1</a>, com poucas exceções.
                 </p>
-                <p>Uma função adicional que incluímos no Bootstrap é a função de contraste de cores, <code>color-contrast</code>. Ele utiliza o algoritmo <a href="https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests">WCAG 2.0</a> para calcular limites de contraste com base em <a href="https://www.w3.org/WAI/GL/wiki/Relative_luminance">luminância relativa</a> em um espaço de cor <code>sRGB</code> para retornar automaticamente uma cor de contraste claro (<code>#fff</code>), escuro (<code>#212529</code>) ou preto (<code>#000</code>) baseado na cor especificada. Esta função é especialmente útil para mixins ou loops onde você está gerando várias classes.
+                <p>Uma função adicional que incluímos no Bootstrap é a função de contraste de cores, <code>color-contrast</code>. Ele utiliza o algoritmo <a href="https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests" target="_blank">WCAG 2.0</a> para calcular limites de contraste com base em <a href="https://www.w3.org/WAI/GL/wiki/Relative_luminance" target="_blank">luminância relativa</a> em um espaço de cor <code>sRGB</code> para retornar automaticamente uma cor de contraste claro (<code>#fff</code>), escuro (<code>#212529</code>) ou preto (<code>#000</code>) baseado na cor especificada. Esta função é especialmente útil para mixins ou loops onde você está gerando várias classes.
                 </p>
                 <p>Por exemplo, para gerar amostras de cores a partir do nosso mapa <code>$theme-colors</code>:
                 </p>

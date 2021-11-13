@@ -102,3 +102,8 @@ strong {
         text-decoration-style: solid;
         text-decoration-line: underline;
 }
+
+.padrao {
+        background-color: #fff;
+        color:#000;
+}
