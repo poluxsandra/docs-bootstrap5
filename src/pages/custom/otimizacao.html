@@ -116,13 +116,13 @@
             </h2>
             <p><em>Procura-se ajuda com esta seção, considere abrir um PR. Obrigado!</em>
             </p>
-            <p>Embora não tenhamos um exemplo pré-construído para usar o <a href="https://github.com/FullHuman/purgecss">PurgeCSS</a>  com Bootstrap, existem alguns artigos e orientações úteis que a comunidade escreveu. Aqui estão algumas opções:
+            <p>Embora não tenhamos um exemplo pré-construído para usar o <a href="https://github.com/FullHuman/purgecss" target="_blank">PurgeCSS</a>  com Bootstrap, existem alguns artigos e orientações úteis que a comunidade escreveu. Aqui estão algumas opções:
             </p>
             <ul>
-                <li><a href="https://medium.com/dwarves-foundation/remove-unused-css-styles-from-bootstrap-using-purgecss-88395a2c5772">https://medium.com/dwarves-foundation/remove-unused-css-styles-from-bootstrap-using-purgecss-88395a2c5772</a></li>
-                <li><a href="https://lukelowrey.com/automatically-removeunused-css-from-bootstrap-or-other-frameworks/">https://lukelowrey.com/automatically-removeunused-css-from-bootstrap-or-other-frameworks/</a></li>
+                <li><a href="https://medium.com/dwarves-foundation/remove-unused-css-styles-from-bootstrap-using-purgecss-88395a2c5772" target="_blank">Remova estilos CSS não utilizados do Bootstrap usando PurgeCSS</a></li>
+                <li><a href="https://lukelowrey.com/automatically-removeunused-css-from-bootstrap-or-other-frameworks/" target="_blank">Remova automaticamente o css não utilizado do Bootstrap ou de outras estruturas</a></li>
             </ul>
-            <p>Por último, este artigo de <a href="https://css-tricks.com/how-do-you-remove-unused-css-from-a-site/">truques de CSS sobre CSS não utilizado</a> mostra como usar o PurgeCSS e outras ferramentas semelhantes.
+            <p>Por último, este artigo de <a href="https://css-tricks.com/how-do-you-remove-unused-css-from-a-site/" target="_blank">truques de CSS sobre CSS não utilizado</a> mostra como usar o PurgeCSS e outras ferramentas semelhantes.
             </p>
 
             <h2 class="head2" id="minify-and-gzip">Minificar e Compactar
@@ -134,7 +134,7 @@
             </h2>
             <p>Embora minimizar e usar compactação possa parecer suficiente, tornar seus arquivos não bloqueadores também é um grande passo para tornar seu site bem otimizado e rápido o suficiente.
             </p>
-            <p>Se você estiver usando um plugin do <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> no Google Chrome, pode ter tropeçado no FCP. A métrica <a href="https://web.dev/fcp/">The First Contentful Paint</a> mede o tempo desde o início do carregamento da página até o momento em que qualquer parte do conteúdo da página é renderizada na tela.
+            <p>Se você estiver usando um plugin do <a href="https://developers.google.com/web/tools/lighthouse/" target="_blank">Lighthouse</a> no Google Chrome, pode ter tropeçado no FCP. A métrica <a href="https://web.dev/fcp/" target="_blank">The First Contentful Paint</a> mede o tempo desde o início do carregamento da página até o momento em que qualquer parte do conteúdo da página é renderizada na tela.
             </p>
             <p>Você pode melhorar o FCP adiando JavaScript ou CSS não crítico. O que isso significa? Simplesmente, JavaScript ou folhas de estilo que não precisam estar presentes na primeira pintura de sua página devem ser marcados com atributos <code>async</code> ou <code>defer</code>.
             </p>
@@ -143,15 +143,15 @@
             <p>Se você quiser saber mais sobre isso, já existem muitos artigos excelentes sobre isso:
             </p>
             <ul>
-                <li><a href="https://web.dev/render-blocking-resources/">https://web.dev/render-blocking-resources/</a></li>
-                <li><a href="https://web.dev/defer-non-critical-css/">https://web.dev/defer-non-critical-css/</a></li>
+                <li><a href="https://web.dev/render-blocking-resources/" target="_blank">Elimine recursos de bloqueio de renderização</a></li>
+                <li><a href="https://web.dev/defer-non-critical-css/" target="_blank">Adiar CSS não crítico</a></li>
             </ul>
 
             <h2 class="head2" id="always-use-https">Sempre Use HTTPS
             </h2>
-            <p>Seu site deve estar disponível apenas em conexões HTTPS em produção. O HTTPS melhora a segurança, a privacidade e a disponibilidade de todos os sites, e <a href="https://https.cio.gov/everything/">não existe tráfego não confidencial na web</a>. As etapas para configurar seu site para ser servido exclusivamente por HTTPS variam amplamente, dependendo de sua arquitetura e provedor de hospedagem na web e, portanto, estão além do escopo destes documentos.
+            <p>Seu site deve estar disponível apenas em conexões HTTPS em produção. O HTTPS melhora a segurança, a privacidade e a disponibilidade de todos os sites, e <a href="https://https.cio.gov/everything/" target="_blank" target="_blank">não existe tráfego não confidencial na web</a>. As etapas para configurar seu site para ser servido exclusivamente por HTTPS variam amplamente, dependendo de sua arquitetura e provedor de hospedagem na web e, portanto, estão além do escopo destes documentos.
             </p>
-            <p>Os sites atendidos por HTTPS também devem acessar todas as folhas de estilo, scripts e outros ativos por meio de conexões HTTPS. Caso contrário, você estará enviando aos usuários <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content">conteúdo ativo misto</a>, levando a vulnerabilidades potenciais em que um site pode ser comprometido pela alteração de uma dependência. Isso pode levar a problemas de segurança e avisos no navegador exibidos aos usuários. Esteja você obtendo Bootstrap de um CDN ou servindo-o você mesmo, certifique-se de acessá-lo apenas por meio de conexões HTTPS.
+            <p>Os sites atendidos por HTTPS também devem acessar todas as folhas de estilo, scripts e outros ativos por meio de conexões HTTPS. Caso contrário, você estará enviando aos usuários <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content" target="_blank">conteúdo ativo misto</a>, levando a vulnerabilidades potenciais em que um site pode ser comprometido pela alteração de uma dependência. Isso pode levar a problemas de segurança e avisos no navegador exibidos aos usuários. Esteja você obtendo Bootstrap de um CDN ou servindo-o você mesmo, certifique-se de acessá-lo apenas por meio de conexões HTTPS.
             </p>
         </div>
       </main>
