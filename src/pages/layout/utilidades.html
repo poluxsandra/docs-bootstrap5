@@ -11,9 +11,43 @@
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Utilitários Para Layout
+                    </h1>
+                </div>
+                <p class="bd-lead">Para um desenvolvimento mais responsivo e compatível com dispositivos móveis, o Bootstrap inclui dezenas de classes de utilitários para mostrar, ocultar, alinhar e espaçar o conteúdo.
+                </p>
+            </div>
+            <div class="bd-content ps-lg-4">
+
+                <h2 class="head2" id="changing-display">Mudando o  <code>display</code>
+                </h2>
+                <p>Use nossos <a href="../util/exibicao.html">utilitários de exibição</a> para alternar responsavelmente os valores comuns da propriedade <code>display</code>. Misture-os com nosso sistema de grade, conteúdos ou componentes para mostrá-los ou ocultá-los em janelas de exibição específicas.
+                </p>
+
+                <h2 class="head2" id="flexbox-options">Opções de Flexbox
+                </h2>
+                <p>O Bootstrap é construído com o flexbox, mas nem todas propriedades <code>display</code> de elementos foram mudadas para <code>display:flex</code> pois isso adicionaria muitas substituições desnecessárias e mudaria inesperadamente os principais comportamentos do navegador. A maioria de <a href="../component/alertas.html">nossos componentes</a> são construídos com flexbox habilitado.
+                </p>
+                <p>Se você precisar adicionar o valor  <code>display:flex</code> em um elemento, faça-o usando a classe <code>.d-flex</code> ou uma das variantes responsivas (por exemplo, <code>.d-sm-flex</code>). Você precisará dessa classe ou do valor da propriedade <code>display</code> para permitir o uso de nossos <a href="../util/flex.html">utilitários extras do flexbox</a> para dimensionamento, alinhamento, espaçamento e muito mais.
+                </p>
+
+                <h2 class="head2" id="margin-and-padding">Margin e Padding
+                </h2>
+                <p>Use os <code>margin</code>, <code>padding</code> e <a href="../util/space.html">utilitários de espaçamento</a> para controlar como os elementos e componentes são espaçados e dimensionados. O Bootstrap inclui uma escala de seis níveis para utilitários de espaçamento, com base em um valor padrão de <code>1rem</code> para a variável <code>$spacer</code>. Escolha valores para todos os viewports (por exemplo, <code>.me-3</code> para <code>margin-right: 1rem</code> em LTR), ou escolha variantes responsivas para visar viewports específicos (por exemplo, <code>.me-md-3</code> para <code>margin-right: 1rem</code> — em LTR — começando no breakpoint <code>md</code>).
+                </p>
+
+                <h2 class="head2" id="toggle-visibility">Alternância de <code>visibility</code>
+                </h2>
+                <p>Quando a alternância do valor da propriedade <code>display</code> não é necessária, você pode alternar o valor da propriedade <code>visibility</code> de um elemento com nossos <a href="../util/visib.html">utilitários de visibilidade</a>. Os elementos invisíveis ainda afetarão o layout da página, mas estarão visualmente ocultos para os visitantes.</p>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>
