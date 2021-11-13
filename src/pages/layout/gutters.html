@@ -11,9 +11,297 @@
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Gutters
+                    </h1>
+                </div>
+                <p class="bd-lead">Gutters são o preenchimento entre as colunas, usado para espaçar e alinhar o conteúdo de forma responsiva no sistema de grade do Bootstrap.
+                </p>
+            </div>
+            <div class="bd-content ps-lg-4">
+                <h2 class="head2" id="how-they-work">Como Eles Trabalham
+                </h2>
+                <ul>
+                    <li><p><strong>Gutters são as lacunas entre o conteúdo da coluna, criadas pelo <code>padding</code> horizontal.</strong> Definimos <code>padding-right</code> e <code>padding-left</code> em cada coluna e usamos a <code>margin</code> negativa para compensar no início e no final de cada linha para alinhar o conteúdo.</p>
+                    <li><p><strong>Gutters começam em <code>1.5rem</code> (<code>24px</code>) de largura.</strong> Isso nos permite combinar nossa grade com a escala de <a href="../util/space.html" target="_blank">espaçadores de padding e margin </a> scale.</p>
+                    <li><p><strong>Gutters podem ser ajustados responsivamente.</strong> Use classes de gutters de um breakpoint especifico para modificar gutters horizontais, gutters verticais, e todos os gutters.</p>
+                </ul>
+
+                <h2 class="head2" id="horizontal-gutters">Gutters Horizontais
+                </h2>
+                <p>As classes <code>.gx-*</code> classes podem ser usadas para controlar as larguras do gutter horizontal. O pai <code>.container</code> ou <code>.container-fluid</code> pode precisar ser ajustado se os gutters maiores forem usados também para evitar transbordamento indesejado, usando um utilitário de preenchimento correspondente. Por exemplo, no exemplo a seguir, aumentamos o preenchimento com <code>.px-4</code>:
+                </p>
+                <div class="bd-callout bd-callout-warning">
+                    <div class="container px-4">
+                        <div class="row gx-5">
+                            <div class="col">
+                                <div class="p-3 border bg-success">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border bg-danger">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container px-4&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row gx-5&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+       <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+                <p>Uma solução alternativa é adicionar um wrapper ao redor da <code>.row</code> com a classe <code>.overflow-hidden</code>:
+                </p>
+                <div class="bd-callout bd-callout-warning">
+                    <div class="container overflow-hidden">
+                        <div class="row gx-5">
+                            <div class="col">
+                                <div class="p-3 border bg-success">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border bg-danger">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container overflow-hidden&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row gx-5&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+       <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="vertical-gutters">Gutters Verticais 
+                </h2>
+                <p>As classes <code>.gy-*</code> podem ser usadas para controlar as larguras do gutter vertical. Como os gutters horizontais, os gutters verticais podem causar algum overflow abaixo da <code>.row</code> no final de uma página. Se isso ocorrer, você adiciona um wrapper em torno da <code>.row</code> com a classe <code>.overflow-hidden</code>:
+                </p>
+                <div class="bd-callout bd-callout-warning">
+                    <div class="container overflow-hidden">
+                        <div class="row gy-5">
+                            <div class="col-6">
+                                <div class="p-3 border bg-success">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 border bg-danger">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 border bg-success">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 border bg-danger">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container overflow-hidden&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row gy-5&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="horizontal--vertical-gutters">Gutters Horizontais e Verticais
+                </h2>
+                <p>As classes <code>.g-*</code> podem ser usadas para controlar as larguras do gutter horizontal, para o exemplo a seguir, usamos uma largura de gutter menor, então não haverá necessidade de adicionar o wrapper <code>.overflow-hidden</code>.
+                </p>
+                <div class="bd-callout bd-callout-warning">
+                    <div class="container">
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="p-3 border bg-success">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 border bg-danger">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 border bg-success">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 border bg-danger">Preenchimento de coluna personalizado
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row g-2&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Preenchimento de coluna personalizado</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="row-columns-gutters">Gutters de Colunas de Linha
+                </h2>
+                <p>As classes de gutters também podem ser adicionadas à <a href="../layout/grid.html#row-columns" target="_blank">colunas de linha</a>. No exemplo a seguir, usamos colunas de linha responsivas e classes de gutters responsivas.
+                </p>
+                <div class="bd-callout bd-callout-warning">
+                    <div class="container">
+                        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+                            <div class="col">
+                                <div class="p-3 border bg-success">Coluna de Linha
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border bg-danger">Coluna de Linha
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border bg-success">Coluna de Linha
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border bg-danger">Coluna de Linha
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border bg-success">Coluna de Linha
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border bg-danger">Coluna de Linha
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border bg-success">Coluna de Linha
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border bg-danger">Coluna de Linha
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border bg-success">Coluna de Linha
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="p-3 border bg-danger">Coluna de Linha
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row row-cols-2 row-cols-lg-5 g-2 g-lg-3&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Coluna de Linha</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Coluna de Linha</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Coluna de Linha</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Coluna de Linha</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Coluna de Linha</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Coluna de Linha</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Coluna de Linha</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Coluna de Linha</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Coluna de Linha</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+        <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;p-3 border bg-light&#34;</span><span class="tg1">&gt;</span><span class="cm1">Coluna de Linha</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="no-gutters">Sem Gutters
+                </h2>
+                <p>Os Gutters entre as colunas em nossas classes de grade predefinidas podem ser removidas com a classe <code>.g-0</code>. Isso remove o <code>margin</code> negativo da <code>.row</code> e o <code>padding</code> horizontal de todas as colunas filhas imediatas.
+                </p>
+                <p><strong>Precisa de um design de ponta a ponta?</strong> Abandone o pai <code>.container</code> ou <code>.container-fluid</code>.
+                </p>
+                <p>Na prática, é assim que parece. Observe que você pode continuar a usar isso com todas as outras classes de grade predefinidas (incluindo larguras de coluna, camadas responsivas, reordenações e muito mais).
+                </p>
+                <div class="bd-callout bd-callout-warning bd-example-row">
+                    <div class="row g-0">
+                        <div class="col-sm-6 col-md-8 bg-success">.col-sm-6 .col-md-8
+                        </div>
+                        <div class="col-6 col-md-4 bg-danger">.col-6 .col-md-4
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row g-0&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-sm-6 col-md-8&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-sm-6 .col-md-8</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6 col-md-4&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-6 .col-md-4</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="change-the-gutters">Mudar os Gutters
+                </h2>
+                <p>As classes são construídas a partir do mapa Sass <code>$gutters</code>, que é herdado do mapa Sass <code>$spacers</code>.
+                </p>
+  <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="tg1">$grid-gutter-width</span><span class="ig1">:</span> <span class="vl1">1</span><span class="vl1">.5</span><span class="doc1">rem</span><span class="ig1">;</span>
+  <span class="nt1">$gutters</span><span class="ig1">:</span> <span class="ig1">(</span>
+    <span class="na1">0</span><span class="ig1">:</span> <span class="vl1">0</span><span class="ig1">,</span>
+    <span class="na1">1</span><span class="ig1">:</span> <span class="tg1">$spacer</span> <span class="ig1">*</span> <span class="vl1">.25</span><span class="ig1">,</span>
+    <span class="na1">2</span><span class="ig1">:</span> <span class="tg1">$spacer</span> <span class="ig1">*</span> <span class="vl1">.5</span><span class="ig1">,</span>
+    <span class="na1">3</span><span class="ig1">:</span> <span class="tg1">$spacer</span><span class="ig1">,</span>
+    <span class="na1">4</span><span class="ig1">:</span> <span class="tg1">$spacer</span> <span class="ig1">*</span> <span class="vl1">1</span><span class="vl1">.5</span><span class="ig1">,</span>
+    <span class="na1">5</span><span class="ig1">:</span> <span class="tg1">$spacer</span> <span class="ig1">*</span> <span class="vl1">3</span><span class="ig1">,</span>
+  <span class="ig1">);</span>
+  </code></pre>
+                </div>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>

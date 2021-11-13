@@ -5,15 +5,590 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>Colunas</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Colunas
+                    </h1>
+                </div>
+                <p class="bd-lead">Aprenda como modificar colunas com um punhado de opções de alinhamento, ordenação e compensação graças ao nosso sistema de grade flexbox. Além disso, veja como usar classes de coluna para gerenciar larguras de elementos que não sejam de grade.
+                </p>
+            </div>
+
+            <div class="bd-content ps-lg-4">
+                <div class="bd-callout bd-callout-warning">
+  <strong>Atenção!</strong> Certifique-se de ler a nossa <a href="../layout/grid.html" target="_blank">página sobre o Grid</a> primeiro antes de mergulhar em como modificar e personalizar as colunas da grade.
+                </div>
+  
+                <h2 class="head2" id="how-they-work">Como Eles Trabalham
+                </h2>
+                <ul>
+                    <li><p><strong>As colunas são construídas na arquitetura flexbox de grade.</strong><br/>Flexbox significa que temos opções para alterar colunas individuais e <a href="../layout/grid.html#row-columns" target="_blank"> modificar grupos de colunas no nível da linha(row)</a>.  Você escolhe como as colunas aumentam, diminuem ou mudam de outra forma.</p>
+                    <li><p><strong>Ao construir layouts de grade, todo o conteúdo vai em colunas.</strong> A hierarquia da grade do Bootstrap vai de <a href="../layout/conteiners.html" target="_blank">contêiner</a>, passa pela linha, depois para coluna e chega no seu conteúdo. Em raras ocasiões, você pode combinar conteúdo e coluna, mas esteja ciente de que pode haver consequências indesejadas.</p>
+                    <li><p><strong>Bootstrap inclui classes predefinidas para criar layouts rápidos e responsivos.</strong> Com <a href="../layout/breakpoints.html" target="_blank">6 breakpoints</a> e 12 colunas em cada camada da grade, temos dezenas de classes já construídas para você criar seus layouts desejados. Isso pode ser desabilitado via Sass, se desejar.</p>
+                </ul>
+
+                <h2 class="head2" id="alignment">Alinhamento
+                </h2>
+                <p>Use os utilitários de alinhamento do flexbox para alinhar colunas vertical e horizontalmente.
+                </p>
+
+                <h3 class="head3" id="vertical-alignment">Alinhamento Vertical
+                </h3>
+                <div class="bd-callout bd-callout-warning bd-example-row bd-example-row-flex-cols">
+                    <div class="container grid">
+                        <div class="row align-items-start">
+                            <div class="col bg-success">
+        1 de 3 colunas
+                            </div>
+                            <div class="col bg-danger">
+        1 de 3 colunas
+                            </div>
+                            <div class="col bg-success">
+        1 de 3 colunas
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col bg-success">
+        1 de 3 colunas
+                            </div>
+                            <div class="col bg-danger">
+        1 de 3 colunas
+                            </div>
+                            <div class="col bg-success">
+        1 de 3 colunas
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col bg-success">
+        1 de 3 colunas
+                            </div>
+                            <div class="col bg-danger">
+        1 de 3 colunas
+                            </div>
+                            <div class="col bg-success">
+        1 de 3 colunas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row align-items-start&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row align-items-center&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row align-items-end&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+                <div class="bd-callout bd-callout-warning bd-example-row bd-example-row-flex-cols">
+                    <div class="container grid">
+                        <div class="row">
+                            <div class="col align-self-start bg-success">
+        1 de 3 colunas
+                            </div>
+                            <div class="col align-self-center bg-danger">
+        1 de 3 colunas
+                            </div>
+                            <div class="col align-self-end bg-success">
+        1 de 3 colunas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col align-self-start&#34;</span><span class="tg1">&gt;</span>
+        <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col align-self-center&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col align-self-end&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 3 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="horizontal-alignment">Alinhamento Horizontal
+                </h3>
+                <div class="bd-callout bd-callout-warning bd-example-row">
+                    <div class="container grid">
+                        <div class="row justify-content-start">
+                            <div class="col-4 bg-success">
+        1 de 2 colunas
+                            </div>
+                            <div class="col-4 bg-danger">
+        1 de 2 colunas
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-4 bg-success">
+        1 de 2 colunas
+                            </div>
+                            <div class="col-4 bg-danger">
+        1 de 2 colunas
+                            </div>
+                        </div>
+                        <div class="row justify-content-end">
+                            <div class="col-4 bg-success">
+        1 de 2 colunas
+                            </div>
+                            <div class="col-4 bg-danger">
+        1 de 2 colunas
+                            </div>
+                        </div>
+                        <div class="row justify-content-around">
+                            <div class="col-4 bg-success">
+        1 de 2 colunas
+                            </div>
+                            <div class="col-4 bg-danger">
+        1 de 2 colunas
+                            </div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div class="col-4 bg-success">
+        1 de 2 colunas
+                            </div>
+                            <div class="col-4 bg-danger">
+        1 de 2 colunas
+                            </div>
+                        </div>
+                        <div class="row justify-content-evenly">
+                            <div class="col-4 bg-success">
+        1 de 2 colunas
+                            </div>
+                            <div class="col-4 bg-danger">
+        1 de 2 colunas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row justify-content-start&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+        <span class="cm1">1 de 2 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 2 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row justify-content-center&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 2 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+        One of two columns
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row justify-content-end&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 2 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 2 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row justify-content-around&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 2 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 2 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row justify-content-between&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 2 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 2 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row justify-content-evenly&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 2 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">1 de 2 colunas</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="column-wrapping">Quebra de Coluna
+                </h3>
+                <p>Se mais de 12 colunas forem colocadas em uma única linha, cada grupo de colunas extras será, como uma unidade, agrupado em uma nova linha.
+                </p>
+                <div class="bd-callout bd-callout-warning bd-example-row">
+                    <div class="container grid">
+                        <div class="row">
+                            <div class="col-9 bg-success">.col-9
+                            </div>
+                            <div class="col-4 bg-danger">.col-4<br/>Como 9 + 4 = 13 &gt; 12, está div(4 colunas) é agrupada em uma nova linha como uma unidade independente
+                            </div>
+                            <div class="col-6 bg-success">.col-6<br/>As colunas subsequentes continuam ao longo da nova linha.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-9&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-9</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-4&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-4</span><span class="tg1">&lt;</span><span class="nt1">br</span><span class="tg1">/&gt;</span><span class="cm1">Como 9 + 4 = 13 &amp;gt; 12, está div(4 colunas) é agrupada em uma nova linha como uma unidade independente.</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-6</span><span class="tg1">&lt;</span><span class="nt1">br</span><span class="tg1">/&gt;</span><span class="cm1">As colunas subsequentes continuam ao longo da nova linha.</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="column-breaks">Quebras de Coluna
+                </h3>
+                <p>Quebrar colunas para uma nova linha no flexbox requer um pequeno hack - adicione um elemento com <code>width: 100%</code> onde você deseja quebrar suas colunas em uma nova linha. Normalmente, isso é realizado com múltiplos <code>.row</code>'s, mas nem em todos os métodos de implementação pode-se contar com isso.
+                </p>
+                <div class="bd-callout bd-callout-warning bd-example-row">
+                    <div class="container grid">
+                        <div class="row">
+                            <div class="col-6 col-sm-3 bg-success">.col-6 .col-sm-3
+                            </div>
+                            <div class="col-6 col-sm-3 bg-danger">.col-6 .col-sm-3
+                            </div>
+
+                            <!-- Força as próximas colunas a quebrar para uma nova linha -->
+                            <div class="w-100">
+                            </div>
+                            <div class="col-6 col-sm-3 bg-danger">.col-6 .col-sm-3
+                            </div>
+                            <div class="col-6 col-sm-3 bg-success">.col-6 .col-sm-3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6 col-sm-3&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-6 .col-sm-3</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6 col-sm-3&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-6 .col-sm-3</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  
+      <span class="cm1">&lt;!-- Força as próximas colunas a quebrar para uma nova linha --&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;w-100&#34;</span><span class="tg1">&gt;&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6 col-sm-3&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-6 .col-sm-3</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6 col-sm-3&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-6 .col-sm-3</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+                <p>Você também pode aplicar esse intervalo em breakpoints específicos com nossos <a href="../util/exibicao.html" target="_blank">utilitários de exibição responsiva</a>.
+                </p>
+                <div class="bd-callout bd-callout-warning bd-example-row">
+                    <div class="container grid">
+                        <div class="row">
+                            <div class="col-6 col-sm-4 bg-success">.col-6 .col-sm-4
+                            </div>
+                            <div class="col-6 col-sm-4 bg-danger">.col-6 .col-sm-4
+                            </div>
+
+                            <!-- Força as próximas colunas a quebrar para uma nova linha no breakpoint md e cima -->
+                            <div class="w-100 d-none d-md-block">
+                            </div>
+                            <div class="col-6 col-sm-4 bg-danger">.col-6 .col-sm-4
+                            </div>
+                            <div class="col-6 col-sm-4 bg-success">.col-6 .col-sm-4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="p">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6 col-sm-4&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-6 .col-sm-4</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6 col-sm-4&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-6 .col-sm-4</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  
+      <span class="cm1">&lt;!-- Força as próximas colunas a quebrar para uma nova linha no breakpoint md e cima --&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;w-100 d-none d-md-block&#34;</span><span class="tg1">&gt;&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6 col-sm-4&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-6 .col-sm-4</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-6 col-sm-4&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-6 .col-sm-4</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="reordering">Reordenando
+                </h2>
+
+                <h3 class="head3" id="order-classes">Classes Order's (Ordem)
+                </h3>
+                <p>Use as classes <code>.order-</code> para controlar a <strong>ordem visual</strong> Essas classes são responsivas, portanto, você pode definir o <code>order</code> pelo breakpoint (por exemplo, <code>.order-1.order-md-2</code>). Inclui suporte para <code>1</code> a <code>5</code> em todas as 6 camadas da grade.
+                </p>
+                <div class="bd-callout bd-callout-warning bd-example-row">
+                    <div class="container grid">
+                        <div class="row">
+                            <div class="col bg-success">
+                                Primeira no DOM, nenhuma ordem aplicada
+                            </div>
+                            <div class="col order-5 bg-success">
+                                Segunda no DOM, com uma ordem maior
+                            </div>
+                            <div class="col order-1 bg-danger">
+                                Terceira no DOM, com uma ordem de 1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">Primeira no DOM, nenhuma ordem aplicada</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col order-5&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">Segunda no DOM, com uma ordem maior</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col order-1&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">Terceira no DOM, com uma ordem de 1</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+                <p>Existem também classes responsivas como a <code>.order-first</code> e <code>.order-last</code> que muda a <code>order</code> de um elemento aplicando <code>order: -1</code> e <code>order: 6</code>, respectivamente. Essas classes também podem ser misturadas com as classes <code>.order-*</code> numeradas, conforme necessário.
+                </p>
+                <div class="bd-callout bd-callout-warning bd-example-row">
+                    <div class="container bg-dark">
+                        <div class="row">
+                            <div class="col order-last bg-success">
+        Primeira no DOM, ordenada para última
+                            </div>
+                            <div class="col bg-danger">
+        Segunda no DOM, sem ordem aplicada
+                            </div>
+                            <div class="col order-first bg-success">
+        Terceira no DOM, ordenada para primeira
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="p">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col order-last&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">Primeira no DOM, ordenado para última</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">Segunda no DOM, sem ordem aplicada</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col order-first&#34;</span><span class="tg1">&gt;</span>
+      <span class="cm1">Terceira mo DOM, ordenada para primeira</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="offsetting-columns">Colunas de Compensação
+                </h3>
+                <p>Você pode compensar as colunas da grade de duas maneiras: nossas classes de grade <code>.offset-</code> grid classes e nossos <a href="../util/space.html" target="_blank">utilitários de margem</a>. As classes de grade são dimensionadas para corresponder às colunas, enquanto as margens são mais úteis para layouts rápidos em que a largura do deslocamento é variável.
+                </p>
+
+                <h4 class="head4" id="offset-classes">Classes de Compensação
+                </h4>
+                <p>Mova as colunas para a direita usando classes <code>.offset-md-*</code> Essas classes aumentam a margem esquerda de uma coluna por <code>*</code> colunas. Por exemplo, <code>.offset-md-4</code> move <code>.col-md-4</code> sobre quatro colunas.
+                </p>
+                <div class="bd-callout bd-callout-warning bd-example-row">
+                    <div class="container grid">
+                        <div class="row">
+                            <div class="col-md-4 bg-success">.col-md-4
+                            </div>
+                            <div class="col-md-4 offset-md-4 bg-danger">.col-md-4 .offset-md-4
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 offset-md-3 bg-success">.col-md-3 .offset-md-3
+                            </div>
+                            <div class="col-md-3 offset-md-3 bg-danger">.col-md-3 .offset-md-3
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 offset-md-3 bg-success">.col-md-6 .offset-md-3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-md-4&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-md-4</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-md-4 offset-md-4&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-md-4 .offset-md-4</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-md-3 offset-md-3&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-md-3 .offset-md-3</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-md-3 offset-md-3&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-md-3 .offset-md-3</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-md-6 offset-md-3&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-md-6 .offset-md-3</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+                <p>Além de limpar a coluna em breakpoints, you may need to reset offsets. responsivos, pode ser necessário redefinir os deslocamentos. Veja isso em ação neste <a href="../../examples/pages/grid.html" target="_blank">exemplo de grade</a>.
+                </p>
+                <div class="bd-callout bd-callout-warning bd-example-row">
+                    <div class="container grid">
+                        <div class="row">
+                            <div class="col-sm-5 col-md-6 bg-success">.col-sm-5 .col-md-6
+                            </div>
+                            <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0 bg-danger">.col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-5 col-lg-6 bg-success">.col-sm-6 .col-md-5 .col-lg-6
+                            </div>
+                            <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 bg-danger">.col-sm-6 .col-md-5 .offset-md-2 .col-lg-6 .offset-lg-0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-sm-5 col-md-6&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-sm-5 .col-md-6</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-sm-5 offset-sm-2 col-md-6 offset-md-0&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-sm-6 col-md-5 col-lg-6&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-sm-6 .col-md-5 .col-lg-6</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-sm-6 .col-md-5 .offset-md-2 .col-lg-6 .offset-lg-0</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h4 class="head4" id="margin-utilities">Utilitários de Margem
+                </h4>
+                <p>Com a mudança para o flexbox na v4, você pode usar utilitários de margem como <code>.me-auto</code> para forçar colunas irmãs a se afastarem umas das outras.
+                </p>
+                <div class="bd-callout bd-callout-warning bd-example-row">
+                    <div class="container grid">
+                        <div class="row">
+                            <div class="col-md-4 bg-success">.col-md-4
+                            </div>
+                            <div class="col-md-4 ms-auto bg-danger">.col-md-4 .ms-auto
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 ms-md-auto bg-success">.col-md-3 .ms-md-auto
+                            </div>
+                            <div class="col-md-3 ms-md-auto bg-danger">.col-md-3 .ms-md-auto
+                            </div>
+                        </div>
+                            <div class="row">
+                            <div class="col-auto me-auto bg-success">.col-auto .me-auto
+                            </div>
+                            <div class="col-auto bg-danger">.col-auto
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-md-4&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-md-4</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-md-4 ms-auto&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-md-4 .ms-auto</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-md-3 ms-md-auto&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-md-3 .ms-md-auto</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-md-3 ms-md-auto&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-md-3 .ms-md-auto</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;row&#34;</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-auto me-auto&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-auto .me-auto</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-auto&#34;</span><span class="tg1">&gt;</span><span class="cm1">.col-auto</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="standalone-column-classes">Classes de Colunas Autônomas
+                </h2>
+                <p>As classes <code>.col-*</code> também podem ser usadas fora de uma <code>.row</code> para dar a um elemento uma largura específica. Sempre que classes de coluna são usadas como filhos não diretos de uma row(linha), os preenchimentos são omitidos.
+                </p>
+                <div class="bd-callout bd-callout-warning">
+                    <div class="col-3 bg-success p-3 border colun">
+    <span class="cm1">.col-3: largura de 25%</span>
+                    </div>
+                    <div class="col-sm-9 bg-danger p-3 border colun">
+    <span class="cm1">.col-sm-9: largura de 75% acima do breakpoint sm</span>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-3 bg-light p-3 border&#34;</span><span class="tg1">&gt;</span>
+    <span class="cm1">.col-3: largura de 25%</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-sm-9 bg-light p-3 border&#34;</span><span class="tg1">&gt;</span>
+    <span class="cm1">.col-sm-9: largura de 75% acima do breakpoint sm</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+                <p>As classes podem ser usadas junto com utilitários para criar imagens flutuantes responsivas. Certifique-se de embrulhar o conteúdo em um embrulho<a href="../helper/clearfix.html" target="_blank"><code>.clearfix</code></a> wrapper  para limpar a flutuação se o texto for mais curto.
+                </p>
+                <div class="bd-callout bd-callout-warning">
+                    <div class="clearfix">
+                        <svg class="bd-placeholder-img col-md-6 float-md-end mb-3 ms-md-3" width="100%" height="210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Imagem flutuante responsiva" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#002000"/><text x="50%" y="50%" fill="#ee0000" dy=".3em">Imagem flutuante responsiva</text>
+                        </svg>
+  
+  
+                        <p>
+                            Um parágrafo de texto de espaço reservado. Estamos usando aqui para mostrar o uso da classe clearfix. Estamos adicionando algumas frases sem sentido aqui para demonstrar como as colunas interagem aqui com a imagem flutuante.
+                        </p>
+  
+                        <p>
+                            Como você pode ver, os parágrafos envolvem graciosamente a imagem flutuante. Agora imagine como isso ficaria com algum conteúdo real aqui, em vez de apenas esse texto chato de espaço reservado que continua indefinidamente, mas na verdade não transmite nenhuma informação tangível em. Simplesmente ocupa espaço e não deve ser lido.
+                        </p>
+  
+                        <p>
+                            E, no entanto, aqui está você, ainda perseverante na leitura deste texto de espaço reservado, na esperança de mais alguns insights, ou algum ovo de Páscoa oculto de conteúdo. Uma piada, talvez. Infelizmente, não há nada disso aqui.
+                        </p>
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;clearfix&#34;</span><span class="tg1">&gt;</span>
+    <span class="tg1">&lt;</span><span class="nt1">img</span> <span class="na1">src</span><span class="ig1">=</span><span class="vl1">&#34;...&#34;</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-md-6 float-md-end mb-3 ms-md-3&#34;</span> <span class="na1">alt</span><span class="ig1">=</span><span class="vl1">&#34;...&#34;</span><span class="tg1">&gt;</span>
+  
+    <span class="tg1">&lt;</span><span class="nt1">p</span><span class="tg1">&gt;</span>
+    <span class="cm1">Um parágrafo de texto de espaço reservado. Estamos usando aqui para mostrar o uso da classe clearfix. Estamos adicionando algumas frases sem sentido aqui para demonstrar como as colunas interagem aqui com a imagem flutuante.</span>
+    <span class="tg1">&lt;/</span><span class="nt1">p</span><span class="tg1">&gt;</span>
+  
+    <span class="tg1">&lt;</span><span class="nt1">p</span><span class="tg1">&gt;</span>
+    <span class="cm1">Como você pode ver, os parágrafos envolvem graciosamente a imagem flutuante. Agora imagine como isso ficaria com algum conteúdo real aqui, em vez de apenas esse texto chato de espaço reservado que continua indefinidamente, mas na verdade não transmite nenhuma informação tangível em. Simplesmente ocupa espaço e não deve ser lido.</span>
+    <span class="tg1">&lt;/</span><span class="nt1">p</span><span class="tg1">&gt;</span>
+  
+    <span class="tg1">&lt;</span><span class="nt1">p</span><span class="tg1">&gt;</span>
+    <span class="cm1">E, no entanto, aqui está você, ainda perseverante na leitura deste texto de espaço reservado, na esperança de mais alguns insights, ou algum ovo de Páscoa oculto de conteúdo. Uma piada, talvez. Infelizmente, não há nada disso aqui.</span>
+    <span class="tg1">&lt;/</span><span class="nt1">p</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>

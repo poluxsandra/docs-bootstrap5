@@ -5,15 +5,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>Breakpoints</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Breakpoints
+                    </h1>
+                </div>
+                <p class="bd-lead">Breakpoints são larguras personalizáveis ​​que determinam como seu layout responsivo se comporta em dispositivos ou tamanhos de janela de exibição no Bootstrap.
+                </p>
+            </div>
+
+            <div class="bd-content ps-lg-4">
+                <h2 class="head2" id="core-concepts">Conceitos Centrais
+                </h2>
+                <ul>
+                    <li><p><strong>Os Breakpoints são os blocos de construção do design responsivo. </strong> Use-os para controlar quando seu layout pode ser adaptado em uma janela de visualização ou tamanho de dispositivo específico.</p>
+                    <li><p><strong>Use consultas de mídia para arquitetar seu CSS por Breakpoint.</strong> As consultas de mídia são um recurso do CSS que permite aplicar condicionalmente estilos com base em um conjunto de parâmetros do navegador e do sistema operacional. Nós mais comumente usamos <code>min-width</code> em nossas consultas de mídia.</p>
+                    <li><p><strong>A meta é o design responsivo e mobile first.</strong> O CSS do Bootstrap visa aplicar o mínimo de estilos para fazer um layout funcionar no menor Breakpoint e, em seguida, camadas em estilos para ajustar esse design para dispositivos maiores. Isso otimiza seu CSS, melhora o tempo de renderização e fornece uma ótima experiência para seus visitantes.</p>
+                </ul>
+
+                <h2 class="head2" id="available-breakpoints">Breakpoints disponíveis
+                </h2>
+                <p>O bootstrap inclui seis Breakpoints padrão, às vezes chamados de <em>camadas de grade</em> , para construção responsiva. Esses Breakpoints podem ser personalizados se você estiver usando nossos arquivos-fonte Sass.
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr class="nt1">
+                            <th>Breakpoint
+                            <th>Infixo de Classe
+                            <th>Dimensões
+                        </tr>
+                    </thead>
+                    <tbody class="vl1">
+                        <tr>
+                            <td class="doc1">X-Small(Muito Pequeno)
+                            <td><em class="tg1">Nenhum</em>
+                            <td>&lt;576px
+                        </tr>
+                        <tr>
+                            <td class="doc1">Small(Pequeno)
+                            <td><code>sm</code>
+                            <td>&ge;576px
+                        </tr>
+                        <tr>
+                            <td class="doc1">Medium(Médio)
+                            <td><code>md</code>
+                            <td>&ge;768px
+                        </tr>
+                        <tr>
+                            <td class="doc1">Large(Grande)
+                            <td><code>lg</code>
+                            <td>&ge;992px
+                        </tr>
+                        <tr>
+                            <td class="doc1">Extra large(Muito Grande)
+                            <td><code>xl</code>
+                            <td>&ge;1200px
+                        </tr>
+                        <tr>
+                            <td class="doc1">Extra extra large(Gigante)
+                            <td><code>xxl</code>
+                            <td>&ge;1400px
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Cada Breakpoint foi escolhido para acomodar confortavelmente contêineres cujas larguras são múltiplos de 12. Os pontos de interrupção também são representativos de um subconjunto de tamanhos de dispositivos comuns e dimensões de janela de visualização - eles não visam especificamente cada caso de uso ou dispositivo. Em vez disso, os intervalos fornecem uma base sólida e consistente para construir em quase todos os dispositivos.
+                </p>
+                <p>Esses pontos de interrupção são personalizáveis ​​por meio do Sass - você os encontrará em um mapa do Sass em nossa folha de estilo <code>_variables.scss</code>.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="tg1">$grid-breakpoints</span><span class="ig1">:</span> <span class="ig1">(</span>
+        <span class="nt1">xs</span><span class="ig1">:</span> <span class="vl1">0</span><span class="ig1">,</span>
+        <span class="nt1">sm</span><span class="ig1">:</span> <span class="vl1">576</span><span class="doc1">px</span><span class="ig1">,</span>
+        <span class="nt1">md</span><span class="ig1">:</span> <span class="vl1">768</span><span class="doc1">px</span><span class="ig1">,</span>
+        <span class="nt1">lg</span><span class="ig1">:</span> <span class="vl1">992</span><span class="doc1">px</span><span class="ig1">,</span>
+        <span class="nt1">xl</span><span class="ig1">:</span> <span class="vl1">1200</span><span class="doc1">px</span><span class="ig1">,</span>
+        <span class="nt1">xxl</span><span class="ig1">:</span> <span class="vl1">1400</span><span class="doc1">px</span>
+      <span class="ig1">);</span></code></pre>
+                </div>
+                <p>Para obter mais informações e exemplos sobre como modificar nossos mapas e variáveis ​​Sass, consulte a seção <a href="../layout/grid.html#sass" target="_blank">Sass da documentação do Grid.</a>.
+                </p>
+
+                <h2 class="head2" id="media-queries">Consultas de Mídia
+                </h2>
+                <p>Como o Bootstrap foi desenvolvido para ser mobile first, usamos um punhado de <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/Media_Queries/Using_media_queries" target="_blank">consultas de mídia</a> para criar Breakpoints sensíveis para nossos layouts e interfaces. Esses Breakpoints são baseados principalmente nas larguras mínimas da viewport e nos permitem dimensionar os elementos conforme a viewport muda.
+                </p>
+
+                <h3 class="head3" id="min-width">Min-width(Largura Mínima)
+                </h3>
+                <p>O Bootstrap usa principalmente os seguintes intervalos de consulta de mídia - ou Breakpoint - em nossos arquivos-fonte Sass para nosso layout, sistema de grade e componentes.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Mixins da Fonte
+      </span><span class="cm1"></span>
+      <span class="cm1">// Nenhuma consulta de mídia necessária para o ponto de interrupção xs, pois é eficaz "@media (min-width: 0) { ... }"
+      </span><span class="cm1"></span><span class="tg1">@include</span><span class="nt1"> media-breakpoint-up</span><span class="ig1">(</span><span class="vl1">sm</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-up</span><span class="ig1">(</span><span class="vl1">md</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-up</span><span class="ig1">(</span><span class="vl1">lg</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-up</span><span class="ig1">(</span><span class="vl1">xl</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-up</span><span class="ig1">(</span><span class="vl1">xxl</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      
+      <span class="cm1">// Uso
+      </span><span class="cm1"></span>
+      <span class="cm1">// Exemplo: ocultar um elemento começando em "min-width: 0" e, em seguida, mostrar no ponto de interrupção "sm" 
+      </span><span class="cm1"></span><span class="tg1">.custom-class</span> <span class="ig1">{</span>
+        <span class="nt1">display</span><span class="ig1">:</span> <span class="vl1">none</span><span class="ig1">;</span>
+      <span class="ig1">}</span>
+      <span class="na1">@include</span><span class="doc1"> media-breakpoint-up</span><span class="ig1">(</span><span class="vl1">sm</span><span class="ig1">)</span> <span class="ig1">{</span>
+        <span class="tg1">.custom-class</span> <span class="ig1">{</span>
+          <span class="nt1">display</span><span class="ig1">:</span> <span class="vl1">block</span><span class="ig1">;</span>
+        <span class="ig1">}</span>
+      <span class="ig1">}</span></code></pre>
+                </div>
+                <p>Esses mixins Sass são traduzidos em nosso CSS compilado usando os valores declarados em nossas variáveis ​​Sass. Por exemplo:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Dispositivos X-Small (modo retrato em celulares, menor que 576px)
+      </span><span class="cm1">// Nenhuma consulta de mídia para "xs", pois este é o padrão no Bootstrap
+      </span><span class="cm1"></span>
+      <span class="cm1">// Dispositivos Small (modo paisagem em telefones, 576px ou maior)
+      </span><span class="cm1"></span><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">min-width</span><span class="ig1">:</span> <span class="vl1">576</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="na1">...</span> <span class="ig1">}</span>
+      
+      <span class="cm1">// Dispositivos Medium (tablets, 768px ou maior)
+      </span><span class="cm1"></span><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">min-width</span><span class="ig1">:</span> <span class="vl1">768</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="na1">...</span> <span class="ig1">}</span>
+      
+      <span class="cm1">// Dispositivos Large (desktops, 992px ou maior)
+      </span><span class="cm1"></span><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">min-width</span><span class="ig1">:</span> <span class="vl1">992</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="na1">...</span> <span class="ig1">}</span>
+      
+      <span class="cm1">// Dispositivos X-Large (desktops largos, 1200px ou maior)
+      </span><span class="cm1"></span><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">min-width</span><span class="ig1">:</span> <span class="vl1">1200</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="na1">...</span> <span class="ig1">}</span>
+      
+      <span class="cm1">// Dispositivos XX-Large (desktops largos, 1400px ou maior)
+      </span><span class="cm1"></span><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">min-width</span><span class="ig1">:</span> <span class="vl1">1400</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="na1">...</span> <span class="ig1">}</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="max-width">Max-width(Largura Máxima)
+                </h3>
+                <p>Ocasionalmente, usamos consultas de mídia que vão na outra direção (o tamanho de tela fornecido <em>ou menor</em>):
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Nenhuma consulta de mídia necessária para o ponto de interrupção "xs", pois é eficaz  "@media (max-width: 0) { ... }"
+      </span><span class="cm1"></span><span class="tg1">@include</span><span class="nt1"> media-breakpoint-down</span><span class="ig1">(</span><span class="vl1">sm</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-down</span><span class="ig1">(</span><span class="vl1">md</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-down</span><span class="ig1">(</span><span class="vl1">lg</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-down</span><span class="ig1">(</span><span class="vl1">xl</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-down</span><span class="ig1">(</span><span class="vl1">xxl</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      
+      <span class="cm1">// Exemplo: estilo de Breakpoint médio e menor
+      </span><span class="cm1"></span><span class="na1">@include</span><span class="doc1"> media-breakpoint-down</span><span class="ig1">(</span><span class="vl1">md</span><span class="ig1">)</span> <span class="ig1">{</span>
+        <span class="tg1">.custom-class</span> <span class="ig1">{</span>
+          <span class="nt1">display</span><span class="ig1">:</span> <span class="vl1">block</span><span class="ig1">;</span>
+        <span class="ig1">}</span>
+      <span class="ig1">}</span></code></pre>
+                </div>
+                <p>Esses mixins pegam esses Breakpoint declarados, subtraem <code>.02px</code> deles e os usam como nossos valores de <code>max-width</code>. Por exemplo:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// X-Small (modo retrato em celulares, menor que 576px)
+      </span><span class="cm1"></span><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">max-width</span><span class="ig1">:</span> <span class="vl1">575</span><span class="vl1">.98</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      
+      <span class="cm1">// Dispositivos Small (modo paisagem em celulares, menor que 768px)
+      </span><span class="cm1"></span><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">max-width</span><span class="ig1">:</span> <span class="vl1">767</span><span class="vl1">.98</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      
+      <span class="cm1">// Dispositivos Medium (tablets, menor que 992px)
+      </span><span class="cm1"></span><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">max-width</span><span class="ig1">:</span> <span class="vl1">991</span><span class="vl1">.98</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      
+      <span class="cm1">// Dispositivos Large (desktops, menor que 1200px)
+      </span><span class="cm1"></span><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">max-width</span><span class="ig1">:</span> <span class="vl1">1199</span><span class="vl1">.98</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      
+      <span class="cm1">// Dispositivos X-Large(large desktops, menor que 1400px)
+      </span><span class="cm1"></span><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">max-width</span><span class="ig1">:</span> <span class="vl1">1399</span><span class="vl1">.98</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      
+      <span class="cm1">// Dispositivos XX-Large (larger desktops)
+      </span><span class="cm1">// Sem consulta de mídia, pois o Breakpoint xxl não tem limite superior em sua largura </span></code></pre>
+                </div>
+                <div class="bd-callout bd-callout-warning">
+      <strong>Por que subtrair 0,02 px?</strong> Navegadores atualmente não suportam <a href="https://www.w3.org/TR/mediaqueries-4/#range-context" target="_blank">consultas de contexto gama</a>, então contornamos as limitações dos prefixos <a href="https://www.w3.org/TR/mediaqueries-4/#mq-min-max" target="_blank"><code>min-</code> and <code>max-</code> prefixes</a> e viewports com larguras fracionários (que pode ocorrer sob certas condições em dispositivos high-dpi, por exemplo), usando os valores com maior precisão. 
+                </div>
+      
+                <h3 class="head3" id="single-breakpoint">Breakpoint Único
+                </h3>
+                <p>Existem também consultas de mídia e mixins para direcionar um único segmento de tamanhos de tela usando as larguras de Breakpoint mínima e máxima.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="tg1">@include</span><span class="nt1"> media-breakpoint-only</span><span class="ig1">(</span><span class="vl1">xs</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-only</span><span class="ig1">(</span><span class="vl1">sm</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-only</span><span class="ig1">(</span><span class="vl1">md</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-only</span><span class="ig1">(</span><span class="vl1">lg</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-only</span><span class="ig1">(</span><span class="vl1">xl</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      <span class="tg1">@include</span><span class="nt1"> media-breakpoint-only</span><span class="ig1">(</span><span class="vl1">xxl</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span></code></pre>
+                </div>
+                <p>Por exemplo, o <code>@include media-breakpoint-only(md) { ... }</code> resultará em :
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">min-width</span><span class="ig1">:</span> <span class="vl1">768</span><span class="doc1">px</span><span class="ig1">)</span> <span class="na1">and</span> <span class="ig1">(</span><span class="nt1">max-width</span><span class="ig1">:</span> <span class="vl1">991</span><span class="vl1">.98</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span>
+      </code></pre>
+                </div>
+
+                <h3 class="head3" id="between-breakpoints">Entre Breakpoints
+                </h3>
+                <p>Da mesma forma, as consultas de mídia podem abranger várias larguras de Breakpoints:</p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="tg1">@include</span><span class="nt1"> media-breakpoint-between</span><span class="ig1">(</span><span class="vl1">md</span><span class="ig1">,</span> <span class="vl1">xl</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span></code></pre>
+                </div>
+                <p>O que resulta em:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Exemplo
+      </span><span class="cm1">// Aplicado estilos desde dispositivos médios até dispositivos extragrandes 
+      </span><span class="cm1"></span><span class="tg1">@media</span> <span class="ig1">(</span><span class="nt1">min-width</span><span class="ig1">:</span> <span class="vl1">768</span><span class="doc1">px</span><span class="ig1">)</span> <span class="na1">and</span> <span class="ig1">(</span><span class="nt1">max-width</span><span class="ig1">:</span> <span class="vl1">1199</span><span class="vl1">.98</span><span class="doc1">px</span><span class="ig1">)</span> <span class="ig1">{</span> <span class="doc1">...</span> <span class="ig1">}</span></code></pre>
+                </div>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>

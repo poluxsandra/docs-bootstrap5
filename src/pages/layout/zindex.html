@@ -11,9 +11,38 @@
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Z-index
+                    </h1>
+                </div>
+                <p class="bd-lead">Embora não façam parte do sistema de grade do Bootstrap, o <code>Z-index</code> desempenham um papel importante em como nossos componentes se sobrepõem e interagem uns com os outros.</p>
+            </div>
+            <div class="bd-content ps-lg-4">
+                <p>Vários componentes do Bootstrap utilizam a propriedade CSS <code>Z-index</code>, que ajuda a controlar o layout, fornecendo um terceiro eixo para organizar o conteúdo. Usamos uma escala padrão de <code>Z-index</code> no Bootstrap que foi projetada para a navegação em camadas, tooltips, popovers, modais e muito mais.
+                </p>
+                <p>Esses valores mais altos começam em um número arbitrário, alto e específico o suficiente para evitar conflitos. Precisamos de um conjunto padrão desses em nossos componentes em camadas - dicas de ferramentas, popovers, barras de navegação, menus suspensos, modais - para que possamos ser razoavelmente consistentes nos comportamentos. Não há razão para não termos usado <code>100</code>+ ou <code>500</code>+.
+                </p>
+                <p>Não encorajamos a personalização desses valores individuais; se você mudar um, provavelmente precisará mudar todos.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">$zindex-dropdown</span><span class="ig1">:</span>                   <span class="vl1">1000</span><span class="ig1">;</span>
+      <span class="nt1">$zindex-sticky</span><span class="ig1">:</span>                     <span class="vl1">1020</span><span class="ig1">;</span>
+      <span class="nt1">$zindex-fixed</span><span class="ig1">:</span>                      <span class="vl1">1030</span><span class="ig1">;</span>
+      <span class="nt1">$zindex-modal-backdrop</span><span class="ig1">:</span>             <span class="vl1">1040</span><span class="ig1">;</span>
+      <span class="nt1">$zindex-offcanvas</span><span class="ig1">:</span>                  <span class="vl1">1050</span><span class="ig1">;</span>
+      <span class="nt1">$zindex-modal</span><span class="ig1">:</span>                      <span class="vl1">1060</span><span class="ig1">;</span>
+      <span class="nt1">$zindex-popover</span><span class="ig1">:</span>                    <span class="vl1">1070</span><span class="ig1">;</span>
+      <span class="nt1">$zindex-tooltip</span><span class="ig1">:</span>                    <span class="vl1">1080</span><span class="ig1">;</span></code></pre>
+                </div>
+                <p>Para lidar com bordas sobrepostas dentro de componentes (por exemplo, botões e entradas em grupo de botões), usamos um valor de <code>z-index</code> de único dígito (como <code>1</code>, <code>2</code>, e <code>3</code> por padrão, em estados hover ou ativos). No hover/foco/ativo, colocamos um elemento específico em primeiro plano com um valor de  <code>z-index</code> alto para mostrar sua borda sobre os elementos irmãos.
+                </p>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>

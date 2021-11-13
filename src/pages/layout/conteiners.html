@@ -5,15 +5,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>Contêiners</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Contêiners
+                    </h1>
+                </div>
+                <p class="bd-lead">Os contêineres são blocos de construção fundamentais do Bootstrap que contém, preenchem e alinham seu conteúdo em um determinado dispositivo ou viewport.</p>
+            </div>
+
+            <div class="bd-content ps-lg-4">
+                <h2 class="head2" id="how-they-work">Como Eles Trabalham
+                </h2>
+                <p>Os contêiners são os elementos de layout mais básicos no Bootstrap e são <strong>necessários ao usar nosso sistema de grade padrão</strong>. Os contêiners são usados ​​para conter, preencher e (às vezes) centralizar o conteúdo dentro deles. Embora os contêiners <em>possam</em> ser aninhados, a maioria dos layouts não exige um contêiner aninhado.
+                </p>
+                <p>Bootstrap vem com três contêineres diferentes:
+                </p>
+                <ul>
+                    <li><code>.container</code>, que define um <code>max-width</code> em breakpoint responsivo
+                    <li><code>.container-fluid</code>, que define <code>width: 100%</code> em todos os breakpoints
+                    <li><code>.container-{breakpoint}</code>, que define <code>width: 100%</code> até o breakpoint especificado
+                </ul>
+                <p>A tabela abaixo ilustra como cada <code>max-width</code> do contêiner se compara ao original <code>.container</code> e <code>.container-fluid</code> em cada breakpoint.
+                </p>
+                <p>Veja-os em ação e compare-os em nosso <a href="../../examples/pages/grid.html#containers"  target="_blank">exemplo de Grid</a>.
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr class="nt1">
+                            <td class="border-dark">
+                            <th  scope="col">
+              Muito Pequeno(X-Small)<br>
+              <span class="fw-normal">&lt;576px</span>
+                            <th scope="col">
+              Pequeno(Small)<br>
+              <span class="fw-normal">&ge;576px</span>
+                            <th scope="col">
+              Médio(Medium)<br>
+              <span class="fw-normal">&ge;768px</span>
+                            <th scope="col">
+              Grande(Large)<br>
+              <span class="fw-normal">&ge;992px</span>
+                            <th scope="col">
+              Muito Grande(X-Large)<br>
+              <span class="fw-normal">&ge;1200px</span>
+                            <th scope="col">
+              Gigante(XX-Large)<br>
+              <span class="fw-normal">&ge;1400px</span>
+                        </tr>
+                    </thead>
+                    <tbody class="vl1">
+                        <tr>
+                            <th scope="row" class="fw-normal"><code>.container</code>
+                            <td class="tg1">100%
+                            <td>540px
+                            <td>720px
+                            <td>960px
+                            <td>1140px
+                            <td>1320px
+                        </tr>
+                        <tr>
+                            <th scope="row" class="fw-normal"><code>.container-sm</code>
+                            <td class="tg1">100%
+                            <td>540px
+                            <td>720px
+                            <td>960px
+                            <td>1140px
+                            <td>1320px
+                        </tr>
+                        <tr>
+                            <th scope="row" class="fw-normal"><code>.container-md</code>
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td>720px
+                            <td>960px
+                            <td>1140px
+                            <td>1320px
+                        </tr>
+                        <tr>
+                            <th scope="row" class="fw-normal"><code>.container-lg</code>
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td>960px
+                            <td>1140px
+                            <td>1320px
+                        </tr>
+                        <tr>
+                            <th scope="row" class="fw-normal"><code>.container-xl</code>
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td>1140px
+                            <td>1320px
+                        </tr>
+                        <tr>
+                            <th scope="row" class="fw-normal"><code>.container-xxl</code>
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td>1320px
+                        </tr>
+                        <tr>
+                            <th scope="row" class="fw-normal"><code>.container-fluid</code>
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                            <td class="tg1">100%
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="head2" id="default-container">Contêiner Padrão
+                </h2>
+                <p>Nossa classe padrão <code>.container</code> é um contêiner responsivo de largura fixa, o que significa que sua <code>max-width</code> muda em cada breakpoint.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container&#34;</span><span class="tg1">&gt;</span>
+        <span class="cm1">&lt;!-- Conteúdo aqui --&gt;</span>
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="responsive-containers">Contêiners Responsivos
+                </h2>
+                <p>Os contêineres responsivos permitem que você especifique uma classe com 100% de largura até que o breakpoint especificado seja alcançado, após o qual aplicamos as <code>max-width</code>'s para cada um dos breakpoints maiores. Por exemplo, <code>.container-sm</code> possui 100% de largura para começar até que o breakpoint <code>sm</code> seja alcançado, onde aumentará com <code>md</code>, <code>lg</code>, <code>xl</code>, e <code>xxl</code>.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html">      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container-sm&#34;</span><span class="tg1">&gt;</span><span class="cm1"><span class="cm1">100% de largura até o breakpoint pequeno(small)</span></span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container-md&#34;</span><span class="tg1">&gt;</span><span class="cm1">100% de largura até o breakpoint médio(medium)</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container-lg&#34;</span><span class="tg1">&gt;</span><span class="cm1">100% de largura até o breakpoint grande(large)</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container-xl&#34;</span><span class="tg1">&gt;</span><span class="cm1">100% de largura até o breakpoint muito grande (x-large)</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span>
+      <span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container-xxl&#34;</span><span class="tg1">&gt;</span><span class="cm1">100% de largura até o breakpoint gigante(xx-large)</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+      
+                <h2 class="head2" id="fluid-containers">Contêiners Fluidos
+                </h2>
+      <p>Use <code>.container-fluid</code> para um contêiner de largura total, abrangendo todo o viewport.</p>
+      <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;container-fluid&#34;</span><span class="tg1">&gt;</span>
+        ...
+      <span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="sass">Sass
+                </h2>
+                <p>Conforme mostrado acima, o Bootstrap gera uma série de classes de contêiners predefinidas para ajudá-lo a construir os layouts que você deseja. Você pode personalizar essas classes de contêiners predefinidas, modificando o mapa Sass (encontrado em <code>_variables.scss</code>) que as fornece:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="tg1">$container-max-widths</span><span class="ig1">:</span> <span class="ig1">(</span>
+        <span class="nt1">sm</span><span class="ig1">:</span> <span class="vl1">540</span><span class="doc1">px</span><span class="ig1">,</span>
+        <span class="nt1">md</span><span class="ig1">:</span> <span class="vl1">720</span><span class="doc1">px</span><span class="ig1">,</span>
+        <span class="nt1">lg</span><span class="ig1">:</span> <span class="vl1">960</span><span class="doc1">px</span><span class="ig1">,</span>
+        <span class="nt1">xl</span><span class="ig1">:</span> <span class="vl1">1140</span><span class="doc1">px</span><span class="ig1">,</span>
+        <span class="nt1">xxl</span><span class="ig1">:</span> <span class="vl1">1320</span><span class="doc1">px</span>
+      <span class="ig1">);</span></code></pre>
+                </div>
+                <p>Além de personalizar o Sass, você também pode criar seus próprios contêiners com nosso mixin Sass.</p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Código-Fonte do Mixin
+      </span><span class="cm1"></span><span class="tg1">@mixin</span><span class="nt1"> make-container</span><span class="ig1">(</span><span class="vl1">$padding-x</span><span class="ig1">:</span> <span class="vl1">$container-padding-x</span><span class="ig1">)</span> <span class="ig1">{</span>
+        <span class="na1">width</span><span class="ig1">:</span> <span class="vl1">100</span><span class="doc1">%</span><span class="ig1">;</span>
+        <span class="na1">padding-right</span><span class="ig1">:</span> <span class="doc1">$</span><span class="vl1">padding-x</span><span class="ig1">;</span>
+        <span class="na1">padding-left</span><span class="ig1">:</span> <span class="doc1">$</span><span class="vl1">padding-x</span><span class="ig1">;</span>
+        <span class="na1">margin-right</span><span class="ig1">:</span> <span class="vl1">auto</span><span class="ig1">;</span>
+        <span class="na1">margin-left</span><span class="ig1">:</span> <span class="vl1">auto</span><span class="ig1">;</span>
+      <span class="ig1">}</span>
+      
+      <span class="cm1">// Uso
+      </span><span class="cm1"></span><span class="nt1">.custom-container</span> <span class="ig1">{</span>
+        <span class="tg1">@include</span><span class="na1"> make-container</span><span class="ig1">();</span>
+      <span class="ig1">}</span></code></pre>
+                </div>
+                <p>Para obter mais informações e exemplos sobre como modificar nossos mapas e variáveis ​​Sass, consulte a <a href="../layout/grid.html#sass"  target="_blank">seção Sass da documentação do Grid.</a>.
+                </p>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>
