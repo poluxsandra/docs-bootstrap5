@@ -26,9 +26,9 @@
             <div class="bd-content ps-lg-4">
                 <h2 class="head2" id="example">Exemplo
                 </h2>
-                <p>O sistema de grade do Bootstrap usa uma série de contêiners, linhas e colunas para fazer o layout e alinhar o conteúdo. Ele é construído com <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Flexbox</a> Abaixo está um exemplo e uma explicação detalhada de como o sistema de grade funciona.</p>
-                <div class="bd-callout bd-callout-info">
-  <strong>Novo ou não está familiarizado com o Flexbox?</strong> <a href="https://translate.google.com/translate?hl=&sl=en&tl=pt&u=https%3A%2F%2Fcss-tricks.com%2Fsnippets%2Fcss%2Fa-guide-to-flexbox%2F%23flexbox-background">Leia este Guia de truques CSS usando o Flexbox </a> para obter informações básicas, terminologia, diretrizes e fragmentos de código.
+                <p>O sistema de grade do Bootstrap usa uma série de contêiners, linhas e colunas para fazer o layout e alinhar o conteúdo. Ele é construído com <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank">Flexbox</a> Abaixo está um exemplo e uma explicação detalhada de como o sistema de grade funciona.</p>
+                <div class="bd-callout bd-callout-warning">
+  <strong>Novo ou não está familiarizado com o Flexbox?</strong> <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background" target="_blank">Leia este Guia de truques CSS usando o Flexbox </a> para obter informações básicas, terminologia, diretrizes e fragmentos de código.
                 </div>
                 <div class="bd-example bd-example-row">
                     <div class="container">
@@ -67,14 +67,14 @@
                 <p>Resumindo, é assim que o sistema de grade se reúne:
                 </p>
                 <ul>
-                    <li><p><strong>Nossa grade suporta <a href="../layout/breakpoints.html">seis breakpoints responsivos</a>.</strong></br> Breakpoints  são baseados em consultas de mídia de <code>min-width</code>, o que significa que afetam aquele breakpoint e todos aqueles acima dele  (por exemplo, <code>.col-sm-4</code> aplica-se à <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, e <code>xxl</code>). Isso significa que você pode controlar o tamanho e o comportamento de contêiners e colunas de cada breakpoint.</p>
+                    <li><p><strong>Nossa grade suporta <a href="../layout/breakpoints.html" target="_blank">seis breakpoints responsivos</a>.</strong></br> Breakpoints  são baseados em consultas de mídia de <code>min-width</code>, o que significa que afetam aquele breakpoint e todos aqueles acima dele  (por exemplo, <code>.col-sm-4</code> aplica-se à <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, e <code>xxl</code>). Isso significa que você pode controlar o tamanho e o comportamento de contêiners e colunas de cada breakpoint.</p>
                     <li><p><strong>Os contêiners centralizam e alinham horizontalmente seu conteúdo.</strong></br> Use <code>.container</code> para uma largura de pixel responsiva, <code>.container-fluid</code> para <code>width: 100%</code> através de todos viewports e dispositivos, ou um contêiner responsivo (por exemplo, <code>.container-md</code>) para uma combinação de larguras de pixel responsiva e fluida.</p>
-                    <li><p><strong>As linhas (Rows) são invólucros para colunas.</strong></br> Cada coluna tem uma horizontal <code>padding</code> (chamada de gutter)  para controlar o espaço entre elas. Esse <code>padding</code> é então neutralizado nas linhas com margens negativas para garantir que o conteúdo em suas colunas esteja visualmente alinhado no lado esquerdo. As linhas também oferecem suporte a classes modificadoras para <a href="#row-columns">aplicar uniformemente o dimensionamento de coluna</a> e <a href="../layout/gutters.html">classes de gutters</a> para alterar o espaçamento de seu conteúdo.</p>
+                    <li><p><strong>As linhas (Rows) são invólucros para colunas.</strong></br> Cada coluna tem uma horizontal <code>padding</code> (chamada de gutter)  para controlar o espaço entre elas. Esse <code>padding</code> é então neutralizado nas linhas com margens negativas para garantir que o conteúdo em suas colunas esteja visualmente alinhado no lado esquerdo. As linhas também oferecem suporte a classes modificadoras para <a href="#row-columns" target="_blank">aplicar uniformemente o dimensionamento de coluna</a> e <a href="../layout/gutters.html" target="_blank">classes de gutters</a> para alterar o espaçamento de seu conteúdo.</p>
                     <li><p><strong>As colunas são incrivelmente flexíveis.</strong></br> Existem 12 colunas de modelo disponíveis por linha, permitindo que você crie diferentes combinações de elementos que abrangem qualquer número de colunas. As classes de coluna indicam o número de colunas do modelo a serem estendidas (por exemplo, <code>col-4</code> abrange 4). <code>Larguras</code> são definidas em porcentagens para que você sempre tenha o mesmo tamanho relativo.</p>
-                    <li><p><strong>Os Gutters também são responsivas e personalizáveis.</strong></br> <a href="../layout/gutters.html">As classes de gutters estão disponíveis</a> em todos breakpoints, com todos eles com o mesmo tamanho de <a href="../util/space.html">margem e espaçamento do padding</a>. Pode-se alterar gutters horizontais com classes <code>.gx-*</code>, e gutters verticais com classes <code>.gy-*</code>, ou todos os gutters com classes <code>.g-*</code>. As classes <code>.g-0</code> também estão disponíveis para remover gutters.</p>
-                    <li><p><strong>Variáveis, mapas e mixins de Sass aumentam o poder do sistema de grade.</strong></br> Se você não quiser usar as classes de grade predefinidas no Bootstrap, você pode usar a <a href="#sass"> fonte de Sass do sistema de grade</a> para criar a sua própria marcação semântica. Também incluímos algumas propriedades customizadas CSS para consumir essas variáveis ​​Sass para uma flexibilidade ainda maior para você.</p>
+                    <li><p><strong>Os Gutters também são responsivas e personalizáveis.</strong></br> <a href="../layout/gutters.html" target="_blank">As classes de gutters estão disponíveis</a> em todos breakpoints, com todos eles com o mesmo tamanho de <a href="../util/space.html" target="_blank">margem e espaçamento do padding</a>. Pode-se alterar gutters horizontais com classes <code>.gx-*</code>, e gutters verticais com classes <code>.gy-*</code>, ou todos os gutters com classes <code>.g-*</code>. As classes <code>.g-0</code> também estão disponíveis para remover gutters.</p>
+                    <li><p><strong>Variáveis, mapas e mixins de Sass aumentam o poder do sistema de grade.</strong></br> Se você não quiser usar as classes de grade predefinidas no Bootstrap, você pode usar a <a href="#sass" target="_blank"> fonte de Sass do sistema de grade</a> para criar a sua própria marcação semântica. Também incluímos algumas propriedades customizadas CSS para consumir essas variáveis ​​Sass para uma flexibilidade ainda maior para você.</p>
                 </ul>
-                <p>Esteja ciente das limitações e <a href="https://translate.google.com/translate?sl=en&tl=pt&u=https://github.com/philipwalton/flexbugs">bugs em torno do flexbox</a>, como a  <a href="https://translate.google.com/translate?hl=&sl=en&tl=pt&u=https%3A%2F%2Fgithub.com%2Fphilipwalton%2Fflexbugs%23flexbug-9">incapacidade de usar alguns elementos HTML como contêiners flex</a>.
+                <p>Esteja ciente das limitações e <a href="https://github.com/philipwalton/flexbugs" target="_blank">bugs em torno do flexbox</a>, como a  <a href="https://github.com/philipwalton/flexbugs#flexbug-9" target="_blank">incapacidade de usar alguns elementos HTML com contêiners flex</a>.
                 </p>
 
                 <h2 class="head2" id="grid-options">Opções de Grade
@@ -92,7 +92,7 @@
                 <p>Conforme observado acima, cada um desses breakpoints tem seus próprios contêiner, prefixo de classe e modificadores. Veja como a grade muda entre esses breakpoints:
                 </p>
                 <table class="table mb-4">
-                    <thead class="na1">
+                    <thead class="nt1">
                         <tr>
                             <th scope="col">
                             <th scope="col">
@@ -117,16 +117,16 @@
                     </thead>
                     <tbody class="vl1">
                         <tr>
-                            <th class="text-nowrap" scope="row">Container (<code>max-width</code>)
-                            <td class="doc1">Nenhum (auto)
-                            <td class="tg1">540px
-                            <td class="tg1">720px
-                            <td class="tg1">960px
-                            <td class="tg1">1140px
-                            <td class="tg1">1320px
+                            <th class="text-nowrap doc1" scope="row">Container (<code>max-width</code>)
+                            <td class="tg1">Nenhum (auto)
+                            <td>540px
+                            <td>720px
+                            <td>960px
+                            <td>1140px
+                            <td>1320px
                         </tr>
                         <tr>
-                            <th class="text-nowrap" scope="row">Prefixo de Classe
+                            <th class="text-nowrap doc1" scope="row">Prefixo de Classe
                             <td><code>.col-</code>
                             <td><code>.col-sm-</code>
                             <td><code>.col-md-</code>
@@ -135,24 +135,24 @@
                             <td><code>.col-xxl-</code>
                         </tr>
                         <tr>
-                            <th class="text-nowrap" scope="row">N° de Colunas
-                            <td colspan="6" class="tg1">12
+                            <th class="text-nowrap doc1" scope="row">N° de Colunas
+                            <td colspan="6">12
                         </tr>
                         <tr>
-                            <th class="text-nowrap" scope="row">Largura do Gutter
-                            <td colspan="6" class="tg1">1.5rem <span class="doc1">(</span>.75rem<span class="doc1"> na direita e na esquerda)</span>
+                            <th class="text-nowrap doc1" scope="row">Largura do Gutter
+                            <td colspan="6">1.5rem <span class="ig1">(</span>.75rem<span class="tg1"> na direita e na esquerda</span><span class="ig1">)</span>
                         </tr>
                         <tr>
-                            <th class="text-nowrap" scope="row">Gutters Personalizados
-                            <td colspan="6"><a href="../layout/gutters.html">Yes</a>
+                            <th class="text-nowrap doc1" scope="row">Gutters Personalizados
+                            <td colspan="6"><a href="../layout/gutters.html" target="_blank" class="linktable">Yes</a>
                         </tr>
                         <tr>
-                            <th class="text-nowrap" scope="row">Aninhamento
-                            <td colspan="6"><a href="#nesting">Yes</a>
+                            <th class="text-nowrap doc1" scope="row">Aninhamento
+                            <td colspan="6"><a href="#nesting" target="_blank" class="linktable">Yes</a>
                         </tr>
                         <tr>
-                            <th class="text-nowrap" scope="row">Ordem de coluna
-                            <td colspan="6"><a href="../layout/colunas.html#reordering">Yes</a>
+                            <th class="text-nowrap doc1" scope="row">Ordem de coluna
+                            <td colspan="6"><a href="../layout/colunas.html#reordering" target="_blank" class="linktable">Yes</a>
                         </tr>
                     </tbody>
                 </table>

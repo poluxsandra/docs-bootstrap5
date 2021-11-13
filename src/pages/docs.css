@@ -93,6 +93,9 @@ strong {
 
 .linktable {
         color: #f00;
+        text-decoration-color: #0f0;
+        text-decoration-style: solid;
+        text-decoration-line: underline;
 
 }
 
