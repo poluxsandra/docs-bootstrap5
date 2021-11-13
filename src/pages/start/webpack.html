@@ -5,15 +5,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
-    <title>Webpack e Bundlers</title>
+    <link rel="stylesheet" type="text/css"href="../docs.css">
+    <title>Webpack</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Webpack e bundlers
+                    </h1>
+                </div>
+                <p class="bd-lead">Aprenda como incluir Bootstrap em seu projeto usando Webpack ou outros bundlers.
+                </p>
+            </div>
+
+            <div class="bd-content ps-lg-4">
+                <h2 class="head2" id="installing-bootstrap">Instando o Bootstrap
+                </h2>
+                <p><a href="download.html#npm" target="_blank">Instale o bootstrap</a> como um módulo Node.js usando o npm.
+                </p>
+
+                <h2 class="head2" id="importing-javascript">Importando JavaScript
+                </h2>
+                <p>Importe o <a href="javascript.html" target="_blank">JavaScript do Bootstrap</a> adicionando esta linha ao ponto de entrada do seu aplicativo (geralmente <code>index.js</code> ou <code>app.js</code>):
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="cm1">// Você pode especificar quais plugins você precisa
+</span><span class="c1"></span><span class="nt1">import</span> <span class="ig1">{</span> <span class="na1">Tooltip</span><span class="ig1">,</span> <span class="na1">Toast</span><span class="ig1">,</span> <span class="na1">Popover</span> <span class="ig1">}</span> <span class="tg1">from</span> <span class="vl1">&#39;bootstrap&#39;</span><span class="ig1">;</span></code></pre>
+                </div>
+                <p>Como alternativa, se você precisar apenas de alguns de nossos plugins, pode <strong>importar esses plugins individualmente</strong> caso seja necessário:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">import</span> <span class="na1">Alert</span> <span class="tg1">from</span> <span class="vl1">&#39;bootstrap/js/dist/alert&#39;</span><span class="ig1">;</span>
+<span class="ig1">...</span></code></pre>
+                </div>
+                <p>Bootstrap depende do <a href="https://popper.js.org/" target="_blank">Popper</a>, que é especificado na propriedade <code>peerDependencies</code>.<br/>Isso significa que você terá que adicionar isso ao seu <code>package.json</code> usando <code>npm install @popperjs/core</code>.
+                </p>
+
+                <h2 class="head2" id="importing-styles">Importando Estilos
+                </h2>
+
+                <h3 class="head3" id="importing-precompiled-sass">Importando Sass Pré-Compilado
+                </h3>
+                <p>Para retirar todo o potencial do Bootstrap e personalizá-lo de acordo com a sua necessidade, use os arquivos-fonte como parte do processo de agrupamento do seu projeto.
+                </p>
+                <p>Primeiro, crie seu próprio <code>_custom.scss</code> e use-o para substituir as <a href="../custom/sass.html" target="_blank">variáveis personalizadas integradas</a>. Em seguida, use seu arquivo Sass principal para importar suas variáveis personalizadas, seguido por Bootstrap:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">@import</span> <span class="vl1">&#34;custom&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;~bootstrap/scss/bootstrap&#34;</span><span class="p">;</span></code></pre>
+                </div>
+                <p>Para compilar o Bootstrap, certifique-se de instalar e usar os carregadores necessários: <a href="https://github.com/webpack-contrib/sass-loader" target="_blank">sass-loader</a>, <a href="https://github.com/webpack-contrib/postcss-loader" target="_blank">postcss-loader</a> com o <a href="https://github.com/postcss/autoprefixer#webpack" target="_blank">Autoprefixador</a>. Com uma configuração mínima, seu webpack deverá incluir estas regras ou algo semelhante:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="cm1">// ...
+</span><span class="c1"></span><span class="ig1">{</span>
+  <span class="tg1">test</span><span class="ig1">:</span> <span class="na1">/\.(scss)$/</span><span class="ig1">,</span>
+  <span class="tg1">use</span><span class="ig1">:</span> <span class="ig1">[{</span>
+    <span class="cm1">// injeta CSS na página
+</span><span class="c1"></span>    <span class="nt1">loader</span><span class="ig1">:</span> <span class="na1">&#39;style-loader&#39;</span>
+  <span class="ig1">},</span> <span class="ig1">{</span>
+    <span class="cm1">// traduz CSS para módulos CommonJS
+</span><span class="c1"></span>    <span class="nt1">loader</span><span class="ig1">:</span> <span class="na1">&#39;css-loader&#39;</span>
+  <span class="ig1">},</span> <span class="ig1">{</span>
+    <span class="cm1">// Executa ações postcss
+</span><span class="c1"></span>    <span class="nt1">loader</span><span class="ig1">:</span> <span class="na1">&#39;postcss-loader&#39;</span><span class="ig1">,</span>
+    <span class="nt1">options</span><span class="ig1">:</span> <span class="p">{</span>
+      <span class="cm1">// `postcssOptions` é necessário para o postcss 8.x;
+</span><span class="c1"></span>      <span class="cm1">// se você usar o postcss 7.x, pule essa key
+</span><span class="c1"></span>      <span class="nt1">postcssOptions</span><span class="ig1">:</span> <span class="ig1">{</span>
+        <span class="cm1">// plugins postcss, podem ser exportadas com postcss.config.js
+</span><span class="c1"></span>        <span class="nt1">plugins</span><span class="ig1">:</span> <span class="nt1">function</span> <span class="ig1">()</span> <span class="ig1">{</span>
+          <span class="tg1">return</span> <span class="ig1">[</span>
+            <span class="na1">require</span><span class="ig1">(</span><span class="vl1">&#39;autoprefixer&#39;</span><span class="ig1">)</span>
+          <span class="ig1">];</span>
+        <span class="ig1">}</span>
+      <span class="ig1">}</span>
+    <span class="ig1">}</span>
+  <span class="ig1">},</span> <span class="ig1">{</span>
+    <span class="cm1">// compilador Sass para CSS
+</span><span class="c1"></span>    <span class="nt1">loader</span><span class="ig1">:</span> <span class="na1">&#39;sass-loader&#39;</span>
+  <span class="ig1">}]</span>
+<span class="ig1">}</span>
+<span class="cm1">// ...</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="importing-compiled-css">Importando CSS compilado
+                </h3>
+                <p>Como alternativa, você pode usar o CSS pronto para uso do Bootstrap simplesmente adicionando esta linha ao ponto de entrada do seu projeto:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">import</span> <span class="vl1">&#39;bootstrap/dist/css/bootstrap.min.css&#39;</span><span class="ig1">;</span></code></pre>
+                </div>
+                <p>Neste caso, você pode usar suas regras existentes de <code>css</code> sem quaisquer modificações especiais na configuração do webpack , exceto que você não precisa do <code>sass-loader</code> somente do <a href="https://github.com/webpack-contrib/style-loader" target="_blank">style-loader</a> e do <a href="https://github.com/webpack-contrib/css-loader" target="_blank">css-loader</a>.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="cm1">// ...
+</span><span class="c1"></span><span class="nt1">module</span><span class="ig1">:</span> <span class="ig1">{</span>
+  <span class="tg1">rules</span><span class="ig1">:</span> <span class="ig1">[</span>
+    <span class="ig1">{</span>
+      <span class="tg1">test</span><span class="ig1">:</span> <span class="na1">/\.css$/</span><span class="ig1">,</span>
+      <span class="tg1">use</span><span class="ig1">:</span> <span class="ig1">[</span>
+        <span class="vl1">&#39;style-loader&#39;</span><span class="ig1">,</span>
+        <span class="vl1">&#39;css-loader&#39;</span>
+      <span class="ig1">]</span>
+    <span class="ig1">}</span>
+  <span class="ig1">]</span>
+<span class="ig1">}</span>
+<span class="cm1">// ...</span></code></pre>
+                </div>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>

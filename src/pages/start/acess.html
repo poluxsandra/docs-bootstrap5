@@ -5,15 +5,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>Acessibilidade</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Accessibilidade
+                    </h1>
+                </div>
+                <p class="bd-lead">Uma breve visão geral dos recursos e limitações do Bootstrap para a criação de conteúdo acessível.
+                </p>
+            </div>
+
+            <div class="bd-content ps-lg-4">
+            <p>O Bootstrap oferece uma estrutura fácil de usar de estilos prontos, ferramentas de layout e componentes interativos, permitindo que os desenvolvedores criem sites e aplicativos visualmente atraentes, funcionalmente ricos e acessível fora da caixa.
+            </p>
+
+            <h2 class="head2" id="overview-and-limitations">Visão Geral e limitação
+            </h2>
+            <p>A acessibilidade geral de qualquer projeto construído com Bootstrap depende em grande parte da marcação do autor, estilo adicional e script que eles incluíram. No entanto, desde que foram implementados corretamente, deve ser perfeitamente possível criar sites e aplicativos com Bootstrap que atendam os padrões <a href="https://www.w3.org/TR/WCAG21/" target="_blank"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</a> (A/AA/AAA), <a href="https://www.access-board.gov/" target="_blank">Section 508</a>, e outros padrões e requisitos de acessibilidade semelhantes.
+            </p>
+
+            <h3 class="head3" id="structural-markup">Marcação estrutural
+            </h3>
+            <p>O estilo e o layout do Bootstrap podem ser aplicado numa ampla gama de estruturas de marcação. Essa documentação visa fornecer aos desenvolvedores as melhores práticas com exemplos para demonstrar o uso do Bootstrap em si e ilustrar a marcação semântica apropriada, incluindo maneiras em que potenciais preocupações de acessibilidade podem ser abordadas.
+            </p>
+
+            <h3 class="head3" id="interactive-components">Componentes Interativos
+            </h3>
+            <p>Os componentes interativos do Bootstrap - como diálogos modais, menus suspensos e dicas de ferramentas personalizadas - são corrigidos para funcionar para usuários de toque, mouse e teclado. Por meio do uso de funções e atributos <a href="https://www.w3.org/WAI/standards-guidelines/aria/" target="_blank"><abbr title="Web Accessibility Initiative">WAI</abbr>-<abbr title="Accessible Rich Internet Applications">ARIA</abbr></a>, esses componentes também devem ser compreensíveis e operáveis usando tecnologias assistivas (como leitores de tela).
+            </p>
+            <p>Como os componentes do Bootstrap são propositadamente projetados para serem bastante genéricos, os autores podem precisar incluir mais regras e atributos <abbr title="Accessible Rich Internet Applications">ARIA</abbr>, bem como o comportamento JavaScript, para transmitir com mais precisão a natureza e funcionalidade precisas de seu componente. Isso geralmente é disposto na documentação.
+            </p>
+
+            <h3 class="head3" id="color-contrast">Contraste de Cor
+            </h3>
+            <p>Algumas combinações de cores que atualmente compõem a paleta padrão do Bootstrap — usadas em toda a estrutura para coisas como variações de botões, variações de alerta, indicadores de validação de formulários — podem levar a contraste de cored  <em>insuficiente</em> (abaixo da recomendação da <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" target="_blank">taxa de contraste de cor textual WCAG 2.1 de 4.5:1</a> e a <a href="https://www.w3.org/TR/WCAG21/#non-text-contrast" target="_blank">relação de contraste de cor não textual WCAG 2.1 de 3:1</a>), particularmente quando usado em um fundo claro. Os autores são encorajados a testar seus usos específicos de cor e, quando necessário, modificar/estender manualmente essas cores padrão para garantir razões adequadas de contraste de cores.
+            </p>
+
+            <h3 class="head3" id="visually-hidden-content">Conteúdo Visualmente Oculto
+            </h3>
+            <p>O conteúdo que deve ser visualmente oculto, mas permanecerá acessível a tecnologias assistivas, como leitores de tela, pode ser estilizado usando uma classe <code>.visually-hidden</code>. Isso pode ser útil em situações em que informações visuais adicionais ou pistas (com significado denotado através do uso de cor) também precisam ser transmitidas para usuários não visuais.
+            </p>
+            <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">p</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;text-danger&#34;</span><span class="tg1">&gt;</span>
+  <span class="tg1">&lt;</span><span class="nt1">span</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;visually-hidden&#34;</span><span class="tg1">&gt;</span><span class="cm1">Danger:</span> <span class="tg1">&lt;/</span><span class="nt1">span</span><span class="tg1">&gt;</span>
+  <span class="cm1">Esta ação não é reversível</span>
+<span class="tg1">&lt;/</span><span class="nt1">p</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+                <p>Para controles interativos visualmente ocultos, como os links tradicionais de “pular”, use a classe <code>.visually-hidden-focusable</code>. Isso garantirá que o controle se torne visível quando focalizado (para usuários de teclado míope). <strong>Cuidado, comparado com as classes equivalente das versões anteriores do Bootstrap 5 (<code>.sr-only</code> e <code>.sr-only-focusable</code>) a classe <code>.visually-hidden-focusable</code> é autônoma, e não deve ser usado em combinação com a classe <code>.visually-hidden</code></strong>.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">a</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;visually-hidden-focusable&#34;</span> <span class="na1">href</span><span class="ig1">=</span><span class="vl1">&#34;#content&#34;</span><span class="tg1">&gt;</span><span class="cm1">Skip to main content</span><span class="tg1">&lt;/</span><span class="nt1">a</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+
+                <h3 class="head3" class="head3" id="reduced-motion">Movimento reduzido
+                </h3>
+                <p>O Bootstrap inclui suporte ao recurso de mídia <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion" target="_blank"><code>prefers-reduced-motion</code></a>. Em navegadores/ ambientes que permitem ao usuário especificar sua preferência para movimento reduzido, a maioria dos efeitos de transição CSS no Bootstrap (por exemplo, quando uma caixa de diálogo modal é aberta ou fechada, ou a animação deslizante em carrosséis) é desativada e animações relevantes (como spinners) serão mais lentos.
+                </p>
+                <p>Em navegadores compatíveis com o <code>prefers-reduced-motion</code>, e quando o usuário <em>não</em> especificou explicitamente que preferiria o movimento reduzido (ou seja, é especificado: <code>prefers-reduced-motion: no-preference</code>), o Bootstrap permite uma rolagem suave usando a propriedade <code>scroll-behavior</code>.
+                </p>
+
+                <h2 class="head2" class="head2" id="additional-resources">Recursos Adicionais
+                </h2>
+                <ul>
+                    <li><a href="https://www.w3.org/TR/WCAG21/" target="_blank">Diretrizes de Acessibilidade de Conteúdo da Web (WCAG) 2.1</a>
+                    <li><a href="https://www.a11yproject.com/" target="_blank">O Projeto A11Y</a>
+                    <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/Accessibility" target="_blank">Documentação de Acessibilidade do MDN</a>
+                    <li><a href="https://tenon.io/" target="_blank">Verificador de Acessibilidade Tenon.io</a>
+                    <li><a href="https://developer.paciellogroup.com/resources/contrastanalyser/" target="_blank">Analisador de Contraste de Cor (CCA)</a>
+                    <li><a href="https://github.com/squizlabs/HTML_CodeSniffer" target="_blank">Bookmarklet “HTML Codesniffer” para Identificar Problemas de Acessibilidade</a>
+                    <li><a href="https://accessibilityinsights.io/" target="_blank">Insights de Acessibilidade da Microsoft</a>
+                    <li><a href="https://www.deque.com/axe/" target="_blank">Ferramentas de Teste Deque Axe</a>
+                </ul>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>

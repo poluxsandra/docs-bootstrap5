@@ -1,4 +1,13 @@
 {
+  "name": "docs-bootstrap5",
+  "version": "0.2.0",
+  "description": "Documentação Traduzida do Bootstrap 5.0",
+  "main": "index.js",
+  "repository": "git@github.com:poluxsandra/docs-bootstrap5.git",
+  "author": "Sandra Martini <sandrinhaamartini@gmail.com>",
+  "license": "GNU",
+  "private": false,
+
   "devDependencies": {
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -12,13 +21,12 @@
     "prettier-plugin-properties": "^0.1.0",
     "prettier-stylelint": "^0.4.2"
   },
-  "dependencies": {
 
-  },
   "scripts": {
     "fix-code": "prettier-eslint --write '.{js,jsx}' ",
     "fix-styles": "prettier-stylelint --write '.{css,scss}' ",
     "fix-html1": "prettier-eslint --write '.{html, mhtml}'",
     "fix-html2": "prettier-stylelint --write '.{html, mhtml}'"
   }
+
 }

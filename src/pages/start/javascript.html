@@ -5,15 +5,241 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>JavaScript</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">JavaScript
+                    </h1>
+                </div>
+                <p class="bd-lead">Dê vida ao Bootstrap com nossos plug-ins opcionais de JavaScript. Saiba mais sobre cada plug-in, nossos dados e opções de API programática e muito mais.
+                </p>
+            </div>
+            <div class="bd-content ps-lg-4">
+
+                <h2 class="head2" id="individual-or-compiled">Individual ou Compilado
+                </h2>
+                <p>Plugins podem ser incluídos individualmente (usando o Bootstrap individual <code>js/dist/*.js</code>), ou todos de uma vez usando o <code>bootstrap.js</code> ou na forma minificada <code>bootstrap.min.js</code> (não incluir ambos).
+                </p>
+                <p>Se você usar um bundler (Webpack, Rollup…), poderá usar arquivos <code>/js/dist/*.js</code> que estão prontos para UMD.
+                </p>
+
+                <h2 class="head2" id="using-bootstrap-as-a-module">Usando Bootstrap Como um Módulo
+                </h2>
+                <p>Nós fornecemos uma versão do Bootstrap construído como <code>ESM</code> (<code>bootstrap.esm.js</code> e <code>bootstrap.esm.min.js</code>) que permite que você use o Bootstrap como um módulo em seu navegador, se houver <a href="https://caniuse.com/es6-module" target="_blank">suporte pelo navegador</a>.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">script</span> <span class="na1">type</span><span class="ig1">=</span><span class="vl1">&#34;module&#34;</span><span class="tg1">&gt;</span>
+  <span class="nt1">import</span> <span class="tg1">{</span> <span class="na1">Toast</span> <span class="tg1">}</span> <span class="ig1">from</span> <span class="vl1">&#39;bootstrap.esm.min.js&#39;</span>
+
+  <span class="nt1">Array</span><span class="tg1">.</span><span class="ig1">from</span><span class="tg1">(</span><span class="na1">document</span><span class="tg1">.</span><span class="na1">querySelectorAll</span><span class="tg1">(</span><span class="vl1">&#39;.toast&#39;</span><span class="tg1">))</span>
+    <span class="tg1">.</span><span class="ig1">forEach</span><span class="tg1">(</span><span class="vl1">toastNode</span> <span class="tg1">=&gt;</span> <span class="nt1">new</span> <span class="na1">Toast</span><span class="tg1">(</span><span class="vl1">toastNode</span><span class="tg1">))</span>
+<span class="tg1">&lt;/</span><span class="nt1">script</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+                <div class="bd-callout bd-callout-warning">
+                    <h2 class="head2" id="incompatible-plugins">Plugins Incompatíveis
+                    </h2>
+                    <p>Alguns plugins como Dropdown, Tooltip e Popover não aceitam ser usados dentro de um elemento <code>&lt;script&gt;</code> com o atributo <code>module</code>, porque eles são dependentes do Popper. Para obter mais informações sobre o problema <a href="https://v8.dev/features/modules#specifiers" target="_blank">clique aqui</a>.
+                    </p>
+                </div>
+
+                <h2 class="head2" id="dependencies">Dependências
+                </h2>
+                <p>Alguns plug-ins e componentes CSS dependem de outros plug-ins. Se você incluir plug-ins individualmente, deverá verificar essas dependências nos documentos.
+                </p>
+                <p>Nossos menus suspensos, popovers e dicas de ferramentas também dependem do <a href="https://popper.js.org/" target="_blank">Popper</a>.
+                </p>
+
+                <h2 class="head2" id="still-want-to-use-jquery-its-possible">Ainda deseja usar o jQuery? É possível!
+                </h2>
+                <p>O Bootstrap 5 foi projetado para ser usado sem jQuery, mas ainda é possível usar nossos componentes com jQuery. <strong>Se o Bootstrap detectar <code>jQuery</code> no <code>Window Objeto</code> </strong> ele adicionará todos os nossos componentes no sistema de plug-ins do jQuery; isso significa que você pode fazer <code>$('[data-bs-toggle=&quot;tooltip&quot;]').tooltip()</code> para habilitar as dicas de ferramentas. O mesmo vale para os nossos outros componentes.
+                </p>
+
+                <h2 class="head2" id="data-attributes">Atributos de arquivos
+                </h2>
+                <p>Quase todos os plug-ins do Bootstrap podem ser ativados e configurados apenas por meio de HTML com atributos de dados (nossa forma preferida de <strong>usar a funcionalidade JavaScript). Certifique-se de usar apenas um conjunto de atributos de dados em um único elemento</strong> (por exemplo, você não pode acionar uma dica de ferramenta e modal a partir do mesmo botão).
+                </p>
+
+                <div class="bd-callout bd-callout-warning bg-dark">
+                    <h2 class="head2" id="selectors">Seletores
+                    </h2>
+                    <p class="ger1">Atualmente, para consultar os elementos DOM, competente os métodos nativos  <code>querySelector</code> e <code>querySelectorAll</code> por motivos de desempenho, portanto, você deve usar <a href="https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier" target="_blank">seletores válidos</a>. Se você usar seletores especiais como, por exemplo: <code>collapse:Example</code> certifique-se de escapar deles.
+                    </p>
+                </div>
+
+                <h2 class="head2" id="events">Eventos
+                </h2>
+                <p>Bootstrap fornece eventos personalizados para ações exclusivas na maioria dos plugins. Geralmente, eles são especificados na sua forma infinitiva ou no particípio - onde o infinitivo (ex. <code>show</code>) é acionado no início de um evento, e o particípio (ex. <code>shown</code>) é acionado na conclusão de uma ação.
+                </p>
+                <p>Todos os eventos infinitivos fornecem a funcionalidade <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Event/preventDefault" target="_blank"><code>preventDefault()</code></a>. Isso fornece a capacidade de parar a execução de uma ação antes dela começar. Caso haja retorno falso em um manipulador de eventos, este também chamará automaticamente <code>preventDefault()</code>.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">var</span> <span class="na1">myModal</span> <span class="ig1">=</span> <span class="tg1">document</span><span class="ig1">.</span><span class="na1">getElementById</span><span class="ig1">(</span><span class="vl1">&#39;myModal&#39;</span><span class="ig1">)</span>
+
+<span class="tg1">myModal</span><span class="ig1">.</span><span class="na1">addEventListener</span><span class="ig1">(</span><span class="vl1">&#39;show.bs.modal&#39;</span><span class="ig1">,</span> <span class="nt1">function</span> <span class="ig1">(</span><span class="vl1">event</span><span class="ig1">)</span> <span class="ig1">{</span>
+    <span class="nt1">if</span> <span class="ig1">(</span><span class="ig1">!</span><span class="vl1">data</span><span class="ig1">)</span> <span class="ig1">{</span>
+      <span class="nt1">return</span> <span class="tg1">event</span><span class="ig1">.</span><span class="na1">preventDefault</span><span class="ig1">()</span> <span class="cm1">// impede modal de ser mostrado(shown)
+</span><span class="cm1"></span>  <span class="ig1">}</span>
+<span class="ig1">})</span></code></pre>
+                </div>
+
+                <div class="bd-callout bd-callout-warning bg-dark">
+                    <h2 class="head2" id="jquery-events">Eventos jQuery
+                    </h2>
+                    <p>Bootstrap detectará <code>jQuery</code> se ele estiver no <code>Window Objeto</code> e não houver o atributo <code>data-bs-no-jquery</code> especificado no elemento <code>&lt;body&gt;</code>. Se jQuery for encontrado, Bootstrap emitirá eventos graças ao sistema de eventos do jquery. Então se você quiser colocar eventos em escuta, deverá usar os métodos do jQuery, que são:(<code>.on</code>, <code>.one</code>) em vez do <code>addEventListener</code>.
+                    </p>
+                    <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="ig1">$</span><span class="ig1">(</span><span class="nt1">&#39;#myTab a&#39;</span><span class="ig1">).</span><span class="tg1">on</span><span class="ig1">(</span><span class="vl1">&#39;shown.bs.tab&#39;</span><span class="ig1">,</span> <span class="na1">function</span> <span class="ig1">()</span> <span class="ig1">{</span>
+  <span class="cm1">// do something...
+</span><span class="ig1">})</span></code></pre>
+                    </div>
+                </div>
+
+                <h2 class="head2" id="programmatic-api">API Programática
+                </h2>
+                <p>Todos os construtores aceitam um objeto de opções opcionais ou nada (que inicia um plugin com seu comportamento padrão):
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">var</span> <span class="na1">myModalEl</span> <span class="ig1">=</span> <span class="tg1">document</span><span class="ig1">.</span><span class="na1">getElementById</span><span class="ig1">(</span><span class="vl1">&#39;myModal&#39;</span><span class="ig1">)</span>
+
+<span class="nt1">var</span> <span class="na1">modal</span> <span class="ig1">=</span> <span class="tg1">new</span> <span class="nt1">bootstrap</span><span class="ig1">.</span><span class="na1">Modal</span><span class="ig1">(</span><span class="vl1">myModalEl</span><span class="ig1">)</span> <span class="cm1">// initialized with defaults
+</span><span class="cm2"></span><span class="nt1">var</span> <span class="na1">modal</span> <span class="ig1">=</span> <span class="tg1">new</span> <span class="nt1">bootstrap</span><span class="ig1">.</span><span class="na1">Modal</span><span class="ig1">(</span><span class="vl1">myModalEl</span><span class="ig1">,</span> <span class="ig1">{</span> <span class="vl1">keyboard</span><span class="ig1">:</span> <span class="tg1">false</span> <span class="ig1">})</span> <span class="cm1">// initialized with no keyboard</span></code></pre>
+                </div>
+                <p>Se você gostaria de obter uma instância de plugin particular, cada plugin expõe um método <code>getInstance</code>. Para recuperá-lo diretamente de um elemento, faça o seguinte: <code>bootstrap.Popover.getInstance(myPopoverEl)</code>.
+                </p>
+
+                <h3 class="head3" id="asynchronous-functions-and-transitions">Funções assíncronas e transições
+                </h3>
+                <p>Todos os método da API Programática são <strong>assíncronas</strong> e retorna assim que o chamador inicia a transição, mas <strong> antes que ela termine</strong>.
+                </p>
+                <p>Para executar uma ação após a conclusão da transição, você pode ouvir o evento correspondente.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">var</span> <span class="na1">myCollapseEl</span> <span class="ig1">=</span> <span class="tg1">document</span><span class="ig1">.</span><span class="na1">getElementById</span><span class="ig1">(</span><span class="vl1">&#39;#myCollapse&#39;</span><span class="ig1">)</span>
+
+<span class="tg1">myCollapseEl</span><span class="ig1">.</span><span class="na1">addEventListener</span><span class="ig1">(</span><span class="vl1">&#39;shown.bs.collapse&#39;</span><span class="ig1">,</span> <span class="nt1">function</span> <span class="ig1">(</span><span class="vl1">event</span><span class="ig1">)</span> <span class="ig1">{</span>
+  <span class="cm1">// Ação que é executada quando a área dobrável é expandida
+</span><span class="cm1"></span><span class="ig1">})</span></code></pre>
+                </div>
+                <p>Além disso, uma chamada de método em um <strong>componente de transição será ignorada</strong>.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">var</span> <span class="na1">myCarouselEl</span> <span class="ig1">=</span> <span class="tg1">document</span><span class="ig1">.</span><span class="na1">getElementById</span><span class="ig1">(</span><span class="vl1">&#39;myCarousel&#39;</span><span class="ig1">)</span>
+<span class="nt1">var</span> <span class="na1">carousel</span> <span class="ig1">=</span> <span class="tg1">bootstrap</span><span class="ig1">.</span><span class="na1">Carousel</span><span class="ig1">.</span><span class="na1">getInstance</span><span class="ig1">(</span><span class="vl1">myCarouselEl</span><span class="ig1">)</span> <span class="cm1">// Recuperar uma instância do Carrossel
+</span><span class="c1"></span>
+<span class="tg1">myCarouselEl</span><span class="ig1">.</span><span class="na1">addEventListener</span><span class="ig1">(</span><span class="vl1">&#39;slid.bs.carousel&#39;</span><span class="ig1">,</span> <span class="nt1">function</span> <span class="ig1">(</span><span class="vl1">event</span><span class="ig1">)</span> <span class="ig1">{</span>
+  <span class="na1">carousel</span><span class="ig1">.</span><span class="na1">to</span><span class="ig1">(</span><span class="vl1">&#39;2&#39;</span><span class="ig1">)</span> <span class="cm1">// Deslizará para o slide 2 assim que a transição para slide 1 estiver concluída
+</span><span class="cm"></span><span class="ig1">})</span>
+
+<span class="tg1">carousel</span><span class="ig1">.</span><span class="na1">to</span><span class="ig1">(</span><span class="vl1">&#39;1&#39;</span><span class="ig1">)</span> <span class="cm1">// Vai começar a deslizar para o slide 1 e retorna para o chamador
+</span><span class="c1"></span><span class="tg1">carousel</span><span class="ig1">.</span><span class="na1">to</span><span class="ig1">(</span><span class="vl1">&#39;2&#39;</span><span class="ig1">)</span> <span class="cm1">// !! Será ignorado, pois a transição para o slide 1 não está concluída !!</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="default-settings">Configurações Padrão
+                </h3>
+                <p>Você pode alterar as configurações padrão de um plugin modificando o objeto <code>Constructor.Default</code> do plugin:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="cm1">// alteração da opção "Padrão" plugin Modal do "teclado" para "false"
+</span><span class="cm"></span><span class="nt1">bootstrap</span><span class="ig1">.</span><span class="na1">Modal</span><span class="ig1">.</span><span class="na1">Default</span><span class="ig1">.</span><span class="na1">keyboard</span> <span class="ig1">=</span> <span class="tg1">false</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="no-conflict-only-if-you-use-jquery">Sem Conflito (somente se você usar jQuery)
+                </h2>
+                <p>Às vezes, é necessário usar plug-ins Bootstrap com outras estruturas de IU. Nessas circunstâncias, podem ocorrer ocasionalmente conflitos de namespace. Se isso acontecer, você pode chamar <code>.noConflict</code> no plugin do qual deseja reverter o valor.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">var</span> <span class="tg1">bootstrapButton</span> <span class="ig1">=</span> <span class="ig1">$</span><span class="ig1">.</span><span class="na1">fn</span><span class="ig1">.</span><span class="na1">button</span><span class="ig1">.</span><span class="na1">noConflict</span><span class="ig1">()</span> <span class="cm1">// retorna o valor $.fn.button previamente atribuído
+</span><span class="c1"></span><span class="ig1">$</span><span class="ig1">.</span><span class="tg1">fn</span><span class="ig1">.</span><span class="na1">bootstrapBtn</span> <span class="ig1">=</span> <span class="vl1">bootstrapButton</span> <span class="cm1">// dar ao $().bootstrapBtn a funcionalidade Bootstrap</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="version-numbers">Números das Versões
+                </h2>
+                <p>A versão de cada um dos plug-ins do Bootstrap pode ser acessado por meio da propriedade <code>VERSION</code> do construtor do plugin. Por exemplo para o plugin Utilitários(tooltip):
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="tg1">bootstrap</span><span class="ig1">.</span><span class="na1">Tooltip</span><span class="ig1">.</span><span class="na1">VERSION</span> <span class="cm1">// =&gt; &#34;5.0.0-beta2&#34;</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="no-special-fallbacks-when-javascript-is-disabled">Sem  Fallbacks Especiais quando o JavaScript está desativado
+                </h2>
+                <p>Os plug-ins do Bootstrap não possuem fallbacks quando o JavaScript está desabilitado. Se você se preocupa com a experiência do usuário neste caso, use o elemento <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/noscript" target="_blank"><code>&lt;noscript&gt;</code></a> para explicar a situação (e como reativar o JavaScript) para seus usuários e / ou adicionar seus próprios fallbacks personalizados.
+                </p>
+
+                <div class="bd-callout bd-callout-warning bg-dark">
+                    <h5 class="head4" id="third-party-libraries ">Bibliotecas de Terceiros
+                    </h5>
+                    <p><strong>Bootstrap não suporta oficialmente bibliotecas JavaScript de terceiros</strong> como Prototype ou jQuery UI. Apesar do <code>.noConflict</code> e eventos namespace, pode haver problemas de compatibilidade que você precisa corrigir por conta própria.
+                    </p>
+                </div>
+
+                <h2 class="head2" id="sanitizer">Sanitizador
+                </h2>
+                <p>Utilitários e o Popovers usam nosso sanotizador integrado para limpar opções que aceitam HTML.
+                </p>
+                <p>O valor padrão <code>allowList</code> é o seguinte:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">var</span> <span class="na1">ARIA_ATTRIBUTE_PATTERN</span> <span class="ig1">=</span> <span class="vl1">/^aria-[\w-]*$/i</span>
+<span class="nt1">var</span> <span class="na1">DefaultAllowlist</span> <span class="ig1">=</span> <span class="ig1">{</span>
+  <span class="cm1">// Atributos globais permitidos em qualquer elemento fornecido abaixo.
+</span><span class="c1"></span>  <span class="ig1">&#39;*&#39;</span><span class="ig1">:</span> <span class="ig1">[</span><span class="vl1">&#39;class&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;dir&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;id&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;lang&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;role&#39;</span><span class="ig1">,</span> <span class="vl1">ARIA_ATTRIBUTE_PATTERN</span><span class="ig1">],</span>
+  <span class="tg1">a</span><span class="ig1">:</span> <span class="ig1">[</span><span class="vl1">&#39;target&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;href&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;title&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;rel&#39;</span><span class="ig1">],</span>
+  <span class="tg1">area</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">b</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">br</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">col</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">code</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">div</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">em</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">hr</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">h1</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">h2</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">h3</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">h4</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">h5</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">h6</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">i</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">img</span><span class="ig1">:</span> <span class="ig1">[</span><span class="vl1">&#39;src&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;srcset&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;alt&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;title&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;width&#39;</span><span class="ig1">,</span> <span class="vl1">&#39;height&#39;</span><span class="ig1">],</span>
+  <span class="tg1">li</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">ol</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">p</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">pre</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">s</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">small</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">span</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">sub</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">sup</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">strong</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">u</span><span class="ig1">:</span> <span class="ig1">[],</span>
+  <span class="tg1">ul</span><span class="ig1">:</span> <span class="ig1">[]</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+                <p>Se quiser adicionar novos valores ao padrão <code>allowList</code> você pode fazer o seguinte:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">var</span> <span class="na1">myDefaultAllowList</span> <span class="ig1">=</span> <span class="tg1">bootstrap</span><span class="ig1">.</span><span class="na1">Tooltip</span><span class="ig1">.</span><span class="na1">Default</span><span class="ig1">.</span><span class="na1">allowList</span>
+
+<span class="cm1">// Para permitir elementos de tabela
+</span><span class="c1"></span><span class="tg1">myDefaultAllowList</span><span class="ig1">.</span><span class="na1">table</span> <span class="ig1">=</span> <span class="ig1">[]</span>
+
+<span class="cm1">// Para permitir elementos td e atributos data-bs-option em elementos td
+</span><span class="c1"></span><span class="tg1">myDefaultAllowList</span><span class="ig1">.</span><span class="na1">td</span> <span class="ig1">=</span> <span class="ig1">[</span><span class="vl1">&#39;data-bs-option&#39;</span><span class="ig1">]</span>
+
+<span class="cm1">// Você pode acrescentar com o "push" seu regex personalizado para validar seus atributos.
+</span><span class="cm1">// Tenha cuidado com expressões regulares relaxadas
+</span><span class="c1"></span><span class="nt1">var</span> <span class="na1">myCustomRegex</span> <span class="ig1">=</span> <span class="vl1">/^data-my-app-[\w-]+/</span>
+<span class="tg1">myDefaultAllowList</span><span class="ig1">[</span><span class="vl1">&#39;*&#39;</span><span class="ig1">].</span><span class="nt1">push</span><span class="ig1">(</span><span class="vl1">myCustomRegex</span><span class="ig1">)</span></code></pre>
+                </div>
+                <p>Se você deseja ignorar nosso sanitizador porque prefere usar uma biblioteca dedicada, por exemplo <a href="https://www.npmjs.com/package/dompurify" target="_blank">DOMPurify</a>, faça o seguinte:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">var</span> <span class="na1">yourTooltipEl</span> <span class="ig1">=</span> <span class="tg1">document</span><span class="ig1">.</span><span class="na1">getElementById</span><span class="ig1">(</span><span class="vl1">&#39;yourTooltip&#39;</span><span class="ig1">)</span>
+<span class="nt1">var</span> <span class="na1">tooltip</span> <span class="ig1">=</span> <span class="nt1">new</span> <span class="tg1">bootstrap</span><span class="ig1">.</span><span class="na1">Tooltip</span><span class="ig1">(</span><span class="vl1">yourTooltipEl</span><span class="ig1">,</span> <span class="ig1">{</span>
+  <span class="na1">sanitizeFn</span><span class="ig1">:</span> <span class="nt1">function</span> <span class="ig1">(</span><span class="vl1">content</span><span class="ig1">)</span> <span class="ig1">{</span>
+    <span class="tg1">return</span> <span class="na1">DOMPurify</span><span class="ig1">.</span><span class="na1">sanitize</span><span class="ig1">(</span><span class="vl1">content</span><span class="ig1">)</span>
+  <span class="ig1">}</span>
+<span class="ig1">})</span></code></pre>
+                </div>
+            </div>
+        </main>
+
+    </div> 
 
 </body>
 </html>
