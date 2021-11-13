@@ -91,3 +91,14 @@ strong {
         color:#000;
 }
 
+.linktable {
+        color: #f00;
+
+}
+
+.linktable:hover {
+        color:#0f0;
+        text-decoration-color: #f00;
+        text-decoration-style: solid;
+        text-decoration-line: underline;
+}
