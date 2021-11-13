@@ -388,12 +388,12 @@
                     <div class="container bg-dark">
                         <div class="row">
                             <div class="col order-last bg-success">
-        Primeira no DOM, ordenado para última
+        Primeira no DOM, ordenada para última
                             </div>
-                            <div class="col">
+                            <div class="col bg-danger">
         Segunda no DOM, sem ordem aplicada
                             </div>
-                            <div class="col order-first bg-danger">
+                            <div class="col order-first bg-success">
         Terceira no DOM, ordenada para primeira
                             </div>
                         </div>
@@ -533,12 +533,12 @@
                 </h2>
                 <p>As classes <code>.col-*</code> também podem ser usadas fora de uma <code>.row</code> para dar a um elemento uma largura específica. Sempre que classes de coluna são usadas como filhos não diretos de uma row(linha), os preenchimentos são omitidos.
                 </p>
-                <div class="bd-example">
-                    <div class="col-3 bg-light p-3 border colun">
-    .col-3: largura de 25%
+                <div class="bd-callout bd-callout-warning">
+                    <div class="col-3 bg-success p-3 border colun">
+    <span class="cm1">.col-3: largura de 25%</span>
                     </div>
-                    <div class="col-sm-9 bg-light p-3 border colun">
-    .col-sm-9: largura de 75% acima do breakpoint sm
+                    <div class="col-sm-9 bg-danger p-3 border colun">
+    <span class="cm1">.col-sm-9: largura de 75% acima do breakpoint sm</span>
                     </div>
                 </div>
                 <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;col-3 bg-light p-3 border&#34;</span><span class="tg1">&gt;</span>
