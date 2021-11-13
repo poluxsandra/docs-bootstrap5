@@ -5,15 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>Opções</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Opções
+                    </h1>
+                </div>
+                <p class="bd-lead">Personalize rapidamente o Bootstrap com variáveis integradas para alternar facilmente as preferências CSS globais para controlar o estilo e o comportamento.
+                </p>
+            </div>
+
+            <div class="bd-content ps-lg-4">
+                <p>Personalize o Bootstrap com nosso arquivo de variáveis ​​personalizadas integrado e alterne facilmente as preferências globais de CSS com as novas variáveis Sass <code>$enable-*</code>. Substitua o valor de uma variável e recompile com o comando <code>npm run test</code> conforme necessário.
+                </p>
+
+                <p>Você pode localizar e personalizar essas variáveis ​​para as principais opções globais no arquivo <code>scss/_variables.scss</code> do Bootstrap.
+                </p>
+
+                <table class="table text-start">
+                    <thead>
+                        <tr class="na1">
+                            <th>Variáveis
+                            <th>Valores
+                            <th>Descrição
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>$spacer</code>
+                            <td class="cm1"><code>1rem</code> (padrão), ou qualquer valor &gt; 0
+                            <td class="cm1">Especifica o valor padrão do espaçador para gerar programaticamente nossos <a href="../util/space.html">utilitários de espaçamento</a>.
+                        </tr>
+                        <tr>
+                            <td><code>$enable-rounded</code>
+                            <td class="cm1"><code>true</code> (padrão) ou <code>false</code>
+                            <td class="cm1">Ativa os estilos predefinidos por <code>border-radius</code> em vários componentes.
+                        </tr>
+                        <tr>
+                            <td><code>$enable-shadows</code>
+                            <td class="cm1"><code>true</code> ou <code>false</code> (padrão)
+                            <td class="cm1">Ativa os estilos decorativos predefinidos por <code>box-shadow</code> em vários componentes. Não afeta os <code>box-shadow</code>&#39;s usados em estados de foco.
+                        </tr>
+                        <tr>
+                            <td><code>$enable-gradients</code>
+                            <td class="cm1"><code>true</code> ou <code>false</code> (padrão
+                            <td class="cm1">Ativa os estilos de gradiente predefinidos por meio do <code>background-image</code> em vários componentes.
+                        </tr>
+                        <tr>
+                            <td><code>$enable-transitions</code>
+                            <td class="cm1"><code>true</code> (padrão) ou <code>false</code>
+                            <td class="cm1">Ativa as predefinições por meio dos <code>transition</code>&#39;s em vários componentes.
+                        </tr>
+                        <tr>
+                            <td><code>$enable-reduced-motion</code>
+                            <td class="cm1"><code>true</code> (padrão) ou <code>false</code>
+                            <td class="cm1">Ativa a consulta de mídia de <a href="../start/acess.html#reduced-motion"><code>prefers-reduced-motion</code></a>, que suprime certas animações/transições com base nas preferências do navegador/sistema operacional dos usuários.</td>
+                        </tr>
+                        <tr>
+                            <td><code>$enable-grid-classes</code>
+                            <td class="cm1"><code>true</code> (padrão) ou <code>false</code>
+                            <td class="cm1">Permite a geração de classes CSS para o sistema de grade (por exemplo <code>.row</code>, <code>.col-md-1</code>, etc.).
+                        </tr>
+                        <tr>
+                            <td><code>$enable-caret</code>
+                            <td class="cm1"><code>true</code> (padrão) ou <code>false</code>
+                            <td class="cm1">Ativa o acento circunflexo do pseudoelemento <code>.dropdown-toggle</code>.
+                        </tr>
+                        <tr>
+                            <td><code>$enable-button-pointers</code>
+                            <td class="cm1"><code>true</code> (padrão) ou <code>false</code>
+                            <td class="cm1">Adicione o cursor de &ldquo;mão&rdquo; a elementos de botão não desabilitados.
+                        </tr>
+                        <tr>
+                            <td><code>$enable-rfs</code>
+                            <td class="cm1"><code>true</code> (padrão) ou <code>false</code>
+                            <td class="cm1">Ativa globalmente o <a href="../start/rfs.html">RFS</a>.
+                        </tr>
+                        <tr>
+                            <td><code>$enable-validation-icons</code>
+                            <td class="cm1"><code>true</code> (padrão) ou <code>false</code>
+                            <td class="cm1">Ativa ícones por meio de <code>background-image</code> em entradas textuais e alguns formulários personalizados para estados de validação.
+                        </tr>
+                        <tr>
+                            <td><code>$enable-negative-margins</code>
+                            <td class="cm1"><code>true</code> ou <code>false</code> (padrão)
+                            <td class="cm1">Ativa a geração do <a href="../util/space.html#negative-margin">utilitário de margem negativa</a>.
+                        </tr>
+                        <tr>
+                            <td><code>$enable-deprecation-messages</code>
+                            <td class="cm1"><code>true</code> (padrão) ou <code>false</code>
+                            <td class="cm1">Defina como <code>false</code> para ocultar avisos ao usar qualquer um dos mixins e funções obsoletos que estão planejados para serem removidos na <code>v6</code>.
+                        </tr>
+                        <tr>
+                            <td><code>$enable-important-utilities</code>
+                            <td class="cm1"><code>true</code> (padrão) ou <code>false</code>
+                            <td class="cm1">Ativa o sufixo <code>!important</code> nas classes de utilitários.
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>
