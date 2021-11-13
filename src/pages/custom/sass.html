@@ -6,14 +6,285 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../docs.css">
-    <title>Sass</title>
+    <title>SASS</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Sass
+                    </h1>
+                </div>
+                <p class="bd-lead">Utilize nossos arquivos-fonte Sass para aproveitar variáveis, mapas, mixins e funções para ajudá-lo a construir aplicações mais rápido e personalizar seu projeto.
+                </p>
+            </div>
+
+            <div class="bd-content ps-lg-4">
+                <p>Utilize nossos arquivos-fonte Sass para utilizar as vantagens de variáveis, mapas, mixins e muito mais.
+                </p>
+
+                <h2 class="head2" id="file-structure">Estrutura de Arquivos
+                </h2>
+                <p>Sempre que possível, evite modificar os arquivos principais do Bootstrap. Para o Sass, isso significa criar sua própria folha de estilo que importa o Bootstrap para que você possa modificar e estendê-lo. Supondo que você está usando um gerenciador de pacotes como o npm, você terá uma estrutura de arquivo semelhante a esta:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-text " data-lang="text"><span class="ger1">seu-projeto/
+├── scss
+│   └── custom.scss
+└── node_modules/
+    └── bootstrap
+        ├── js
+        └── scss</span></code></pre>
+                </div>
+                <p>Se você baixou nossos arquivos-fonte e não está usando um gerenciador de pacotes, você vai querer configurar a folha de estilo manualmente, então o sistema de arquivos teria uma estrutura semelhante a abaixo, mantendo os arquivos-fonte do Bootstrap separados dos seus.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ger1">seu-projeto/
+├── scss
+│   └── custom.scss
+└── bootstrap/
+    ├── js
+    └── scss</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="importing">Importando
+                </h2>
+                <p>Em seu <code>custom.scss</code>, você importará os arquivos-fontes Sass do Bootstrap. Você tem duas opções: incluir todo o Bootstrap ou escolher as partes de que precisa. Nós encorajamos o último, embora exista alguns requisitos e dependências em nossos componentes. Você também poderá incluir algum JavaScript em nosso plugin.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Custom.scss
+</span><span class="cm1">// Opção A: Incluir todo o Bootstrap
+</span><span class="c1"></span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/bootstrap&#34;</span><span class="ig1">;</span>
+
+<span class="cm1">// Adicione seu código personalizado aqui
+</span></code></pre>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Custom.scss
+</span><span class="cm1">// Opção B: Incluir partes do Bootstrap
+</span><span class="c1"></span>
+<span class="cm1">// Requirido
+</span><span class="c1"></span><span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/functions&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/variables&#34;</span><span class="ig2">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/mixins&#34;</span><span class="ig1">;</span>
+
+<span class="cm1">// Inclua substituições ao padrão de variáveis personalizadas aqui
+</span><span class="c1"></span>
+<span class="cm1">// Opcional
+</span><span class="c1"></span><span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/root&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/reboot&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/type&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/images&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/containers&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/grid&#34;</span><span class="ig1">;</span></code></pre>
+                </div>
+                <p>Com essa configuração, você pode começar a modificar qualquer uma das variáveis e mapas Sass em seu <code>custom.scss</code>. Você também pode começar a adicionar partes do Bootstrap na seção <code>//Opcional</code> conforme necessário. Nós sugerimos a pilha de importação completa através do nosso arquivo <code>bootstrap.scss</code> como ponto de partida.
+                </p>
+
+                <h2 class="head2" id="variable-defaults">Variáveis Padrões
+                </h2>
+                <p>Cada variável Sass no Bootstrap inclui o sinalizador <code>!default</code> sinalizador, permitindo que você substitua o valor da variável em seu próprio Sass sem modificar o código-fonte do Bootstrap. Copie e cole variáveis conforme necessário, modifique seus valores e remova o sinalizador <code>!default</code>. Se um valor já foi atribuído a uma variável, ele não será reatribuído a uma variável pelos valores padrão no Bootstrap.
+                </p>
+                <p>Você encontrará uma lista completa das variáveis do Bootstrap no arquivo <code>scss/_variables.scss</code>. Algumas variáveis possui <code>null</code> como valor, essas variáveis não geram nenhuma propriedade a menos que sejam substituídas em sua configuração.
+                </p>
+                <p>Substituições de variáveis devem vir após nossas funções, variáveis e mixins serem importados, mas antes do resto das importações.
+                </p>
+                <p>Aqui está um exemplo que altera as propriedades <code>background-color</code> e <code>color</code> do elemento <code>&lt;body&gt;</code> quano se  importa e compila o Bootstrap via npm:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Requirido
+</span><span class="c1"></span><span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/functions&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/variables&#34;</span><span class="ig1">;</span>
+<span class="nt">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/mixins&#34;</span><span class="ig1">;</span>
+
+<span class="cm1">// Sua variável substitui a padrão
+</span><span class="na1"></span><span class="na1">$body-bg</span><span class="ig1">:</span> <span class="vl1">#000</span><span class="ig1">;</span>
+<span class="na1">$body-color</span><span class="ig1">:</span> <span class="vl1">#111</span><span class="ig1">;</span>
+
+<span class="cm1">// Bootstrap e suas variáveis padrão
+</span><span class="c1"></span>
+<span class="cm1">// Opcional
+</span><span class="c1"></span><span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/root&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/reboot&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/type&#34;</span><span class="ig1">;</span>
+<span class="cm1">// etc</span></code></pre>
+                </div>
+                <p>Repita conforme necessário para qualquer variável no Bootstrap, incluindo as opções globais abaixo.
+                </p>
+                <div class="bd-callout bd-callout-info bg-dark"><strong>Comece com Bootstrap via npm com nosso projeto inicial!</strong> Vá para o repositório de modelos <a href="https://github.com/twbs/bootstrap-npm-starter">twbs/bootstrap-npm-starter</a> para ver como construir e personalizar bootstrap em seu próprio projeto npm. Inclui compilador Sass, Autoprefixador, Stylelint, PurgeCSS, e Ícones do Bootstrap.
+                </div>
+
+                <h2 class="head2" id="maps-and-loops">Mapas e Loops
+                </h2>
+                <p>O Bootstrap inclui um punhado de mapas Sass, pares de valores-chave que tornam mais fácil gerar famílias de CSS relacionadas. Usamos mapas Sass para nossos núcleos, pontos de interrupção de grau e muito mais. Assim como as variáveis Sass, todos os mapas Sass incluem um sinalizador <code>!default</code> e podem ser substituídos e estendidos.
+                </p>
+                <p>Alguns de nossos mapas Sass são fundidos com mapas vazios por padrão. Isso é feito para permitir a fácil expansão de um determinado mapa Sass, mas <em>remover</em> itens de um mapa fica um pouco mais difícil.
+                </p>
+
+                <h3 class="head3" id="modify-map">Modificar Mapas
+                </h3>
+                <p>Todos as variáveis do mapa <code>$theme-colors</code> são definidas como variáveis independentes. Para modificar uma cor existente em nosso mapa <code>$theme-colors</code>, no seu arquivo Sass personalizado, adicione o seguinte:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">$primary</span><span class="ig1">:</span> <span class="vl1">#0074d9</span><span class="ig1">;</span>
+<span class="nt1">$danger</span><span class="ig1">:</span> <span class="vl1">#ff4136</span><span class="ig1">;</span></code></pre>
+                </div>
+                <p>Posteriormente, essas variáveis são definidas no mapa <code>$theme-colors</code> do Bootstrap:
+                </p>
+<div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">$theme-colors</span><span class="ig1">:</span> <span class="ig1">(</span>
+  <span class="na1">&#34;primary&#34;</span><span class="ig1">:</span> <span class="vl1">$primary</span><span class="ig1">,</span>
+  <span class="na1">&#34;danger&#34;</span><span class="ig1">:</span> <span class="vl1">$danger</span>
+<span class="ig1">);</span>
+</code></pre>
+                </div>
+
+                <h3 class="head3" id="add-to-map">Adicionar ao Mapa
+                </h3>
+                <p>Adicione novas cores ao <code>$theme-colors</code>, ou qualquer outro mapa, criando um novo mapa Sass com seus valores personalizados e mesclando-o com o mapa original. Nesse caso, criaremos um novo mapa chamado de <code>$custom-colors</code> e mesclamos com o mapa <code>$theme-colors</code>.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Criação do seu próprio mapa
+</span><span class="c1"></span><span class="nt1">$custom-colors</span><span class="ig1">:</span> <span class="ig1">(</span>
+  <span class="na1">&#34;custom-color&#34;</span><span class="ig1">:</span> <span class="vl1">#900</span>
+<span class="ig1">);</span>
+
+<span class="cm1">// Mesclando os mapas
+</span><span class="c1"></span><span class="nt1">$theme-colors</span><span class="ig1">:</span> <span class="na1">map-merge</span><span class="ig1">(</span><span class="vl1">$theme-colors</span><span class="ig1">,</span> <span class="vl1">$custom-colors</span><span class="ig1">);</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="remove-from-map">Removendo do Mapa
+                </h3>
+                <p>Para remover cores do mapa <code>$theme-colors</code>, ou qualquer outro mapa, use o <code>map-remove</code>. Esteja ciente de que você deve inseri-lo entre os recursos requiridos e os opcionais: 
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Requiridos
+</span><span class="c1"></span><span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/functions&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/variables&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/mixins&#34;</span><span class="ig1">;</span>
+
+<span class="nt1">$theme-colors</span><span class="ig1">:</span> <span class="na1">map-remove</span><span class="ig1">(</span><span class="vl1">$theme-colors</span><span class="ig1">,</span> <span class="vl1">&#34;info&#34;</span><span class="ig1">,</span> <span class="vl1">&#34;light&#34;</span><span class="ig1">,</span> <span class="vl1">&#34;dark&#34;</span><span class="ig1">);</span>
+
+<span class="cm1">// Opcional
+</span><span class="c1"></span><span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/root&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/reboot&#34;</span><span class="ig1">;</span>
+<span class="nt1">@import</span> <span class="vl1">&#34;../node_modules/bootstrap/scss/type&#34;</span><span class="ig1">;</span>
+<span class="cm1">// etc</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="required-keys">Chaves Requiridas
+                </h2>
+                <p>O Bootstrap assume a presença de algumas chaves específicas dentro dos mapas Sass que é usada e extendida pela própria equipe do Bootstrap. À medida que você personaliza os mapas incluídos, você pode encontrar erros onde essas chaves está sendo usada em um mapa Sass específico.
+                </p>
+                <p>Por exemplo, nós usamos as chaves<code>primary</code>, <code>success</code>, e <code>danger</code> do mapa <code>$theme-colors</code> para links, botões, e estados de formulário. Substituir os valores dessas chaves não deve apresentar problemas, mas removê-los pode causar problemas de compilação do Sass. Nestes casos, você precisará modificar o código Sass que faz uso desses valores.
+                </p>
+
+                <h2 class="head2" id="functions">Funções
+                </h2>
+
+                <h3 class="head3" id="colors">Cores
+                </h3>
+                <p>Ao lado do <a href="cor.html#color-sass-maps">Mapas Sass</a> nós temos, cores temáticas também que podem ser usadas como variáveis autônomas, como <code>$primary</code>.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">.custom-element</span> <span class="ig1">{</span>
+  <span class="na1">color</span><span class="ig1">:</span> <span class="ig1">$</span><span class="vl1">gray-100</span><span class="ig1">;</span>
+  <span class="na1">background-color</span><span class="ig1">:</span> <span class="ig1">$</span><span class="vl1">dark</span><span class="ig1">;</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+                <p>Você pode clarear ou escurecer cores com Bootstrap usando as funções <code>tint-color()</code> e <code>shade-color()</code>. Essas funções misturarão cores com preto ou branco, ao contrário das funções nativas do Sass (<code>lighten()</code> e <code>darken()</code>) que iriam alterar a luminosidade em um valor fixo, o que muitas vezes não leva ao efeito desejado.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Matizar uma cor: misturar uma cor com branco
+</span><span class="c1"></span><span class="nt1">@function</span> <span class="tg1">tint-color</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">color</span><span class="ig1">,</span> <span class="ig1">$</span><span class="vl1">weight</span><span class="ig1">)</span> <span class="ig1">{</span>
+  <span class="nt1">@return</span> <span class="tg1">mix</span><span class="ig1">(</span><span class="na1">white</span><span class="ig1">,</span> <span class="ig1">$</span><span class="vl1">color</span><span class="ig1">,</span> <span class="ig1">$</span><span class="vl1">weight</span><span class="ig1">)</span><span class="ig1">;</span>
+<span class="ig1">}</span>
+
+<span class="cm1">// Sombrear uma cor: misture uma cor com preto
+</span><span class="c1"></span><span class="nt1">@function</span> <span class="tg1">shade-color</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">color</span><span class="ig1">,</span> <span class="ig1">$</span><span class="vl1">weight</span><span class="ig1">)</span> <span class="ig1">{</span>
+  <span class="nt1">@return</span> <span class="tg1">mix</span><span class="ig1">(</span><span class="na1">black</span><span class="ig1">,</span> <span class="ig1">$</span><span class="vl1">color</span><span class="ig1">,</span> <span class="ig1">$</span><span class="vl1">weight</span><span class="ig1">)</span><span class="ig1">;</span>
+<span class="ig1">}</span>
+
+<span class="cm1">// Sombrear a cor se o weight for positivo, senão matiza-lo
+</span><span class="c1"></span><span class="nt1">@function</span> <span class="tg1">shift-color</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">color</span><span class="ig1">,</span> <span class="ig1">$</span><span class="vl1">weight</span><span class="ig1">)</span> <span class="ig1">{</span>
+  <span class="nt1">@return</span> <span class="tg1">if</span><span class="ig1">(</span><span class="ig1">$</span><span class="na1">weight</span> <span class="ig1">&gt;</span> <span class="vl1">0</span><span class="ig1">,</span> <span class="doc1">shade-color</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">color</span><span class="ig1">,</span> <span class="ig1">$</span><span class="vl1">weight</span><span class="ig1">),</span> <span class="doc1">tint-color</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">color</span><span class="ig1">,</span> <span class="ig1">-</span><span class="ig1">$</span><span class="vl1">weight</span><span class="ig1">))</span><span class="ig1">;</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+                <p>Na prática, você chama a função e passa os parâmetros de cor e weight.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">.custom-element</span> <span class="ig1">{</span>
+  <span class="tg1">color</span><span class="ig1">:</span> <span class="na1">tint-color</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">primary</span><span class="ig1">,</span> <span class="vl1">10</span><span class="nt1">%</span><span class="ig1">)</span><span class="ig1">;</span>
+<span class="ig1">}</span>
+
+<span class="nt1">.custom-element-2</span> <span class="ig1">{</span>
+  <span class="tg1">color</span><span class="ig1">:</span> <span class="na1">shade-color</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">danger</span><span class="ig1">,</span> <span class="vl1">30</span><span class="nt1">%</span><span class="ig1">)</span><span class="ig1">;</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="color-contrast">Contraste de Cor
+                </h3>
+                <p>A fim de atender os <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html"> Padrões de Acessibilidade de Contraste de Cor do WCAG 2.0</a>, autores <strong>devem</strong> providenciar <a href="https://www.w3.org/WAI/WCAG20/quickref/20160105/Overview.php#visual-audio-contrast-contrast">uma relação de contraste de pelo menos de 4,5:1</a>, com poucas exceções.
+                </p>
+                <p>Uma função adicional que incluímos no Bootstrap é a função de contraste de cores, <code>color-contrast</code>. Ele utiliza o algoritmo <a href="https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests">WCAG 2.0</a> para calcular limites de contraste com base em <a href="https://www.w3.org/WAI/GL/wiki/Relative_luminance">luminância relativa</a> em um espaço de cor <code>sRGB</code> para retornar automaticamente uma cor de contraste claro (<code>#fff</code>), escuro (<code>#212529</code>) ou preto (<code>#000</code>) baseado na cor especificada. Esta função é especialmente útil para mixins ou loops onde você está gerando várias classes.
+                </p>
+                <p>Por exemplo, para gerar amostras de cores a partir do nosso mapa <code>$theme-colors</code>:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">@each</span> <span class="ig1">$</span><span class="vl1">color</span><span class="ig1">,</span> <span class="ig1">$</span><span class="vl1">value</span> <span class="tg1">in</span> <span class="ig1">$</span><span class="doc1">theme-colors</span> <span class="ig1">{</span>
+  <span class="na1">.swatch-</span><span class="ig1">#{</span><span class="vl1">$color</span><span class="ig1">}</span> <span class="ig1">{</span>
+    <span class="tg1">color</span><span class="ig1">:</span> <span class="na1">color-contrast</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">value</span><span class="ig1">)</span><span class="ig1">;</span>
+  <span class="ig1">}</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+                <p>Também pode ser usado para necessidades únicas de contraste:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">.custom-element</span> <span class="ig1">{</span>
+  <span class="tg1">color</span><span class="ig1">:</span> <span class="na1">color-contrast</span><span class="ig1">(</span><span class="vl1">#000</span><span class="ig">)</span><span class="ig1">;</span> <span class="cm1">// retorna "color: #fff"
+</span><span class="c1"></span><span class="ig1">}</span></code></pre>
+                </div>
+                <p>Você também pode especificar uma cor de base com nossas funções de mapa de cores:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">.custom-element</span> <span class="ig1">{</span>
+  <span class="tg1">color</span><span class="ig1">:</span> <span class="na1">color-contrast</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">dark</span><span class="ig1">)</span><span class="ig1">;</span> <span class="cm1">// retorna "color: #fff"
+</span><span class="c1"></span><span class="ig1">}</span></code></pre>
+                </div>
+
+                <h3 class="head3" id="escape-svg">Escape SVG
+                </h3>
+                <p>Nós usamos a função <code>escape-svg</code> para escapar os caracteres <code>&lt;</code>, <code>&gt;</code> e <code>#</code> para planos de fundo de imagens SVG. Quando se usa a função <code>escape-svg</code>, os URIs de dados devem ser citados.
+                </p>
+
+                <h3 class="head3" id="add-and-subtract-functions">Funções de Adicionar e Subtrair
+                </h3>
+                <p>Nós usamos as funções <code>add</code> e <code>subtract</code> para empacotar a função <code>calc</code> no CSS. O objetivo principal dessas funções é evitar erros quando um valor <code>0</code> "sem unidade" é passado dentro de uma expressão no <code>calc</code>. Expressões como <code>calc(10px - 0)</code> retornará erro em todos os navegadores, apesar de ser matematicamente correto.
+                </p>
+                <p>Exemplo de onde o calc é válido:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">$border-radius</span><span class="ig1">:</span> <span class="vl1">.25</span><span class="doc1">rem</span><span class="ig1">;</span>
+<span class="nt1">$border-width</span><span class="ig1">:</span> <span class="vl1">1</span><span class="doc1">px</span><span class="ig1">;</span>
+
+<span class="nt1">.element</span> <span class="ig1">{</span>
+  <span class="cm1">// A saída calc (.25rem - 1px) é válida
+</span><span class="c1"></span>  <span class="na1">border-radius</span><span class="ig1">:</span> <span class="tg1">calc</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">border-radius</span> <span class="ig1">-</span> <span class="ig1">$</span><span class="vl1">border-width</span><span class="ig1">)</span><span class="ig1">;</span>
+<span class="ig1">}</span>
+
+<span class="nt1">.element</span> <span class="ig1">{</span>
+  <span class="cm1">// Retorna o mesmo calc (.25rem - 1px) como acima
+</span><span class="c1"></span>  <span class="na1">border-radius</span><span class="ig1">:</span> <span class="tg1">subtract</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">border-radius</span><span class="ig1">,</span> <span class="ig1">$</span><span class="vl1">border-width</span><span class="ig1">)</span><span class="ig1">;</span>
+<span class="ig">}</span></code></pre>
+                </div>
+                <p>Exemplo de quando o calc é inválido:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">$border-radius</span><span class="ig1">:</span> <span class="vl1">.25</span><span class="doc1">rem</span><span class="ig1">;</span>
+<span class="nt1">$border-width</span><span class="ig1">:</span> <span class="vl1">0</span><span class="ig1">;</span>
+
+<span class="nt1">.element</span> <span class="ig1">{</span>
+  <span class="cm1">// A saída calc (.25rem - 0) é inválida
+</span><span class="c1"></span>  <span class="na1">border-radius</span><span class="ig1">:</span> <span class="tg1">calc</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">border-radius</span> <span class="ig1">-</span> <span class="ig1">$</span><span class="vl1">border-width</span><span class="ig1">)</span><span class="ig1">;</span>
+<span class="ig1">}</span>
+
+<span class="nt1">.element</span> <span class="ig1">{</span>
+  <span class="cm1">// Saída .25rem
+</span><span class="c1"></span>  <span class="na1">border-radius</span><span class="ig1">:</span> <span class="tg1">subtract</span><span class="ig1">(</span><span class="ig1">$</span><span class="vl1">border-radius</span><span class="ig1">,</span> <span class="ig1">$</span><span class="vl1">border-width</span><span class="ig1">)</span><span class="ig1">;</span>
+<span class="ig1">}</span></code></pre>
+                </div>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>
