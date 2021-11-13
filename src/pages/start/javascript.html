@@ -33,7 +33,7 @@
 
                 <h2 class="head2" id="using-bootstrap-as-a-module">Usando Bootstrap Como um Módulo
                 </h2>
-                <p>Nós fornecemos uma versão do Bootstrap construído como <code>ESM</code> (<code>bootstrap.esm.js</code> e <code>bootstrap.esm.min.js</code>) que permite que você use o Bootstrap como um módulo em seu navegador, se houver <a href="https://caniuse.com/es6-module">suporte pelo navegador</a>.
+                <p>Nós fornecemos uma versão do Bootstrap construído como <code>ESM</code> (<code>bootstrap.esm.js</code> e <code>bootstrap.esm.min.js</code>) que permite que você use o Bootstrap como um módulo em seu navegador, se houver <a href="https://caniuse.com/es6-module" target="_blank">suporte pelo navegador</a>.
                 </p>
                 <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">script</span> <span class="na1">type</span><span class="ig1">=</span><span class="vl1">&#34;module&#34;</span><span class="tg1">&gt;</span>
   <span class="nt1">import</span> <span class="tg1">{</span> <span class="na1">Toast</span> <span class="tg1">}</span> <span class="ig1">from</span> <span class="vl1">&#39;bootstrap.esm.min.js&#39;</span>
@@ -45,7 +45,7 @@
                 <div class="bd-callout bd-callout-warning">
                     <h2 class="head2" id="incompatible-plugins">Plugins Incompatíveis
                     </h2>
-                    <p>Alguns plugins como Dropdown, Tooltip e Popover não aceitam ser usados dentro de um elemento <code>&lt;script&gt;</code> com o atributo <code>module</code>, porque eles são dependentes do Popper. Para obter mais informações sobre o problema <a href="https://v8.dev/features/modules#specifiers">clique aqui</a>.
+                    <p>Alguns plugins como Dropdown, Tooltip e Popover não aceitam ser usados dentro de um elemento <code>&lt;script&gt;</code> com o atributo <code>module</code>, porque eles são dependentes do Popper. Para obter mais informações sobre o problema <a href="https://v8.dev/features/modules#specifiers" target="_blank">clique aqui</a>.
                     </p>
                 </div>
 
@@ -53,7 +53,7 @@
                 </h2>
                 <p>Alguns plug-ins e componentes CSS dependem de outros plug-ins. Se você incluir plug-ins individualmente, deverá verificar essas dependências nos documentos.
                 </p>
-                <p>Nossos menus suspensos, popovers e dicas de ferramentas também dependem do <a href="https://popper.js.org/">Popper</a>.
+                <p>Nossos menus suspensos, popovers e dicas de ferramentas também dependem do <a href="https://popper.js.org/" target="_blank">Popper</a>.
                 </p>
 
                 <h2 class="head2" id="still-want-to-use-jquery-its-possible">Ainda deseja usar o jQuery? É possível!
@@ -69,7 +69,7 @@
                 <div class="bd-callout bd-callout-warning bg-dark">
                     <h2 class="head2" id="selectors">Seletores
                     </h2>
-                    <p class="ger1">Atualmente, para consultar os elementos DOM, competente os métodos nativos  <code>querySelector</code> e <code>querySelectorAll</code> por motivos de desempenho, portanto, você deve usar <a href="https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">seletores válidos</a>. Se você usar seletores especiais como, por exemplo: <code>collapse:Example</code> certifique-se de escapar deles.
+                    <p class="ger1">Atualmente, para consultar os elementos DOM, competente os métodos nativos  <code>querySelector</code> e <code>querySelectorAll</code> por motivos de desempenho, portanto, você deve usar <a href="https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier" target="_blank">seletores válidos</a>. Se você usar seletores especiais como, por exemplo: <code>collapse:Example</code> certifique-se de escapar deles.
                     </p>
                 </div>
 
@@ -77,7 +77,7 @@
                 </h2>
                 <p>Bootstrap fornece eventos personalizados para ações exclusivas na maioria dos plugins. Geralmente, eles são especificados na sua forma infinitiva ou no particípio - onde o infinitivo (ex. <code>show</code>) é acionado no início de um evento, e o particípio (ex. <code>shown</code>) é acionado na conclusão de uma ação.
                 </p>
-                <p>Todos os eventos infinitivos fornecem a funcionalidade <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault"><code>preventDefault()</code></a>. Isso fornece a capacidade de parar a execução de uma ação antes dela começar. Caso haja retorno falso em um manipulador de eventos, este também chamará automaticamente <code>preventDefault()</code>.
+                <p>Todos os eventos infinitivos fornecem a funcionalidade <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Event/preventDefault" target="_blank"><code>preventDefault()</code></a>. Isso fornece a capacidade de parar a execução de uma ação antes dela começar. Caso haja retorno falso em um manipulador de eventos, este também chamará automaticamente <code>preventDefault()</code>.
                 </p>
                 <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">var</span> <span class="na1">myModal</span> <span class="ig1">=</span> <span class="tg1">document</span><span class="ig1">.</span><span class="na1">getElementById</span><span class="ig1">(</span><span class="vl1">&#39;myModal&#39;</span><span class="ig1">)</span>
 
@@ -161,7 +161,7 @@
 
                 <h2 class="head2" id="no-special-fallbacks-when-javascript-is-disabled">Sem  Fallbacks Especiais quando o JavaScript está desativado
                 </h2>
-                <p>Os plug-ins do Bootstrap não possuem fallbacks quando o JavaScript está desabilitado. Se você se preocupa com a experiência do usuário neste caso, use o elemento <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript"><code>&lt;noscript&gt;</code></a> para explicar a situação (e como reativar o JavaScript) para seus usuários e / ou adicionar seus próprios fallbacks personalizados.
+                <p>Os plug-ins do Bootstrap não possuem fallbacks quando o JavaScript está desabilitado. Se você se preocupa com a experiência do usuário neste caso, use o elemento <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/noscript" target="_blank"><code>&lt;noscript&gt;</code></a> para explicar a situação (e como reativar o JavaScript) para seus usuários e / ou adicionar seus próprios fallbacks personalizados.
                 </p>
 
                 <div class="bd-callout bd-callout-warning bg-dark">
@@ -227,7 +227,7 @@
 </span><span class="c1"></span><span class="nt1">var</span> <span class="na1">myCustomRegex</span> <span class="ig1">=</span> <span class="vl1">/^data-my-app-[\w-]+/</span>
 <span class="tg1">myDefaultAllowList</span><span class="ig1">[</span><span class="vl1">&#39;*&#39;</span><span class="ig1">].</span><span class="nt1">push</span><span class="ig1">(</span><span class="vl1">myCustomRegex</span><span class="ig1">)</span></code></pre>
                 </div>
-                <p>Se você deseja ignorar nosso sanitizador porque prefere usar uma biblioteca dedicada, por exemplo <a href="https://www.npmjs.com/package/dompurify">DOMPurify</a>, faça o seguinte:
+                <p>Se você deseja ignorar nosso sanitizador porque prefere usar uma biblioteca dedicada, por exemplo <a href="https://www.npmjs.com/package/dompurify" target="_blank">DOMPurify</a>, faça o seguinte:
                 </p>
                 <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nt1">var</span> <span class="na1">yourTooltipEl</span> <span class="ig1">=</span> <span class="tg1">document</span><span class="ig1">.</span><span class="na1">getElementById</span><span class="ig1">(</span><span class="vl1">&#39;yourTooltip&#39;</span><span class="ig1">)</span>
 <span class="nt1">var</span> <span class="na1">tooltip</span> <span class="ig1">=</span> <span class="nt1">new</span> <span class="tg1">bootstrap</span><span class="ig1">.</span><span class="na1">Tooltip</span><span class="ig1">(</span><span class="vl1">yourTooltipEl</span><span class="ig1">,</span> <span class="ig1">{</span>
