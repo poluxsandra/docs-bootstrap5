@@ -26,15 +26,15 @@
             <div class="bd-content ps-lg-4">
                 <h2 class="head2" id="get-familiar">Familiarizando
                 </h2>
-                <p>Recomendamos familiarizar-se com o Bootstrap primeiro lendo nossa  <a href="introducao.html">página de introdução </a> dessa seção. Após isto, segue o conteúdo a seguir sobre RTL. 
+                <p>Recomendamos familiarizar-se com o Bootstrap primeiro lendo nossa  <a href="introducao.html" target="_blank">página de introdução </a> dessa seção. Após isto, segue o conteúdo a seguir sobre RTL. 
                 </p>
-                <p>Você também pode querer ler sobre o <a href="https://rtlcss.com/">Projeto RTLCSS</a>, ele reforça nossa abordagem para RTL.
+                <p>Você também pode querer ler sobre o <a href="https://rtlcss.com/" target="_blank">Projeto RTLCSS</a>, ele reforça nossa abordagem para RTL.
                 </p>
 
                 <div class="bd-callout bd-callout-warning bg-dark">
                     <h3 class="head3" id="experimental-feature" >Recurso Experimental
                     </h3>
-                    <p>O recurso RTL ainda é <strong>experimental</strong> e provavelmente irá evoluir de acordo com os feedbacks do usuários. Identificou algo ou tem uma sugestão de melhoria? <a href="https://github.com/twbs/bootstrap/issues/new">Abra um issue</a>, adoraríamos receber seus insights.
+                    <p>O recurso RTL ainda é <strong>experimental</strong> e provavelmente irá evoluir de acordo com os feedbacks do usuários. Identificou algo ou tem uma sugestão de melhoria? <a href="https://github.com/twbs/bootstrap/issues/new" target="_blank">Abra um issue</a>, adoraríamos receber seus insights.
                     </p>
                 </div>
 
@@ -86,7 +86,7 @@
 
                 <h3 class="head3" id="rtl-examples">Exemplos de RTL
                 </h3>
-                <p>Comece com um de nossos vários <a href="../../examples/examples.html#rtl">exemplos de RTL</a>.
+                <p>Comece com um de nossos vários <a href="../../examples/examples.html#rtl" target="_blank">exemplos de RTL</a>.
                 </p>
 
                 <h2 class="head2" id="approach">Abordagem
@@ -95,7 +95,7 @@
                 </p>
                 <ol>
                     <li>
-                        <p><strong>Primeiro, decidimos construí-lo com o projeto <a href="https://rtlcss.com/">RTLCSS</a>.</strong> Isso nos dá alguns recursos poderosos para gerenciar alterações e substituições ao mudar de LTR para RTL. Também nos permite construir duas versões do Bootstrap a partir de um código-base.
+                        <p><strong>Primeiro, decidimos construí-lo com o projeto <a href="https://rtlcss.com/" target="_blank">RTLCSS</a>.</strong> Isso nos dá alguns recursos poderosos para gerenciar alterações e substituições ao mudar de LTR para RTL. Também nos permite construir duas versões do Bootstrap a partir de um código-base.
                         </p>
                     <li>
                         <p><strong>Em segundo lugar, renomeamos um punhado de classes direcionais para adotar uma abordagem de propriedades lógicas.</strong> Most of you have alreadA maioria de vocês já interagiu com propriedades lógicas graças aos nossos utilitários flex - eles substituem as propriedades de direção como <code>left</code> e <code>right</code> em favor das propriedades <code>start</code> e <code>end</code>. Isso torna os nomes e valores das classes apropriados para LTR e RTL sem qualquer sobrecarga.
@@ -109,12 +109,12 @@
 
                 <h2 class="head2" id="customize-from-source">Personalize a partir da fonte
                 </h2>
-                <p>Quando se trata de <a href="../custom/sass.html">customização</a>, a maneira preferida é aproveitar as vantagens de usar variáveis, mapas e mixins. Essa abordagem funciona da mesma forma para RTL, mesmo que seja pós-processada a partir dos arquivos compilados, graças ao <a href="https://rtlcss.com/learn/getting-started/why-rtlcss/">funcionamento do RTLCSS</a>.
+                <p>Quando se trata de <a href="../custom/sass.html" target="_blank">customização</a>, a maneira preferida é aproveitar as vantagens de usar variáveis, mapas e mixins. Essa abordagem funciona da mesma forma para RTL, mesmo que seja pós-processada a partir dos arquivos compilados, graças ao <a href="https://rtlcss.com/learn/getting-started/why-rtlcss/" target="_blank">funcionamento do RTLCSS</a>.
                 </p>
 
                 <h3 class="head3" id="custom-rtl-values">Valores RTL Personalizados
                 </h3>
-                <p>Usando <a href="https://rtlcss.com/learn/usage-guide/value-directives/">diretivas de valor RTLCSS</a>, você pode fazer de uma saída variável um valor diferente para RTL. Por exemplo, para diminuir o peso de <code>$font-weight-bold</code> ao longo da base de código, você pode usar a sintaxe <code>/*rtl: {value}*/</code>:
+                <p>Usando <a href="https://rtlcss.com/learn/usage-guide/value-directives/" target="_blank">diretivas de valor RTLCSS</a>, você pode fazer de uma saída variável um valor diferente para RTL. Por exemplo, para diminuir o peso de <code>$font-weight-bold</code> ao longo da base de código, você pode usar a sintaxe <code>/*rtl: {value}*/</code>:
                 </p>
                 <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt1">$font-weight-bold</span><span class="ig1">:</span> <span class="vl1">700</span> <span class="ig1">#{</span><span class="cm1">/* rtl:600 </span><span class="cm1">*/</span><span class="ig1">}</span> <span class="na1">!default</span><span class="ig1">;</span></code></pre>
                 </div>
@@ -161,7 +161,7 @@
 
                 <h3 class="head3" id="ltr-and-rtl-at-the-same-time">LTR e RTL ao mesmo tempo
                 </h3>
-                <p>Precisa de LTR e RTL na mesma página? Graças ao <a href="https://rtlcss.com/learn/usage-guide/string-map/">String Maps do RTLCSS</a>, isso é bastante simples. Envolva seu <code>@import</code> com uma classe e determinada regra de renomeação personalizada para RTLCSS:
+                <p>Precisa de LTR e RTL na mesma página? Graças ao <a href="https://rtlcss.com/learn/usage-guide/string-map/" target="_blank">String Maps do RTLCSS</a>, isso é bastante simples. Envolva seu <code>@import</code> com uma classe e determinada regra de renomeação personalizada para RTLCSS:
                 </p>
                 <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="na1">/* rtl:begin:options: {
 </span><span class="vl1">  &#34;autoRename&#34;: true,
@@ -191,21 +191,21 @@
                     </p>
                     <ol>
                         <li>Quando alternar entre <code>.ltr</code> e <code>.rtl</code>, certifique-se de adicionar os atributos <code>dir</code> e <code>lang</code> compatíveis.
-                        <li>Carregar ambos os arquivos pode ser um verdadeiro gargalo de desempenho: considere alguns pontos de <a href="../custom/otimizacao.html">otimização</a>, e talvez tentar <a href="https://www.filamentgroup.com/lab/load-css-simpler/">carregar um desses arquivos de forma assíncrona</a>.
-                        <li>O aninhamento de estilos dessa forma evitará que nosso mixin <code>form-validation-state()</code> funcione conforme o esperado, portanto, é necessário ajustá-lo um pouco sozinho. Veja o <a href="https://github.com/twbs/bootstrap/issues/31223">Issue #31223</a>.
+                        <li>Carregar ambos os arquivos pode ser um verdadeiro gargalo de desempenho: considere alguns pontos de <a href="../custom/otimizacao.html" target="_blank">otimização</a>, e talvez tentar <a href="https://www.filamentgroup.com/lab/load-css-simpler/" target="_blank">carregar um desses arquivos de forma assíncrona</a>.
+                        <li>O aninhamento de estilos dessa forma evitará que nosso mixin <code>form-validation-state()</code> funcione conforme o esperado, portanto, é necessário ajustá-lo um pouco sozinho. Veja o <a href="https://github.com/twbs/bootstrap/issues/31223" target="_blank">Issue #31223</a>.
                     </ol>
                 </div>
 
                 <h2 class="head2" id="the-breadcrumb-case">O caso do Breadcrumb
                 </h2>
-                <p>O separador <a href="../component/bread.html#changing-the-separator">breadcrumb</a> é o único caso que requer sua própria variável — isto é, <code>$breadcrumb-divider-flipped</code> — padronizando para <code>$breadcrumb-divider</code>.
+                <p>O separador <a href="../component/bread.html#changing-the-separator" target="_blank">breadcrumb</a> é o único caso que requer sua própria variável — isto é, <code>$breadcrumb-divider-flipped</code> — padronizando para <code>$breadcrumb-divider</code>.
                 </p>
 
                 <h2 class="head2" id="additional-resources">Recursos Adicionais
                 </h2>
                 <ul>
-                    <li><a href="https://rtlcss.com/">RTLCSS</a>
-                    <li><a href="https://rtlstyling.com/posts/rtl-styling">RTL Styling 101</a>
+                    <li><a href="https://rtlcss.com/" target="_blank">RTLCSS</a>
+                    <li><a href="https://rtlstyling.com/posts/rtl-styling" target="_blank">RTL Styling 101</a>
                 </ul>
             </div>
         </main>
