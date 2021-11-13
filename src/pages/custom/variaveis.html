@@ -5,15 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
-    <title>Variáveis CSS/title>
+    <link rel="stylesheet" type="text/css"href="../docs.css">
+    <title>Variáveis CSS</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Variáveis ​​CSS
+                    </h1>
+                </div>
+                <p class="bd-lead">Use as propriedades personalizadas CSS do Bootstrap para um design e desenvolvimento rápido e voltado para o futuro.
+                </p>
+            </div>
+            <div class="bd-content ps-lg-4">
+                <p>Bootstrap inclui cerca de duas dúzias de <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/Using_CSS_custom_properties" target="_blank">propriedades customizadas CSS (variáveis)</a> em seu CSS compilado, com dezenas mais a caminho para customização aprimorada por componente. Eles fornecem acesso fácil aos valores comumente usados, como nossas cores de tema, pontos de interrupção e pilhas de fontes primárias ao trabalhar no inspetor de seu navegador, uma caixa de proteção de código ou prototipagem geral.
+                </p>
+                <p><strong>Todas as nossas propriedades personalizadas são prefixadas com <code>bs-</code></strong> para evitar conflitos com CSS de terceiros.
+                </p>
+
+                <h2 class="head2" id="root-variables">Variáveis ​​Raiz
+                </h2>
+                <p>Aqui estão as variáveis ​​que incluímos (observe que <code>:root</code> é obrigatório) que podem ser acessadas em qualquer lugar que o CSS do Bootstrap esteja carregado. Eles estão localizados em nosso arquivo <code>_root.scss</code> e incluídas em nossos arquivos dist compilados.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-css" data-lang="css"><span class="tg1">:root {
+    <span class="nt1">--bs-blue</span><span class="ig1">:</span> <span class="vl1">#0d6efd</span><span class="ig1">;</span>
+    <span class="nt1">--bs-indigo</span><span class="ig1">:</span> <span class="vl1">#6610f2</span><span class="ig1">;</span>
+    <span class="nt1">--bs-purple</span><span class="ig1">:</span> <span class="vl1">#6f42c1</span><span class="ig1">;</span>
+    <span class="nt1">--bs-pink</span><span class="ig1">:</span> <span class="vl1">#d63384</span><span class="ig1">;</span>
+    <span class="nt1">--bs-red</span><span class="ig1">:</span> <span class="vl1">#dc3545</span><span class="ig1">;</span>
+    <span class="nt1">--bs-orange</span><span class="ig1">:</span> <span class="vl1">#fd7e14</span><span class="ig1">;</span>
+    <span class="nt1">--bs-yellow</span><span class="ig1">:</span> <span class="vl1">#ffc107</span><span class="ig1">;</span>
+    <span class="nt1">--bs-green</span><span class="ig1">:</span> <span class="vl1">#198754</span><span class="ig1">;</span>
+    <span class="nt1">--bs-teal</span><span class="ig1">:</span> <span class="vl1">#20c997</span><span class="ig1">;</span>
+    <span class="nt1">--bs-cyan</span><span class="ig1">:</span> <span class="vl1">#0dcaf0</span><span class="ig1">;</span>
+    <span class="nt1">--bs-white</span><span class="ig1">:</span> <span class="vl1">#fff</span><span class="ig1">;</span>
+    <span class="nt1">--bs-gray</span><span class="ig1">:</span> <span class="vl1">#6c757d</span><span class="ig1">;</span>
+    <span class="nt1">--bs-gray-dark</span><span class="ig1">:</span> <span class="vl1">#343a40</span><span class="ig1">;</span>
+    <span class="nt1">--bs-primary</span><span class="ig1">:</span> <span class="vl1">#0d6efd</span><span class="ig1">;</span>
+    <span class="nt1">--bs-secondary</span><span class="ig1">:</span> <span class="vl1">#6c757d</span><span class="ig1">;</span>
+    <span class="nt1">--bs-success</span><span class="ig1">:</span> <span class="vl1">#198754</span><span class="ig1">;</span>
+    <span class="nt1">--bs-info</span><span class="ig1">:</span> <span class="vl1">#0dcaf0</span><span class="ig1">;</span>
+    <span class="nt1">--bs-warning</span><span class="ig1">:</span> <span class="vl1">#ffc107</span><span class="ig1">;</span>
+    <span class="nt1">--bs-danger</span><span class="ig1">:</span> <span class="vl1">#dc3545</span><span class="ig1">;</span>
+    <span class="nt1">--bs-light</span><span class="ig1">:</span> <span class="vl1">#f8f9fa</span><span class="ig1">;</span>
+    <span class="nt1">--bs-dark</span><span class="ig1">:</span> <span class="vl1">#212529</span><span class="ig1">;</span>
+    <span class="nt1">--bs-font-sans-serif</span><span class="ig1">:</span> <span class="vl1">system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"</span><span class="ig1">;</span>
+    <span class="nt1">--bs-font-monospace</span><span class="ig1">:</span> <span class="vl1">SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace</span><span class="ig1">;</span>
+    <span class="nt1">--bs-gradient</span><span class="ig1">:</span> <span class="vl1">linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))</span><span class="ig1">;</span>
+  }</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="component-variables">Variáveis ​​de Componente
+                </h2>
+                <p>Também estamos começando a usar propriedades personalizadas como variáveis ​​locais para vários componentes. Dessa forma, podemos reduzir nosso CSS compilado, garantir que os estilos não sejam herdados em lugares como tabelas aninhadas e permitir um pouco de restyling e extensão de componentes do Bootstrap após a compilação do Sass.
+                </p>
+                <p>Dê uma olhada em nossa documentação de tabela para alguns <a href="../content/tabelas.html#how-do-the-variants-and-accented-tables-work" target="_blank">insights sobre como estamos usando variáveis ​​CSS.</a>.
+                </p>
+                <p>Também estamos usando variáveis ​​CSS em nossas grades - principalmente para calhas - com mais uso de componentes chegando no futuro.
+                </p>
+
+                <h2 class="head2" id="examples">Exemplos
+                </h2>
+                <p>As variáveis ​​CSS oferecem flexibilidade semelhante às variáveis ​​do Sass, mas sem a necessidade de compilação antes de serem veiculadas no navegador. Por exemplo, aqui estamos redefinindo os estilos de fonte e link de nossa página com variáveis ​​CSS.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-css" data-lang="css"><span class="nt1">body</span> <span class="ig">{</span>
+    <span class="na1">font</span><span class="ig1">:</span> <span class="vl1">1</span><span class="doc1">rem</span><span class="ig1">/</span><span class="vl1">1.5</span> <span class="tg1">var</span><span class="ig1">(</span><span class="doc1">--</span><span class="vl1">bs</span><span class="ig1">-</span><span class="vl1">font</span><span class="ig1">-</span><span class="vl1">sans-serif</span><span class="ig1">);</span>
+  <span class="ig1">}</span>
+  <span class="nt1">a</span> <span class="ig1">{</span>
+    <span class="na1">color</span><span class="ig1">:</span> <span class="tg1">var</span><span class="ig1">(</span><span class="doc1">--</span><span class="vl1">bs</span><span class="ig1">-</span><span class="vl1">blue</span><span class="ig1">);</span>
+  <span class="ig1">}</span></code></pre>
+                </div>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>

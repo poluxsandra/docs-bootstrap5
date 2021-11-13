@@ -5,15 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>Opções</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Opções
+                    </h1>
+                </div>
+                <p class="bd-lead">Personalize rapidamente o Bootstrap com variáveis integradas para alternar facilmente as preferências CSS globais para controlar o estilo e o comportamento.
+                </p>
+            </div>
+
+            <div class="bd-content ps-lg-4">
+                <p>Personalize o Bootstrap com nosso arquivo de variáveis ​​personalizadas integrado e alterne facilmente as preferências globais de CSS com as novas variáveis Sass <code>$enable-*</code>. Substitua o valor de uma variável e recompile com o comando <code>npm run test</code> conforme necessário.
+                </p>
+
+                <p>Você pode localizar e personalizar essas variáveis ​​para as principais opções globais no arquivo <code>scss/_variables.scss</code> do Bootstrap.
+                </p>
+
+                <table class="table text-start">
+                    <thead>
+                        <tr class="nt1">
+                            <th>Variáveis
+                            <th>Valores
+                            <th>Descrição
+                        </tr>
+                    </thead>
+                    <tbody class="vl1">
+                        <tr>
+                            <td><code class="doc1">$spacer</code>
+                            <td><code>1rem</code> (padrão), ou qualquer valor &gt; 0
+                            <td>Especifica o valor padrão do espaçador para gerar programaticamente nossos <a class="linktable" href="../util/space.html" target="_blank">utilitários de espaçamento</a>.
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-rounded</code>
+                            <td><code>true</code> (padrão) ou <code>false</code>
+                            <td>Ativa os estilos predefinidos por <code>border-radius</code> em vários componentes.
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-shadows</code>
+                            <td><code>true</code> ou <code>false</code> (padrão)
+                            <td>Ativa os estilos decorativos predefinidos por <code>box-shadow</code> em vários componentes. Não afeta os <code>box-shadow</code>&#39;s usados em estados de foco.
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-gradients</code>
+                            <td><code>true</code> ou <code>false</code> (padrão
+                            <td>Ativa os estilos de gradiente predefinidos por meio do <code>background-image</code> em vários componentes.
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-transitions</code>
+                            <td><code>true</code> (padrão) ou <code>false</code>
+                            <td>Ativa as predefinições por meio dos <code>transition</code>&#39;s em vários componentes.
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-reduced-motion</code>
+                            <td><code>true</code> (padrão) ou <code>false</code>
+                            <td>Ativa a consulta de mídia de <a class="linktable" href="../start/acess.html#reduced-motion" target="_blank"><code>prefers-reduced-motion</code></a>, que suprime certas animações/transições com base nas preferências do navegador/sistema operacional dos usuários.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-grid-classes</code>
+                            <td><code>true</code> (padrão) ou <code>false</code>
+                            <td>Permite a geração de classes CSS para o sistema de grade (por exemplo <code>.row</code>, <code>.col-md-1</code>, etc.).
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-caret</code>
+                            <td><code>true</code> (padrão) ou <code>false</code>
+                            <td>Ativa o acento circunflexo do pseudoelemento <code>.dropdown-toggle</code>.
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-button-pointers</code>
+                            <td><code>true</code> (padrão) ou <code>false</code>
+                            <td>Adicione o cursor de &ldquo;mão&rdquo; a elementos de botão não desabilitados.
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-rfs</code>
+                            <td><code>true</code> (padrão) ou <code>false</code>
+                            <td>Ativa globalmente o <a class="linktable" href="../start/rfs.html" target="_blank">RFS</a>.
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-validation-icons</code>
+                            <td><code>true</code> (padrão) ou <code>false</code>
+                            <td>Ativa ícones por meio de <code>background-image</code> em entradas textuais e alguns formulários personalizados para estados de validação.
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-negative-margins</code>
+                            <td><code>true</code> ou <code>false</code> (padrão)
+                            <td>Ativa a geração do <a class="linktable" href="../util/space.html#negative-margin" target="_blank">utilitário de margem negativa</a>.
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-deprecation-messages</code>
+                            <td><code>true</code> (padrão) ou <code>false</code>
+                            <td>Defina como <code>false</code> para ocultar avisos ao usar qualquer um dos mixins e funções obsoletos que estão planejados para serem removidos na <code>v6</code>.
+                        </tr>
+                        <tr>
+                            <td><code class="doc1">$enable-important-utilities</code>
+                            <td><code>true</code> (padrão) ou <code>false</code>
+                            <td>Ativa o sufixo <code>!important</code> nas classes de utilitários.
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>

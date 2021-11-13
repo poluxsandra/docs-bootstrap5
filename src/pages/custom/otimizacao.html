@@ -5,15 +5,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>Otimização</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Otimização
+                    </h1>
+                </div>
+                <p class="bd-lead">Mantenha seus projetos enxutos, responsivos e fáceis de manter, para que você possa oferecer a melhor experiência e se concentrar em trabalhos mais importantes.</p>
+            </div>
+            <div class="bd-content ps-lg-4">
+
+            <h2 class="head2" id="lean-sass-imports">Importações Lean Sass
+            </h2>
+            <p>Ao usar o Sass em seu pipeline de ativos, certifique-se de otimizar o Bootstrap apenas com <code>@import</code> os componentes necessários. Suas maiores otimizações provavelmente virão da seção <code>Layout &amp; Components</code> do nosso <code>bootstrap.scss</code>.
+            </p>
+            <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// Configuração
+  </span><span class="cm1"></span><span class="tg1">@import</span> <span class="s2">&#34;functions&#34;</span><span class="p">;</span>
+  <span class="tg1">@import</span> <span class="s2">&#34;variables&#34;</span><span class="p">;</span>
+  <span class="tg1">@import</span> <span class="s2">&#34;mixins&#34;</span><span class="p">;</span>
+  <span class="tg1">@import</span> <span class="s2">&#34;utilities&#34;</span><span class="p">;</span>
+  
+  <span class="cm1">// Layout &amp; Componentes
+  </span><span class="c1"></span><span class="tg1">@import</span> <span class="vl1">&#34;root&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;reboot&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;type&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;images&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;containers&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;grid&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;tables&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;forms&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;buttons&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;transitions&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;dropdown&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;button-group&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;nav&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;navbar&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;card&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;accordion&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;breadcrumb&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;pagination&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;badge&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;alert&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;progress&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;list-group&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;close&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;toasts&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;modal&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;tooltip&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;popover&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;carousel&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;spinners&#34;</span><span class="ig1">;</span>
+  <span class="tg1">@import</span> <span class="vl1">&#34;offcanvas&#34;</span><span class="ig1">;</span>
+  
+  <span class="cm1">// Helpers
+  </span><span class="cm"></span><span class="tg1">@import</span> <span class="vl1">&#34;helpers&#34;</span><span class="ig1">;</span>
+  
+  <span class="cm1">// Utilities
+  </span><span class="cm1"></span><span class="tg1">@import</span> <span class="vl1">&#34;utilities/api&#34;</span><span class="ig1">;</span></code></pre>
+                </div>
+                <p>Se você não estiver usando um componente, comente-o ou exclua-o totalmente. Por exemplo, se você não estiver usando o carrossel, remova essa importação para salvar o tamanho do arquivo no CSS compilado. Lembre-se de que existem algumas dependências nas importações do Sass que podem dificultar a omissão de um arquivo.
+                </p>
+
+                <h2 class="head2" id="lean-javascript">JavaScript Enxuto
+                </h2>
+                <p>O JavaScript do Bootstrap inclui todos os componentes em nossos arquivos dist primários (<code>bootstrap.js</code> e <code>bootstrap.min.js</code>), e até mesmo nossa dependência primária (Popper) com nossos arquivos de pacote (Popper) com nossos arquivos de pacote (<code>bootstrap.bundle.js</code> e <code>bootstrap.bundle.min.js</code>). Enquanto estiver personalizando pelo Sass, certifique-se de remover o JavaScript relacionado.</p>
+                <p>Por exemplo, supondo que você esteja usando seu próprio agrupador de JavaScript, como Webpack ou Rollup, você importaria apenas o JavaScript que planeja usar. No exemplo abaixo, mostramos como incluir apenas nosso JavaScript modal:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// Importe apenas o que precisa
+  </span><span class="cm1"></span>
+  <span class="cm1">// import &#39;bootstrap/js/dist/alert&#39;;
+  </span><span class="cm1">// import &#39;bootstrap/js/dist/button&#39;;
+  </span><span class="cm1">// import &#39;bootstrap/js/dist/carousel&#39;;
+  </span><span class="cm1">// import &#39;bootstrap/js/dist/collapse&#39;;
+  </span><span class="cm1">// import &#39;bootstrap/js/dist/dropdown&#39;;
+  </span><span class="cm1"></span><span class="nt1">import</span> <span class="vl1">&#39;bootstrap/js/dist/modal&#39;</span><span class="ig1">;</span>
+  <span class="cm1">// import &#39;bootstrap/js/dist/popover&#39;;
+  </span><span class="cm1">// import &#39;bootstrap/js/dist/scrollspy&#39;;
+  </span><span class="cm1">// import &#39;bootstrap/js/dist/tab&#39;;
+  </span><span class="cm1">// import &#39;bootstrap/js/dist/toast&#39;;
+  </span><span class="cm1">// import &#39;bootstrap/js/dist/tooltip&#39;;</span></code></pre>
+                </div>
+                <p>Dessa forma, você não está incluindo nenhum JavaScript que não pretende usar para componentes como botões, carrosséis e dicas de ferramentas. Se você estiver importando menus suspensos, dicas de ferramentas ou popovers, certifique-se de listar a dependência de Popper em seu arquivo <code>package.json</code>.
+                </p>
+                <div class="bd-callout bd-callout-warning">
+
+                <h3 class="head3" id="default-exports">Exportações Padrão
+                </h3>
+                <p>Os arquivos em uso no <code>bootstrap/js/dist</code> são a <strong>exportação padrão</strong>, portanto, se quiser usar um deles, você deve fazer o seguinte:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-js" data-lang="js"><span class="tg1">import</span> <span class="nt1">Modal</span> <span class="doc1">from</span> <span class="vl1">&#39;bootstrap/js/dist/modal&#39;</span>
+  
+  <span class="tg1">const</span> <span class="nt1">modal</span> <span class="ig1">=</span> <span class="doc1">new</span> <span class="nt1">Modal</span><span class="ig1">(</span><span class="vl1">document</span><span class="ig1">.</span><span class="vl1">getElementById</span><span class="ig1">(</span><span class="vl1">&#39;myModal&#39;</span><span class="ig1">))</span></code></pre>
+                </div>
+            </div>
+  
+            <h2 class="head2" id="autoprefixer-browserslistrc">Autoprefixador .browserslistrc
+            </h2>
+            <p>O bootstrap depende do Autoprefixador para adicionar automaticamente os prefixos do navegador a certas propriedades CSS. Os prefixos são ditados por nosso arquivo <code>.browserslistrc</code>, encontrado na raiz do repositório Bootstrap. Personalizar esta lista de navegadores e recompilar o Sass removerá automaticamente algum CSS do CSS compilado, se houver prefixos de fornecedor exclusivos para aquele navegador ou versão.
+            </p>
+
+            <h2 class="head2" id="unused-css">CSS Não Utilizado
+            </h2>
+            <p><em>Procura-se ajuda com esta seção, considere abrir um PR. Obrigado!</em>
+            </p>
+            <p>Embora não tenhamos um exemplo pré-construído para usar o <a href="https://github.com/FullHuman/purgecss" target="_blank">PurgeCSS</a>  com Bootstrap, existem alguns artigos e orientações úteis que a comunidade escreveu. Aqui estão algumas opções:
+            </p>
+            <ul>
+                <li><a href="https://medium.com/dwarves-foundation/remove-unused-css-styles-from-bootstrap-using-purgecss-88395a2c5772" target="_blank">Remova estilos CSS não utilizados do Bootstrap usando PurgeCSS</a></li>
+                <li><a href="https://lukelowrey.com/automatically-removeunused-css-from-bootstrap-or-other-frameworks/" target="_blank">Remova automaticamente o css não utilizado do Bootstrap ou de outras estruturas</a></li>
+            </ul>
+            <p>Por último, este artigo de <a href="https://css-tricks.com/how-do-you-remove-unused-css-from-a-site/" target="_blank">truques de CSS sobre CSS não utilizado</a> mostra como usar o PurgeCSS e outras ferramentas semelhantes.
+            </p>
+
+            <h2 class="head2" id="minify-and-gzip">Minificar e Compactar
+            </h2>
+            <p>Sempre que possível, certifique-se de compactar todo o código que você veicula para seus visitantes. Se você estiver usando arquivos dist do Bootstrap, tente usar as versões reduzidas (indicadas pelas extensões <code>.min.css</code> e <code>.min.js</code>). Se você estiver construindo Bootstrap a partir do código-fonte com seu próprio sistema de construção, certifique-se de implementar seus próprios minificadores para HTML, CSS e JS.
+            </p>
+
+            <h2 class="head2" id="nonblocking-files">Arquivos Não Bloqueadores
+            </h2>
+            <p>Embora minimizar e usar compactação possa parecer suficiente, tornar seus arquivos não bloqueadores também é um grande passo para tornar seu site bem otimizado e rápido o suficiente.
+            </p>
+            <p>Se você estiver usando um plugin do <a href="https://developers.google.com/web/tools/lighthouse/" target="_blank">Lighthouse</a> no Google Chrome, pode ter tropeçado no FCP. A métrica <a href="https://web.dev/fcp/" target="_blank">The First Contentful Paint</a> mede o tempo desde o início do carregamento da página até o momento em que qualquer parte do conteúdo da página é renderizada na tela.
+            </p>
+            <p>Você pode melhorar o FCP adiando JavaScript ou CSS não crítico. O que isso significa? Simplesmente, JavaScript ou folhas de estilo que não precisam estar presentes na primeira pintura de sua página devem ser marcados com atributos <code>async</code> ou <code>defer</code>.
+            </p>
+            <p>Isso garante que os recursos menos importantes sejam carregados posteriormente e não bloqueiem a primeira pintura. Por outro lado, recursos críticos podem ser incluídos como scripts ou estilos embutidos.
+            </p>
+            <p>Se você quiser saber mais sobre isso, já existem muitos artigos excelentes sobre isso:
+            </p>
+            <ul>
+                <li><a href="https://web.dev/render-blocking-resources/" target="_blank">Elimine recursos de bloqueio de renderização</a></li>
+                <li><a href="https://web.dev/defer-non-critical-css/" target="_blank">Adiar CSS não crítico</a></li>
+            </ul>
+
+            <h2 class="head2" id="always-use-https">Sempre Use HTTPS
+            </h2>
+            <p>Seu site deve estar disponível apenas em conexões HTTPS em produção. O HTTPS melhora a segurança, a privacidade e a disponibilidade de todos os sites, e <a href="https://https.cio.gov/everything/" target="_blank" target="_blank">não existe tráfego não confidencial na web</a>. As etapas para configurar seu site para ser servido exclusivamente por HTTPS variam amplamente, dependendo de sua arquitetura e provedor de hospedagem na web e, portanto, estão além do escopo destes documentos.
+            </p>
+            <p>Os sites atendidos por HTTPS também devem acessar todas as folhas de estilo, scripts e outros ativos por meio de conexões HTTPS. Caso contrário, você estará enviando aos usuários <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content" target="_blank">conteúdo ativo misto</a>, levando a vulnerabilidades potenciais em que um site pode ser comprometido pela alteração de uma dependência. Isso pode levar a problemas de segurança e avisos no navegador exibidos aos usuários. Esteja você obtendo Bootstrap de um CDN ou servindo-o você mesmo, certifique-se de acessá-lo apenas por meio de conexões HTTPS.
+            </p>
+        </div>
+      </main>
+
+    </div>
 
 </body>
 </html>

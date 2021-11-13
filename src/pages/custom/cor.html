@@ -5,15 +5,416 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>Cor</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Color
+                    </h1>
+                </div>
+                <p class="bd-lead">O Bootstrap é suportado por um extenso sistema de cores que tem como tema nossos estilos e componentes. Isso permite uma personalização e extensão mais abrangentes para qualquer projeto.</p>
+            </div>
+
+
+            <div class="bd-content ps-lg-4">
+                <h2 class="head2" id="theme-colors">Cores do Tema
+                </h2>
+                <p>Usamos um subconjunto de todas as cores para criar uma paleta de cores menor para gerar esquemas de cores, também disponíveis como variáveis ​​Sass e um mapa Sass no arquivo <code>scss/_variables.scss</code> do Bootstrap.
+                </p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="p-3 mb-3 bg-primary text-white">Primária
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 mb-3 bg-secondary text-white">Secundária
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 mb-3 bg-success text-white">Sucesso
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 mb-3 bg-danger text-white">Risco
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 mb-3 bg-warning text-dark">Alerta
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 mb-3 bg-info text-dark">Informação
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 mb-3 bg-light text-dark">Claro
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 mb-3 bg-dark text-white">Escuro
+                        </div>
+                    </div>
+                </div>
+                <p>Todas essas cores estão disponíveis como um mapa Sass denominado <code>$theme-colors</code>.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="na1">$theme-colors</span><span class="ig1">:</span> <span class="ig1">(</span>
+        <span class="tg1">&#34;primary&#34;</span><span class="ig1">:</span>    <span class="nt1">$primary</span><span class="ig1">,</span>
+        <span class="tg1">&#34;secondary&#34;</span><span class="ig1">:</span>  <span class="nt1">$secondary</span><span class="ig1">,</span>
+        <span class="tg1">&#34;success&#34;</span><span class="ig1">:</span>    <span class="nt1">$success</span><span class="ig1">,</span>
+        <span class="tg1">&#34;info&#34;</span><span class="ig1">:</span>       <span class="nt1">$info</span><span class="ig1">,</span>
+        <span class="tg1">&#34;warning&#34;</span><span class="ig1">:</span>    <span class="nt1">$warning</span><span class="ig1">,</span>
+        <span class="tg1">&#34;danger&#34;</span><span class="ig1">:</span>     <span class="nt1">$danger</span><span class="ig1">,</span>
+        <span class="tg1">&#34;light&#34;</span><span class="ig1">:</span>      <span class="nt1">$light</span><span class="ig1">,</span>
+        <span class="tg1">&#34;dark&#34;</span><span class="ig1">:</span>       <span class="nt1">$dark</span>
+      <span class="ig1">);</span></code></pre>
+                </div>
+                <p>Confire nossa documentação sobre <a href="../custom/sass.html#maps-and-loops" target="_blank">mapas Sass e loops</a> para saber como modificar essas cores.
+                </p>
+
+                <h2 class="head2" id="all-colors">Todas as Cores
+                </h2>
+                <p>Todas as cores do Bootstrap estão disponíveis como variáveis ​​Sass e um mapa Sass no arquivo <code>scss/_variables.scss</code>. Para evitar o aumento do tamanho dos arquivos, não criamos classes de texto ou cor de fundo para cada uma dessas variáveis. Em vez disso, escolhemos um subconjunto dessas cores para uma <a href="#theme-colors">paleta de tema</a>.
+                </p>
+                <p>Certifique-se de monitorar as taxas de contraste ao personalizar as cores. Conforme mostrado abaixo, adicionamos três taxas de contraste a cada uma das cores principais - uma para as cores atuais da amostra, uma para o branco e uma para o preto.
+                </p>
+                <div class="row font-monospace">
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 position-relative swatch-blue">
+              <strong class="d-block">$blue</strong>
+              #0d6efd
+                        </div>
+                        <div class="p-3 bd-blue-100">$blue-100
+                        </div>
+                        <div class="p-3 bd-blue-200">$blue-200
+                        </div>
+                        <div class="p-3 bd-blue-300">$blue-300
+                        </div>
+                        <div class="p-3 bd-blue-400">$blue-400
+                        </div>
+                        <div class="p-3 bd-blue-500">$blue-500
+                        </div>
+                        <div class="p-3 bd-blue-600">$blue-600
+                        </div>
+                        <div class="p-3 bd-blue-700">$blue-700
+                        </div>
+                        <div class="p-3 bd-blue-800">$blue-800
+                        </div>
+                        <div class="p-3 bd-blue-900">$blue-900
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 position-relative swatch-indigo">
+              <strong class="d-block">$indigo</strong>
+              #6610f2
+                        </div>
+                        <div class="p-3 bd-indigo-100">$indigo-100
+                        </div>
+                        <div class="p-3 bd-indigo-200">$indigo-200
+                        </div>
+                        <div class="p-3 bd-indigo-300">$indigo-300
+                        </div>
+                        <div class="p-3 bd-indigo-400">$indigo-400
+                        </div>
+                        <div class="p-3 bd-indigo-500">$indigo-500
+                        </div>
+                        <div class="p-3 bd-indigo-600">$indigo-600
+                        </div>
+                        <div class="p-3 bd-indigo-700">$indigo-700
+                        </div>
+                        <div class="p-3 bd-indigo-800">$indigo-800
+                        </div>
+                        <div class="p-3 bd-indigo-900">$indigo-900
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 position-relative swatch-purple">
+              <strong class="d-block">$purple</strong>
+              #6f42c1
+                        </div>
+                        <div class="p-3 bd-purple-100">$purple-100
+                        </div>
+                        <div class="p-3 bd-purple-200">$purple-200
+                        </div>
+                        <div class="p-3 bd-purple-300">$purple-300
+                        </div>
+                        <div class="p-3 bd-purple-400">$purple-400
+                        </div>
+                        <div class="p-3 bd-purple-500">$purple-500
+                        </div>
+                        <div class="p-3 bd-purple-600">$purple-600
+                        </div>
+                        <div class="p-3 bd-purple-700">$purple-700
+                        </div>
+                        <div class="p-3 bd-purple-800">$purple-800
+                        </div>
+                        <div class="p-3 bd-purple-900">$purple-900
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 position-relative swatch-pink">
+              <strong class="d-block">$pink</strong>
+              #d63384
+                        </div>
+                        <div class="p-3 bd-pink-100">$pink-100
+                        </div>
+                        <div class="p-3 bd-pink-200">$pink-200
+                        </div>
+                        <div class="p-3 bd-pink-300">$pink-300
+                        </div>
+                        <div class="p-3 bd-pink-400">$pink-400
+                        </div>
+                        <div class="p-3 bd-pink-500">$pink-500
+                        </div>
+                        <div class="p-3 bd-pink-600">$pink-600
+                        </div>
+                        <div class="p-3 bd-pink-700">$pink-700
+                        </div>
+                        <div class="p-3 bd-pink-800">$pink-800
+                        </div>
+                        <div class="p-3 bd-pink-900">$pink-900
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 position-relative swatch-red">
+              <strong class="d-block">$red</strong>
+              #dc3545
+                        </div>
+                        <div class="p-3 bd-red-100">$red-100
+                        </div>
+                        <div class="p-3 bd-red-200">$red-200
+                        </div>
+                        <div class="p-3 bd-red-300">$red-300
+                        </div>
+                        <div class="p-3 bd-red-400">$red-400
+                        </div>
+                        <div class="p-3 bd-red-500">$red-500
+                        </div>
+                        <div class="p-3 bd-red-600">$red-600
+                        </div>
+                        <div class="p-3 bd-red-700">$red-700
+                        </div>
+                        <div class="p-3 bd-red-800">$red-800
+                        </div>
+                        <div class="p-3 bd-red-900">$red-900
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 position-relative swatch-orange">
+              <strong class="d-block">$orange</strong>
+              #fd7e14
+                        </div>
+                        <div class="p-3 bd-orange-100">$orange-100
+                        </div>
+                        <div class="p-3 bd-orange-200">$orange-200
+                        </div>
+                        <div class="p-3 bd-orange-300">$orange-300
+                        </div>
+                        <div class="p-3 bd-orange-400">$orange-400
+                        </div>
+                        <div class="p-3 bd-orange-500">$orange-500
+                        </div>
+                        <div class="p-3 bd-orange-600">$orange-600
+                        </div>
+                        <div class="p-3 bd-orange-700">$orange-700
+                        </div>
+                        <div class="p-3 bd-orange-800">$orange-800
+                        </div>
+                        <div class="p-3 bd-orange-900">$orange-900
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 position-relative swatch-yellow">
+              <strong class="d-block">$yellow</strong>
+              #ffc107
+                        </div>
+                        <div class="p-3 bd-yellow-100">$yellow-100
+                        </div>
+                        <div class="p-3 bd-yellow-200">$yellow-200
+                        </div>
+                        <div class="p-3 bd-yellow-300">$yellow-300
+                        </div>
+                        <div class="p-3 bd-yellow-400">$yellow-400
+                        </div>
+                        <div class="p-3 bd-yellow-500">$yellow-500
+                        </div>
+                        <div class="p-3 bd-yellow-600">$yellow-600
+                        </div>
+                        <div class="p-3 bd-yellow-700">$yellow-700
+                        </div>
+                        <div class="p-3 bd-yellow-800">$yellow-800
+                        </div>
+                        <div class="p-3 bd-yellow-900">$yellow-900
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 position-relative swatch-green">
+              <strong class="d-block">$green</strong>
+              #198754
+                        </div>
+                        <div class="p-3 bd-green-100">$green-100
+                        </div>
+                        <div class="p-3 bd-green-200">$green-200
+                        </div>
+                        <div class="p-3 bd-green-300">$green-300
+                        </div>
+                        <div class="p-3 bd-green-400">$green-400
+                        </div>
+                        <div class="p-3 bd-green-500">$green-500
+                        </div>
+                        <div class="p-3 bd-green-600">$green-600
+                        </div>
+                        <div class="p-3 bd-green-700">$green-700
+                        </div>
+                        <div class="p-3 bd-green-800">$green-800
+                        </div>
+                        <div class="p-3 bd-green-900">$green-900
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 position-relative swatch-teal">
+              <strong class="d-block">$teal</strong>
+              #20c997
+                        </div>
+                        <div class="p-3 bd-teal-100">$teal-100
+                        </div>
+                        <div class="p-3 bd-teal-200">$teal-200
+                        </div>
+                        <div class="p-3 bd-teal-300">$teal-300
+                        </div>
+                        <div class="p-3 bd-teal-400">$teal-400
+                        </div>
+                        <div class="p-3 bd-teal-500">$teal-500
+                        </div>
+                        <div class="p-3 bd-teal-600">$teal-600
+                        </div>
+                        <div class="p-3 bd-teal-700">$teal-700
+                        </div>
+                        <div class="p-3 bd-teal-800">$teal-800
+                        </div>
+                        <div class="p-3 bd-teal-900">$teal-900
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 position-relative swatch-cyan">
+              <strong class="d-block">$cyan</strong>
+              #0dcaf0
+                        </div>
+                        <div class="p-3 bd-cyan-100">$cyan-100
+                        </div>
+                        <div class="p-3 bd-cyan-200">$cyan-200
+                        </div>
+                        <div class="p-3 bd-cyan-300">$cyan-300
+                        </div>
+                        <div class="p-3 bd-cyan-400">$cyan-400
+                        </div>
+                        <div class="p-3 bd-cyan-500">$cyan-500
+                        </div>
+                        <div class="p-3 bd-cyan-600">$cyan-600
+                        </div>
+                        <div class="p-3 bd-cyan-700">$cyan-700
+                        </div>
+                        <div class="p-3 bd-cyan-800">$cyan-800
+                        </div>
+                        <div class="p-3 bd-cyan-900">$cyan-900
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 position-relative swatch-gray-500">
+            <strong class="d-block">$gray-500</strong>
+            #adb5bd
+                        </div>
+                        <div class="p-3 bd-gray-100">$gray-100
+                        </div>
+                        <div class="p-3 bd-gray-200">$gray-200
+                        </div>
+                        <div class="p-3 bd-gray-300">$gray-300
+                        </div>
+                        <div class="p-3 bd-gray-400">$gray-400
+                        </div>
+                        <div class="p-3 bd-gray-500">$gray-500
+                        </div>
+                        <div class="p-3 bd-gray-600">$gray-600
+                        </div>
+                        <div class="p-3 bd-gray-700">$gray-700
+                        </div>
+                        <div class="p-3 bd-gray-800">$gray-800
+                        </div>
+                        <div class="p-3 bd-gray-900">$gray-900
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-3 mb-2 bd-black text-white">
+            <strong class="d-block">$black</strong>
+            #000
+                        </div>
+                        <div class="p-3 mb-2 bd-white border">
+            <strong class="d-block">$white</strong>
+            #fff
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="head3" id="notes-on-sass">Notas sobre Sass
+                </h3>
+                <p>O Sass não pode gerar variáveis ​​de maneira programática, portanto, nós mesmos criamos variáveis ​​manualmente para cada tom e tonalidade. Especificamos o valor do ponto médio (por exemplo <code>$blue-500</code>) e usamos funções de cores personalizadas para tingir (clarear) ou sombrear (escurecer) nossas cores por meio da função de cor <code>mix()</code>, nativa do Sass.
+                </p>
+                <p>Usar a função <code>mix()</code> não é a mesma coisa que usar as funções <code>lighten()</code> e <code>darken()</code> — a primeira combina a cor especificada com branco ou preto, enquanto as últimas apenas ajustam o valor de claridade de cada cor. O resultado é um conjunto de cores muito mais completo, como mostrado <a href="https://codepen.io/emdeoh/pen/zYOQOPB" target="_blank">nesta demonstração do CodePen</a>.
+                </p>
+                <p>Nossas funções <code>tint-color()</code> e <code>shade-color()</code> usam a função <code>mix()</code> ao lado de nossa variável <code>$theme-color-interval</code>, que especifica um valor percentual escalonado para cada cor mista que produzimos. Consulte os arquivos <code>scss/_functions.scss</code> e <code>scss/_variables.scss</code> para obter o código fonte completo.
+                </p>
+
+                <h2 class="head2" id="color-sass-maps">Mapas de Cor do Sass
+                </h2>
+                <p>Os arquivos-fonte Sass do Bootstrap incluem três mapas para ajudá-lo a percorrer de forma rápida e fácil uma lista de cores e seus valores hexadecimais.
+                </p>
+                <ul>
+                    <li><code>$colors</code> lista todas as cores base &#40;<code>500</code>&#41; disponíveis
+                    <li><code>$theme-colors</code> lista todas as cores do tema semanticamente nomeadas &#40;mostrado abaixo&#41;
+                    <li><code>$grays</code> lista todas as matizes e tons de cinza
+                </ul>
+                <p>Dentro do arquivo <code>scss/_variables.scss</code>, você encontrará as variáveis ​​de cores do Bootstrap e o mapa Sass <code>$colors</code>:
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="na1">$colors</span><span class="ig1">:</span> <span class="ig1">(</span>
+        <span class="tg1">&#34;blue&#34;</span><span class="ig1">:</span>       <span class="nt1">$blue</span><span class="ig1">,</span>
+        <span class="tg1">&#34;indigo&#34;</span><span class="ig1">:</span>     <span class="nt1">$indigo</span><span class="ig1">,</span>
+        <span class="tg1">&#34;purple&#34;</span><span class="ig1">:</span>     <span class="nt1">$purple</span><span class="ig1">,</span>
+        <span class="tg1">&#34;pink&#34;</span><span class="ig1">:</span>       <span class="nt1">$pink</span><span class="ig1">,</span>
+        <span class="tg1">&#34;red&#34;</span><span class="ig1">:</span>        <span class="nt1">$red</span><span class="ig1">,</span>
+        <span class="tg1">&#34;orange&#34;</span><span class="ig1">:</span>     <span class="nt1">$orange</span><span class="ig1">,</span>
+        <span class="tg1">&#34;yellow&#34;</span><span class="ig1">:</span>     <span class="nt1">$yellow</span><span class="ig1">,</span>
+        <span class="tg1">&#34;green&#34;</span><span class="ig1">:</span>      <span class="nt1">$green</span><span class="ig1">,</span>
+        <span class="tg1">&#34;teal&#34;</span><span class="ig1">:</span>       <span class="nt1">$teal</span><span class="ig1">,</span>
+        <span class="tg1">&#34;cyan&#34;</span><span class="ig1">:</span>       <span class="nt1">$cyan</span><span class="ig1">,</span>
+        <span class="tg1">&#34;white&#34;</span><span class="ig1">:</span>      <span class="nt1">$white</span><span class="ig1">,</span>
+        <span class="tg1">&#34;gray&#34;</span><span class="ig1">:</span>       <span class="nt1">$gray-600</span><span class="ig1">,</span>
+        <span class="tg1">&#34;gray-dark&#34;</span><span class="ig1">:</span>  <span class="nt1">$gray-800</span>
+      <span class="ig1">);</span></code></pre>
+                </div>
+                <p>Adicione, remova ou modifique valores dentro do mapa para atualizar como eles são usados ​​em muitos outros componentes. Infelizmente, no momento, nem todos os componentes utilizam este mapa Sass. As atualizações futuras se esforçarão para melhorar isso. Até então, planeje fazer uso das variavéis <code>${color}</code> e este mapa Sass.
+                </p>
+
+                <h3 class="head3" id="example">Exemplo
+                </h3>
+                <p>Veja como você pode usar isso em seu Sass:</p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="na1">.alpha</span> <span class="ig1">{</span> <span class="tg1">color</span><span class="ig1">:</span> <span class="doc1">$</span><span class="nt1">purple</span><span class="ig1">;</span> <span class="ig1">}</span>
+      <span class="na1">.beta</span> <span class="ig1">{</span>
+        <span class="tg1">color</span><span class="ig1">:</span> <span class="doc1">$</span><span class="nt1">yellow-300</span><span class="ig1">;</span>
+        <span class="tg1">background-color</span><span class="ig1">:</span> <span class="doc1">$</span><span class="nt1">indigo-900</span><span class="ig1">;</span>
+      <span class="ig1">}</span></code></pre>
+                </div>
+                <p>Classes de utilitários de <a href="../util/cores.html" target="_blank">Cores</a> e <a href="../util/fundo.html" target="_blank">Fundo</a> também estão disponíveis para configurar  <code>color</code> e <code>background-color</code> usando os valores das cores <code>500</code>.
+                </p>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>

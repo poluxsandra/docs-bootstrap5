@@ -5,15 +5,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../docs.css">
+    <link rel="stylesheet" type="text/css"href="../docs.css">
     <title>Componentes</title>
 
 </head>
 <body>
 
-
     <div class="container-xxl my-md-4 bd-layout">
 
+        <main class="bd-main order-1">
+            <div class="bd-intro ps-lg-4">
+                <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+                    <h1 class="bd-title head1" id="content">Componentes
+                    </h1>
+                </div>
+                <p class="bd-lead">Aprenda como e por que construímos quase todos os nossos componentes responsivamente e com classes base e modificadoras.
+                </p>
+            </div>
+
+            <div class="bd-content ps-lg-4">
+                <h2 class="head2" id="base-classes">Classes Base
+                </h2>
+                <p>Os componentes do Bootstrap são amplamente construídos com uma nomenclatura modificadora de base. Nós agrupamos tantas propriedades compartilhadas quanto possível em uma classe base, como <code>.btn</code>, e então agrupamos estilos individuais para cada variante em classes modificadoras, como <code>.btn-primary</code> ou <code>.btn-success</code>.
+                </p>
+                <p>Para construir nossas classes modificadoras, usamos os loops <code>@each</code> para iterar sobre um mapa do Sass. Isso é especialmente útil para gerar variantes de um componente por nosso <code>$theme-colors</code> e criar variantes responsivas para cada ponto de interrupção. Ao personalizar esses mapas Sass e recompilar, você verá automaticamente suas alterações refletidas nesses loops.
+                </p>
+                <p>Confire nossa documentação sobre <a href="../custom/sass.html#maps-and-loops" target="_blank">Mapas Sass e Loops</a> para saber como personalizar esses loops e estender a abordagem do modificador de base do Bootstrap para seu próprio código.
+                </p>
+
+                <h2 class="head2" id="modifiers">Modificadores
+                </h2>
+                <p>Muitos dos componentes do Bootstrap são construídos com uma abordagem de classe modificadora de base. Isso significa que a maior parte do estilo está contida em uma classe base (por exemplo, <code>.btn</code>) enquanto as variações de estilo são confinadas a classes modificadoras (por exemplo, <code>.btn-danger</code>). Essas classes modificadoras são construídas a partir do mapa <code>$theme-colors</code> para personalizar o número e o nome de nossas classes modificadoras.
+                </p>
+                <p>Aqui estão dois exemplos de como percorremos o mapa <code>$theme-colors</code> para gerar modificadores para os componentes <code>.alert</code> e <code>.list-group</code> components.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Gera classes modificadoras contextuais para colorir o alerta.
+  </span><span class="cm1"></span>
+  <span class="na1">@each</span> <span class="doc1">$</span><span class="tg1">state</span><span class="ig1">,</span> <span class="doc1">$</span><span class="tg1">value</span> <span class="nt1">in</span> <span class="doc1">$</span><span class="na1">theme-colors</span> <span class="ig1">{</span>
+    <span class="tg1">$alert-background</span><span class="ig1">:</span> <span class="nf">shift-color</span><span class="ig1">(</span><span class="vl1">$value</span><span class="ig1">,</span> <span class="vl1">$alert-bg-scale</span><span class="ig1">);</span>
+    <span class="tg1">$alert-border</span><span class="ig1">:</span> <span class="nf">shift-color</span><span class="ig1">(</span><span class="vl1">$value</span><span class="ig1">,</span> <span class="vl1">$alert-border-scale</span><span class="ig1">);</span>
+    <span class="tg1">$alert-color</span><span class="ig1">:</span> <span class="nf">shift-color</span><span class="ig1">(</span><span class="vl1">$value</span><span class="ig1">,</span> <span class="vl1">$alert-color-scale</span><span class="ig1">);</span>
+    <span class="na1">@if</span> <span class="ig1">(</span><span class="nf">contrast-ratio</span><span class="ig1">(</span><span class="vl1">$alert-background</span><span class="ig1">,</span> <span class="vl1">$alert-color</span><span class="ig1">)</span> <span class="ig1">&lt;</span> <span class="vl1">$min-contrast-ratio</span><span class="ig1">)</span> <span class="ig1">{</span>
+      <span class="tg1">$alert-color</span><span class="ig1">:</span> <span class="nf">mix</span><span class="ig1">(</span><span class="vl1">$value</span><span class="ig1">,</span> <span class="nf">color-contrast</span><span class="ig1">(</span><span class="vl1">$alert-background</span><span class="ig1">)</span><span class="ig1">,</span> <span class="nf">abs</span><span class="ig1">(</span><span class="vl1">$alert-color-scale</span><span class="ig1">));</span>
+    <span class="ig1">}</span>
+    <span class="si">.alert-</span><span class="nf">#{</span><span class="vl1">$state</span><span class="nf">}</span> <span class="p">{</span>
+      <span class="na1">@include</span><span class="nf"> alert-variant</span><span class="ig1">(</span><span class="vl1">$alert-background</span><span class="ig'">,</span> <span class="vl1">$alert-border</span><span class="ig1">,</span> <span class="vl1">$alert-color</span><span class="ig1">);</span>
+    <span class="ig1">}</span>
+  <span class="ig1">}</span></code></pre>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Liste o grupo de variantes contextuais
+  </span><span class="cm1">//
+  </span><span class="cm1">// Adicione classes modificadoras para alterar a cor do texto e do plano de fundo em itens individuais. 
+  </span><span class="cm1">// De forma organizada, isso deve vir depois do estados :hover do mouse.
+  </span><span class="cm1"></span>
+  <span class="na1">@each</span> <span class="doc1">$</span><span class="tg1">state</span><span class="ig1">,</span> <span class="doc1">$</span><span class="vl1">value</span> <span class="nt1">in</span> <span class="doc1">$</span><span class="na1">theme-colors</span> <span class="ig1">{</span>
+    <span class="tg1">$list-group-variant-bg</span><span class="ig1">:</span> <span class="nf">shift-color</span><span class="ig1">(</span><span class="vl1">$value</span><span class="ig1">,</span> <span class="vl1">$list-group-item-bg-scale</span><span class="ig1">);</span>
+    <span class="tg1">$list-group-variant-color</span><span class="ig1">:</span> <span class="nf">shift-color</span><span class="ig1">(</span><span class="vl1">$value</span><span class="ig1">,</span> <span class="vl1">$list-group-item-color-scale</span><span class="ig1">);</span>
+    <span class="na1">@if</span> <span class="ig1">(</span><span class="nf">contrast-ratio</span><span class="ig1">(</span><span class="vl1">$list-group-variant-bg</span><span class="ig1">,</span> <span class="vl1">$list-group-variant-color</span><span class="ig1">)</span> <span class="ig1">&lt;</span> <span class="vl1">$min-contrast-ratio</span><span class="ig1">)</span> <span class="ig1">{</span>
+      <span class="vl1">$list-group-variant-color</span><span class="ig1">:</span> <span class="nf">mix</span><span class="ig1">(</span><span class="vl1">$value</span><span class="ig1">,</span> <span class="nf">color-contrast</span><span class="ig1">(</span><span class="vl1">$list-group-variant-bg</span><span class="ig1">)</span><span class="ig1">,</span> <span class="nf">abs</span><span class="ig1">(</span><span class="vl1">$list-group-item-color-scale</span><span class="ig1">));</span>
+    <span class="ig1">}</span>
+  
+    <span class="na1">@include</span><span class="nf"> list-group-item-variant</span><span class="ig1">(</span><span class="tg1">$state</span><span class="ig1">,</span> <span class="tg1">$list-group-variant-bg</span><span class="ig1">,</span> <span class="tg1">$list-group-variant-color</span><span class="ig1">);</span>
+  <span class="ig1">}</span></code></pre>
+                </div>
+
+                <h2 class="head2" id="responsive">Responsivo
+                </h2>
+                <p>Esses loops Sass também não se limitam a mapas coloridos. Você também pode gerar variações responsivas de seus componentes. Considere, por exemplo, nosso alinhamento responsivo dos menus suspensos, onde misturamos um loop <code>@each</code> para o mapa Sass <code>$grid-breakpoints</code> com uma consulta de mídia incluída.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Nós deliberadamente codificamos o prefixo "bs-" porque verificamos 
+  </span><span class="cm1">// esta é uma propriedade customizada em JS para determinar o posicionamento do Popper
+  </span><span class="cm1"></span>
+  <span class="na1">@each</span> <span class="doc1">$</span><span class="tg1">breakpoint</span> <span class="nt1">in</span> <span class="tg1">map-keys</span><span class="ig1">(</span><span class="doc1">$</span><span class="vl1">grid-breakpoints</span><span class="ig1">)</span> <span class="ig'">{</span>
+    <span class="na1">@include</span><span class="nt1"> media-breakpoint-up</span><span class="ig1">(</span><span class="vl1">$breakpoint</span><span class="ig1">)</span> <span class="ig1">{</span>
+      <span class="tg1">$infix</span><span class="ig1">:</span> <span class="nf">breakpoint-infix</span><span class="ig1">(</span><span class="vl1">$breakpoint</span><span class="ig1">,</span> <span class="vl1">$grid-breakpoints</span><span class="ig1">);</span>
+  
+      <span class="nt1">.dropdown-menu</span><span class="si">#{</span><span class="doc1">$infix</span><span class="si">}</span><span' class="vl1">-start</span> <span class="ig1">{</span>
+        <span class="tg1">--bs-position</span><span class="ig1">:</span> <span class="vl1">start</span><span class="ig1">;</span>
+  
+        <span class="doc1">&amp;</span><span class="ig1">[</span><span class="nt1">data-bs-popper</span><span class="ig1">]</span> <span class="ig1">{</span>
+          <span class="tg1">right</span><span class="ig1">:</span> <span class="vl1">auto</span> <span class="si">#</span><span class="ig1">{</span><span class="doc1">&#34;/* rtl:ignore */&#34;</span><span class="ig1">};</span>
+          <span class="tg1">left</span><span class="ig1">:</span> <span class="vl1">0</span> <span class="si">#</span><span class="ig1">{</span><span class="doc1">&#34;/* rtl:ignore */&#34;</span><span class="ig1">};</span>
+        <span class="ig1">}</span>
+      <span class="ig1">}</span>
+  
+      <span class="nt1">.dropdown-menu</span><span class="si">#{</span><span class="doc1">$infix</span><span class="si">}</span><span class="vl1">-end</span> <span class="ig1">{</span>
+        <span class="tg1">--bs-position</span><span class="ig1">:</span> <span class="vl1">end</span><span class="ig1">;</span>
+  
+        <span class="doc1">&amp;</span><span class="ig1">[</span><span class="nt1">data-bs-popper</span><span class="ig1">]</span> <span class="ig1">{</span>
+          <span class="tg1">right</span><span class="ig1">:</span> <span class="vl1">0</span> <span class="si">#</span><span class="ig1">{</span><span class="doc1">&#34;/* rtl:ignore */&#34;</span><span class="ig1">};</span>
+          <span class="tg1">left</span><span class="ig1">:</span> <span class="vl1">auto</span> <span class="si">#</span><span class="ig1">{</span><span class="doc1">&#34;/* rtl:ignore */&#34;</span><span class="ig1">};</span>
+        <span class="ig1">}</span>
+      <span class="ig1">}</span>
+    <span class="ig1">}</span>
+  <span class="ig1">}</span></code></pre>
+                </div>
+                <p>Se você modificar o seu <code>$grid-breakpoints</code>, suas alterações se aplicarão a todos os loops que iteram naquele mapa.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="tg1">$grid-breakpoints</span><span class="ig1">:</span> <span class="ig1">(</span>
+    <span class="nt1">xs</span><span class="ig1">:</span> <span class="vl1">0</span><span class="ig1">,</span>
+    <span class="nt1">sm</span><span class="ig1">:</span> <span class="vl1">576</span><span class="na1">px</span><span class="ig1">,</span>
+    <span class="nt1">md</span><span class="ig1">:</span> <span class="vl1">768</span><span class="na1">px</span><span class="ig1">,</span>
+    <span class="nt1">lg</span><span class="ig1">:</span> <span class="vl1">992</span><span class="na1">px</span><span class="ig1">,</span>
+    <span class="nt1">xl</span><span class="ig1">:</span> <span class="vl1">1200</span><span class="na1">px</span><span class="ig1">,</span>
+    <span class="nt1">xxl</span><span class="ig1">:</span> <span class="vl1">1400</span><span class="na1">px</span>
+  <span class="ig1">);</span></code></pre>
+                </div>
+                <p>Para obter mais informações e exemplos sobre como modificar nossos mapas e variáveis ​​Sass, consulte a <a href="../layout/grid.html#sass" target="_blank">seção Sass da documentação do Grid</a>.
+                </p>
+
+                <h2 class="head2" id="creating-your-own">Criando o seu próprio
+                </h2>
+                <p>Nós encorajamos você a adotar essas diretrizes ao construir com o Bootstrap para criar seus próprios componentes. Nós mesmos estendemos essa abordagem aos componentes personalizados em nossa documentação e exemplos. Componentes como nossos <code>textos explicativos</code> são construídos da mesma forma que nossos componentes fornecidos com classes base e modificadoras.
+                </p>
+                <div class="bd-callout bd-callout-warning">
+                    <div class="bd-callout my-0 padrao">
+      <strong class="linkTitle">Este é um texto explicativo.</strong> Nós o criamos de forma personalizada para nossos documentos, de modo que nossas mensagens para você se destaquem. Ele tem três variantes por meio de classes modificadoras.
+                    </div>
+                </div>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-html" data-lang="html"><span class="tg1">&lt;</span><span class="nt1">div</span> <span class="na1">class</span><span class="ig1">=</span><span class="vl1">&#34;callout&#34;</span><span class="tg1">&gt;</span><span class="cm1">...</span><span class="tg1">&lt;/</span><span class="nt1">div</span><span class="tg1">&gt;</span></code></pre>
+                </div>
+                <p>Em seu CSS, você teria algo como o seguinte, onde a maior parte do estilo é feito por meio da classe <code>.callout</code>. Em seguida, os estilos exclusivos entre cada variante são controlados por meio da classe modificadora.
+                </p>
+                <div class="highlight bg-dark"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm1">// Classe Base
+  </span><span class="cm1"></span><span class="na1">.callout</span> <span class="ig1">{}</span>
+  
+  <span class="c1">// Classes modificadoras
+  </span><span class="cm1"></span><span class="na1">.callout-info</span> <span class="ig1">{}</span>
+  <span class="na1">.callout-warning</span> <span class="ig1">{}</span>
+  <span class="na1">.callout-danger</span> <span class="ig1">{}</span></code></pre>
+                </div>
+                <p>Para as frases de destaque (textos explicativos), esse estilo único é apenas um <code>border-left-color</code>. Ao combinar essa classe base com uma dessas classes modificadoras, você obtém sua família completa de componentes:
+                </p>
+                <div class="bd-callout bd-callout-info padrao">
+  <strong class="linkTitle">Esta é uma chamada de informação.</strong> Exemplo de texto em ação.
+                </div>
+                <div class="bd-callout bd-callout-warning padrao">
+  <strong class="linkTitle">Esta é uma chamada de alerta.</strong> Exemplo de texto em ação.
+                </div>
+                <div class="bd-callout bd-callout-danger padrao">
+  <strong class="linkTitle">Esta é uma chamada de risco.</strong> Exemplo de texto em ação.
+                </div>
+            </div>
+        </main>
+
+    </div>
 
 </body>
 </html>
